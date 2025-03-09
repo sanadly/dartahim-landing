@@ -20,7 +20,7 @@ const Hero = () => {
             <div className="absolute top-20 -right-4 w-8 h-8 rounded-lg bg-primary/70 backdrop-blur-sm animate-float" style={{ animationDelay: '0.6s' }}></div>
             
             {/* Main card visualization */}
-            <div className="w-[280px] md:w-[380px] h-[350px] rounded-3xl glass-card bg-gradient-to-br from-white/50 to-white/10 flex flex-col p-6 shadow-xl border border-white/20 relative overflow-hidden z-10">
+            <div className="w-[280px] md:w-[380px] h-[200px] rounded-3xl glass-card bg-gradient-to-br from-white/50 to-white/10 flex flex-col p-6 shadow-xl border border-white/20 relative overflow-hidden z-10">
               <div className="flex justify-between items-center mb-auto">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
                   <span className="text-white font-bold">د</span>
