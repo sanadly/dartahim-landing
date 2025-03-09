@@ -20,9 +20,9 @@ const Hero = () => {
             <div className="absolute top-20 -right-4 w-8 h-8 rounded-lg bg-primary/70 backdrop-blur-sm animate-float" style={{ animationDelay: '0.6s' }}></div>
             
             {/* Main card visualization */}
-            <div className="w-[280px] md:w-[380px] h-[200px] rounded-3xl glass-card bg-gradient-to-br from-white/50 to-white/10 flex flex-col p-6 shadow-xl border border-white/20 relative overflow-hidden z-10">
+            <div className="w-[280px] md:w-[380px] h-[500px] rounded-3xl glass-card bg-gradient-to-br from-white/50 to-white/10 flex flex-col p-6 shadow-xl border border-white/20 relative overflow-hidden z-10">
               <div className="flex justify-between items-center mb-auto">
-                <div className="w-12 h-18 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
                   <span className="text-white font-bold">د</span>
                 </div>
                 <span className="text-xl font-bold">دراهم كارد</span>
@@ -33,9 +33,7 @@ const Hero = () => {
                   <span className="text-text/70">محمد أحمد</span>
                   <span className="text-text/70">12/27</span>
                 </div>
-                <div className="mt-2 bg-white/20 backdrop-blur-sm h-10 w-full rounded-lg">
-                  <img src="https://www.cognex.com/api/Sitecore/GenerateBarcode/Get?data=123456789&code=BCL_CODE39Extended&width=500&imageType=JPG&foreColor=%23000000&backColor=%23FFFFFF&rotation=RotateNoneFlipNone">
-                </div>
+                <div className="mt-2 bg-white/20 backdrop-blur-sm h-10 w-full rounded-lg"></div>
                 <div className="mt-2 flex justify-between">
                   <span className="text-text/70">1234 5678 9012 3456</span>
                   <span className="text-text/70">PREMIUM</span>
