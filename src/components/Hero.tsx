@@ -64,7 +64,7 @@ const Hero = () => {
         {/* Hero Content - Now on the right for desktop */}
         <div className="order-1 lg:order-2 animate-fade-up" style={{ animationDelay: '0.2s' }}>
           <div className="inline-block px-4 py-1 rounded-full bg-secondary/30 backdrop-blur-sm mb-4">
-            <span className="text-sm font-medium">نحن نقدم خدمات تسويق و حلول للشركات و التجار</span>
+            <span className="text-sm font-medium">نحن نقدم خدمات تسويق و حلول للشركات و التجار #1 في ليبيا</span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
             حلول <span className="text-gradient">البطاقات الرقمية</span> وبرامج المكافآت والولاء
