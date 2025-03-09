@@ -96,7 +96,7 @@ const Contact = () => {
                 </div>
                 
                 <div>
-                  <label htmlFor="phone" className="block mb-2 text-sm font-medium">
+                  <label htmlFor="phone" className=" mb-2 text-sm font-medium">
                     رقم الهاتف
                   </label>
                   <input
