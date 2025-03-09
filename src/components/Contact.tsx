@@ -54,53 +54,7 @@ const Contact = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-          {/* Contact Info */}
-          <div className="flex flex-col space-y-8 md:pr-8">
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <Phone size={20} className="text-primary" />
-              </div>
-              <div>
-                <h4 className="font-bold mb-1">اتصل بنا</h4>
-                <p className="text-text/70 dir-ltr">+218 94-6753753</p>
-              </div>
-            </div>
-            
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <Mail size={20} className="text-primary" />
-              </div>
-              <div>
-                <h4 className="font-bold mb-1">البريد الإلكتروني</h4>
-                <p className="text-text/70">info@dartahim.ly</p>
-                <p className="text-text/70">support@dartahim.ly</p>
-              </div>
-            </div>
-            
-            {/* Social Media */}
-            <div className="mt-8">
-              <h4 className="font-bold mb-4">تابعنا على</h4>
-              <div className="flex gap-4">
-                <a href="#" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
-                  <Facebook size={20} className="text-primary" />
-                </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
-                  <Instagram size={20} className="text-primary" />
-                </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
-                  <Twitter size={20} className="text-primary" />
-                </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
-                  <Linkedin size={20} className="text-primary" />
-                </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
-                  <Youtube size={20} className="text-primary" />
-                </a>
-              </div>
-            </div>
-          </div>
-          
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">          
           {/* Contact Form */}
           <div>
             <div className="bg-white/70 backdrop-blur-md rounded-2xl p-8 shadow-lg border border-white/30">
@@ -187,6 +141,53 @@ const Contact = () => {
               </form>
             </div>
           </div>
+
+                    {/* Contact Info */}
+                    <div className="flex flex-col space-y-8 md:pr-8">
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <Phone size={20} className="text-primary" />
+              </div>
+              <div>
+                <h4 className="font-bold mb-1">اتصل بنا</h4>
+                <p className="text-text/70 dir-ltr">+218 94-6753753</p>
+              </div>
+            </div>
+            
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <Mail size={20} className="text-primary" />
+              </div>
+              <div>
+                <h4 className="font-bold mb-1">البريد الإلكتروني</h4>
+                <p className="text-text/70">info@dartahim.ly</p>
+                <p className="text-text/70">support@dartahim.ly</p>
+              </div>
+            </div>
+            
+            {/* Social Media */}
+            <div className="mt-8">
+              <h4 className="font-bold mb-4">تابعنا على</h4>
+              <div className="flex gap-4">
+                <a href="#" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
+                  <Facebook size={20} className="text-primary" />
+                </a>
+                <a href="#" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
+                  <Instagram size={20} className="text-primary" />
+                </a>
+                <a href="#" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
+                  <Twitter size={20} className="text-primary" />
+                </a>
+                <a href="#" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
+                  <Linkedin size={20} className="text-primary" />
+                </a>
+                <a href="#" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
+                  <Youtube size={20} className="text-primary" />
+                </a>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
