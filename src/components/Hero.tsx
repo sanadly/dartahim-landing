@@ -33,7 +33,7 @@ const Hero = () => {
                   <span className="text-text/70">محمد أحمد</span>
                   <span className="text-text/70">12/27</span>
                 </div>
-                <div className="mt-2 bg-white/20 backdrop-blur-sm h-10 w-full rounded-lg"></div>
+                <div className="mt-2 bg-white/20 backdrop-blur-sm h-20 w-full rounded-lg"></div>
                 <div className="mt-2 flex justify-between">
                   <span className="text-text/70">1234 5678 9012 3456</span>
                   <span className="text-text/70">PREMIUM</span>
