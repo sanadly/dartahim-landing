@@ -184,7 +184,7 @@ const ImplementationTabs = () => {
               </div>
             </div>)}
         </div>
-        <div className="relative h-0.5 bg-text/20 mt-[10px] z-0 my-0 py-px">
+        <div className="relative h-0.5 bg-text/20 mt-[12px] z-0 my-0 py-px">
           <div className="absolute top-0 right-0 h-full bg-primary transition-all" style={{
           width: `${activeTab / (implementationTabs.length - 1) * 100}%`
         }}></div>
