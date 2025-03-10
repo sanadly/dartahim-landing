@@ -105,7 +105,7 @@ const Contact = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg bg-white/50 border border-secondary/30 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                    className="w-full text-right dir-rtl px-4 py-3 rounded-lg bg-white/50 border border-secondary/30 focus:outline-none focus:ring-2 focus:ring-primary/50"
                     placeholder="أدخل رقم هاتفك"
                   />
                 </div>
