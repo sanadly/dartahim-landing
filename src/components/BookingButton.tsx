@@ -9,7 +9,7 @@ const BookingButton = ({ className = "" }: { className?: string }) => {
       rel="noopener noreferrer"
       className={`button-primary flex items-center gap-2 ${className}`}
     >
-      أحجز موعد <ArrowLeft className="h-4 w-4" />
+      أحجز موعد <ArrowLeft className="h-4 w-4 text-justify align-middle" />
     </a>
   );
 };

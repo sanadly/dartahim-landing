@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { CheckCircle, Star, Gift, User, CreditCard, TrendingUp, Award, Shield, Crown, Sparkles, ChevronRight } from "lucide-react";
+import BookingButton from "@/components/BookingButton";
 const LoyaltyCards = () => {
   const benefits = [{
     icon: <Star className="h-6 w-6" />,
@@ -253,7 +254,7 @@ const LoyaltyCards = () => {
               تواصل معنا اليوم لمعرفة المزيد عن حلول بطاقات الولاء المخصصة التي يمكننا تقديمها لعملك.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="#" className="button-primary">أحجز موعد</a>
+            <BookingButton className="text-sm md:text-base py-2 md:py-3" />
               <a href="/#contact" className="button-outline">تواصل معنا</a>
             </div>
           </div>

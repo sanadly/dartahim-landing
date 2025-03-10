@@ -1,7 +1,7 @@
 
 import { cn } from '@/lib/utils';
 import { useState, useEffect } from 'react';
-import { ArrowRight, CheckCircle, XCircle } from 'lucide-react';
+import { ArrowLeft, ArrowRight, CheckCircle, XCircle } from 'lucide-react';
 
 const WhyUs = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -191,7 +191,7 @@ const WhyUs = () => {
           <a href="#contact" className="button-primary inline-block group">
             <span className="inline-flex items-center">
               تواصل معنا الآن
-              <ArrowRight className="h-4 w-4 mr-2 group-hover:translate-x-[-4px] transition-transform" />
+              <ArrowLeft className="h-4 w-4 mr-2 group-hover:translate-x-[-4px] transition-transform" />
             </span>
           </a>
         </div>

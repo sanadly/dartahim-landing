@@ -4,6 +4,7 @@ import { BarChart4, Target, Users, Mail, Smartphone, MessageSquare, BarChart2, G
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { DatabaseIcon, Store, CreditCard } from "lucide-react";
+import BookingButton from "@/components/BookingButton";
 
 const MarketingPlatforms = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -434,13 +435,8 @@ const MarketingPlatforms = () => {
                 </div>
                 
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <a href="#" className="button-primary text-center group transition-all">
-                    <span className="flex items-center justify-center">
-                      أحجز موعد
-                      <ArrowUpRight className="h-4 w-4 mr-2 group-hover:translate-y-[-2px] group-hover:translate-x-[-2px] transition-transform" />
-                    </span>
-                  </a>
-                  <a href="/#contact" className="button-outline text-center">تواصل معنا</a>
+                <BookingButton className="text-sm md:text-base py-2 md:py-3" />
+                <a href="/#contact" className="button-outline text-center">تواصل معنا</a>
                 </div>
               </div>
               

@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
+import BookingButton from "@/components/BookingButton";
 
 const founders = [
     {
@@ -243,7 +244,7 @@ const WhoAreWe = () => {
               نحن ملتزمون بتقديم حلول مبتكرة ومخصصة لكل عميل، تلبي احتياجاته الخاصة وتساعده على تحقيق أهدافه. تواصل معنا اليوم للحصول على استشارة مجانية حول كيفية تطوير علاقتك مع عملائك.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="#" className="button-primary hover:scale-105 transition-transform">أحجز موعد</a>
+            <BookingButton className="text-sm md:text-base py-2 md:py-3" />
               <a href="/#contact" className="button-outline hover:scale-105 transition-transform">تواصل معنا</a>
             </div>
           </div>
