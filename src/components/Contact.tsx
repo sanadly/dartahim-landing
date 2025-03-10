@@ -135,19 +135,19 @@ const Contact = () => {
             <div className="feature-card p-8">
               <h3 className="text-xl font-bold mb-6">تابعنا على وسائل التواصل</h3>
               <div className="flex flex-wrap gap-4">
-                <a href="https://www.facebook.com/darahim.ly" className="bg-primary text-white p-3 rounded-full hover:bg-primary/80 transition-colors shadow-md">
+                <a href="https://www.facebook.com/darahim.ly" className="bg-blue-500 text-white p-3 rounded-full hover:bg-blue-600 transition-colors">
                   <Facebook size={20} />
                 </a>
-                <a href="#" className="bg-primary text-white p-3 rounded-full hover:bg-primary/80 transition-colors shadow-md">
+                <a href="#" className="bg-indigo-500 text-white p-3 rounded-full hover:bg-indigo-600 transition-colors">
                   <Twitter size={20} />
                 </a>
-                <a href="#" className="bg-primary text-white p-3 rounded-full hover:bg-primary/80 transition-colors shadow-md">
+                <a href="#" className="bg-pink-500 text-white p-3 rounded-full hover:bg-pink-600 transition-colors">
                   <Instagram size={20} />
                 </a>
-                <a href="https://www.linkedin.com/company/darahimly/" className="bg-primary text-white p-3 rounded-full hover:bg-primary/80 transition-colors shadow-md">
+                <a href="https://www.linkedin.com/company/darahimly/" className="bg-blue-700 text-white p-3 rounded-full hover:bg-blue-800 transition-colors">
                   <Linkedin size={20} />
                 </a>
-                <a href="#" className="bg-primary text-white p-3 rounded-full hover:bg-primary/80 transition-colors shadow-md">
+                <a href="#" className="bg-red-500 text-white p-3 rounded-full hover:bg-red-600 transition-colors">
                   <Youtube size={20} />
                 </a>
               </div>
