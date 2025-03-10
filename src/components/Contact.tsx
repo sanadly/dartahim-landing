@@ -161,7 +161,7 @@ const Contact = () => {
               
               {/* Added CTA button under social links */}
               <div className="mt-6">
-              <BookingButton className="text-sm md:text-base py-2 md:py-3" />
+              <BookingButton className="text-sm md:text-base py-2 md:py-3 justify-center" />
               </div>
             </div>
           </div>
