@@ -18,7 +18,7 @@ const NewsArticle8 = () => {
       "كان هدفنا الأساسي هو استكشاف أحدث التقنيات والتوجهات في مجال برامج الولاء وتقنيات المدفوعات الرقمية، والتواصل مع خبراء الصناعة لبناء شراكات استراتيجية تساعدنا في تطوير حلولنا وخدماتنا المقدمة للسوق الليبي. 💯",
       
       "<div className='my-10 rounded-lg overflow-hidden shadow-md'>",
-      "<img src='/lovable-uploads/f7341154-6b0b-4d67-837b-075f65bcade6.png' alt='صورة من معرض EuroCIS' className='w-full object-cover' />",
+      "<img src='/lovable-uploads/eurocis-1.png' alt='صورة من معرض EuroCIS' className='w-full object-cover' />",
       "<p className='text-center text-sm text-text/60 mt-2'>صورة من معرض EuroCIS للتكنولوجيا في دوسلدورف</p>",
       "</div>",
       
@@ -49,17 +49,7 @@ const NewsArticle8 = () => {
       "<li>الاطلاع على تجارب ناجحة يمكن تطبيقها محليًا بما يتناسب مع السوق الليبي. 📈</li>",
       "<li>تمثيل ليبيا في المحافل الدولية وإبراز الفرص الاستثمارية فيها. 🇱🇾</li>",
       "</ul>",
-      
-      "<div className='my-10 rounded-lg overflow-hidden shadow-md'>",
-      "<img src='/lovable-uploads/düsseldorf.jpg' alt='مدينة دوسلدورف' className='w-full object-cover' />",
-      "<p className='text-center text-sm text-text/60 mt-2'>مدينة دوسلدورف الألمانية المستضيفة للمعرض</p>",
-      "</div>",
-      
-      "<div className='my-10 rounded-lg overflow-hidden shadow-md'>",
-      "<img src='/lovable-uploads/01b4c9b6-74b9-4aa4-95ae-cef321707e46.png' alt='تكنولوجيا المدفوعات' className='w-full object-cover' />",
-      "<p className='text-center text-sm text-text/60 mt-2'>أحدث تقنيات برامج الولاء ومعالجة المدفوعات</p>",
-      "</div>",
-      
+                  
       "<div className='bg-primary/10 p-6 rounded-xl mt-10 shadow-sm'>",
       "<h3 className='font-bold text-xl mb-4'>تفاصيل المعرض: 📋</h3>",
       "<p><strong>المكان:</strong> دوسلدورف، ألمانيا 🇩🇪</p>",
