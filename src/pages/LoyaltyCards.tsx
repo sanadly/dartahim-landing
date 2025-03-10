@@ -182,7 +182,7 @@ const LoyaltyCards = () => {
           <div className="mb-20 bg-primary/5 rounded-2xl overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div className="md:h-full">
-                <img alt="بطاقات ولاء دراهم" className="w-full h-full object-cover" src="/lovable-uploads/da1e9582-2257-4e62-a7c9-5b81477776c8.jpg" />
+                <img alt="بطاقات ولاء دراهم" className="w-full h-full object-cover" src="/lovable-uploads/8d82719d-8f80-4a58-9372-6835998ad7a9.jpg" />
               </div>
               <div className="p-10">
                 <h2 className="text-3xl font-bold mb-4">برامج ولاء مبتكرة ومتطورة</h2>
