@@ -10,7 +10,7 @@ const Jobs = () => {
       title: "مطور واجهة أمامية",
       description: "نبحث عن مطور واجهة أمامية ذو خبرة في React وTypeScript لمساعدتنا في تطوير منصتنا الرقمية.",
       type: "دوام كامل",
-      location: "طرابلس، ليبيا",
+      location: "عن بعد",
       icon: <BriefcaseIcon className="h-6 w-6" />
     },
     {
