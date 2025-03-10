@@ -10,7 +10,6 @@ const BookingButton = ({ className = "" }: { className?: string }) => {
   useEffect(() => {
     // This will ensure that Calendly properly initializes when the dialog opens
     if (isOpen && calendarRef.current && window.Calendly) {
-      // @ts-ignore - Calendly is loaded globally
       window.Calendly.initInlineWidget({
         url: 'https://calendly.com/darahim-info/30min?primary_color=50ba64',
         parentElement: calendarRef.current,
