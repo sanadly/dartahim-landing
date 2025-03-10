@@ -12,7 +12,7 @@ const Hero = () => {
       
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Hero Image - Now on the left for desktop */}
-        <div className="order-2 lg:order-1 flex justify-center items-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
+        <div className="order-2 lg:order-2 flex justify-center items-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
           <div className="relative">
             {/* Decorative elements */}
             <div className="absolute top-10 -left-8 w-16 h-16 rounded-xl bg-secondary/70 backdrop-blur-sm animate-float" style={{ animationDelay: '0s' }}></div>
@@ -62,7 +62,7 @@ const Hero = () => {
         </div>
         
         {/* Hero Content - Now on the right for desktop */}
-        <div className="order-1 lg:order-2 animate-fade-up" style={{ animationDelay: '0.2s' }}>
+        <div className="order-1 lg:order-1 animate-fade-up" style={{ animationDelay: '0.2s' }}>
           <div className="inline-block px-4 py-1 rounded-full bg-secondary/30 backdrop-blur-sm mb-4">
             <span className="text-sm font-medium">المتخصصون في برامج الولاء و حلول التسويق الرقمية #1 في ليبيا            </span>
           </div>
