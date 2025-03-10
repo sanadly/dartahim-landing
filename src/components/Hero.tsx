@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { CreditCard, Gift, BarChart4, ChevronRight, ArrowLeft, Code, Laptop, Smartphone, Award } from 'lucide-react';
@@ -81,12 +80,12 @@ const Hero = () => {
             <span className="text-xs md:text-sm font-medium">المتخصصون في برامج الولاء و حلول التسويق الرقمية #1 في ليبيا</span>
           </motion.div>
           
-          <motion.h1 variants={itemVariants} className="text-3xl md:text-4xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
+          <motion.h1 variants={itemVariants} className="text-3xl md:text-4xl lg:text-6xl font-bold mb-4 md:mb-6 leading-relaxed">
             حلول <span className="text-gradient">البطاقات الرقمية</span> وبرامج المكافآت والولاء
           </motion.h1>
           
           <motion.p variants={itemVariants} className="text-base md:text-lg mb-6 md:mb-8 text-text/80 max-w-xl">
-            دراهم هي الشركة الليبية الرائدة في حلول البطاقات الرقمية وبرامج المكافآت والولاء. نحن نمكّن الأفراد، الشركات، والتجار من تعظيم الفائدة من القيمة الرقمية، مع تجربة سلسة واستثنائية باستخدام تقنيات مبتكرة.
+            دراهم هي الشركة الليبية ال��ائدة في حلول البطاقات الرقمية وبرامج المكافآت والولاء. نحن نمكّن الأفراد، الشركات، والتجار من تعظيم الفائدة من القيمة الرقمية، مع تجربة سلسة واستثنائية باستخدام تقنيات مبتكرة.
           </motion.p>
           
           <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
