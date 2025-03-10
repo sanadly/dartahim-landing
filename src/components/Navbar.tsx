@@ -49,12 +49,10 @@ const Navbar = () => {
 
         {/* Desktop menu */}
         <div className="hidden md:flex items-center gap-8">
-          <a href="#features" onClick={(e) => handleAnchorClick(e, '#features')} className="hover:text-primary transition-colors">المميزات</a>
-          <a href="#why-us" onClick={(e) => handleAnchorClick(e, '#why-us')} className="hover:text-primary transition-colors">لماذا نحن</a>
           <a href="#contact" onClick={(e) => handleAnchorClick(e, '#contact')} className="hover:text-primary transition-colors">اتصل بنا</a>
           <Link to="/who-are-we" className="hover:text-primary transition-colors">من نحن</Link>
           <Link to="/news" className="hover:text-primary transition-colors">الأخبار</Link>
-          <Link to="/team" className="hover:text-primary transition-colors">فريقنا</Link>
+          <Link to="/our-team" className="hover:text-primary transition-colors">فريقنا</Link>
           <Link to="/jobs" className="hover:text-primary transition-colors">الوظائف</Link>
           <a href="#" className="button-primary">أحجز موعد</a>
         </div>
@@ -68,8 +66,6 @@ const Navbar = () => {
       {/* Mobile menu */}
       <div className={cn("fixed inset-0 bg-background/95 backdrop-blur-md flex flex-col items-center justify-center gap-6 text-lg transition-all duration-300 md:hidden z-50", 
                          mobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none -z-10")}>
-        <a href="#features" onClick={(e) => { handleAnchorClick(e, '#features'); setMobileMenuOpen(false); }} className="hover:text-primary transition-colors">المميزات</a>
-        <a href="#why-us" onClick={(e) => { handleAnchorClick(e, '#why-us'); setMobileMenuOpen(false); }} className="hover:text-primary transition-colors">لماذا نحن</a>
         <a href="#contact" onClick={(e) => { handleAnchorClick(e, '#contact'); setMobileMenuOpen(false); }} className="hover:text-primary transition-colors">اتصل بنا</a>
         <Link to="/who-are-we" className="hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>من نحن</Link>
         <Link to="/news" className="hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>الأخبار</Link>
