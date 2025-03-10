@@ -7,7 +7,7 @@ const NewsArticle8 = () => {
   const articleData = {
     id: 8,
     title: "📢 موعدنا في معرض EuroCIS في دوسلدورف! 🚀",
-    date: "١٢ فبراير ٢٠٢٤",
+    date: "15 فبراير 2025",
     imageUrl: "/lovable-uploads/eurocis-1.png",
     coverImage: "/lovable-uploads/düsseldorf.jpg",
     content: [

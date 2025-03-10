@@ -7,7 +7,7 @@ const NewsArticle6 = () => {
   const articleData = {
     id: 6,
     title: "عميلك أقرب إليك الآن: اكتشف قوة الحملات التسويقية المخصصة في تطبيق \"دراهم\"",
-    date: "١٠ سبتمبر ٢٠٢٣",
+    date: "1 يناير 2025",
     imageUrl: "/lovable-uploads/02c3c264-3de6-4eaf-9f6f-3e695a9724e1.png",
     coverImage: "/lovable-uploads/notification.jpg",
     content: [

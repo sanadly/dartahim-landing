@@ -7,7 +7,7 @@ const NewsArticle7 = () => {
   const articleData = {
     id: 7,
     title: "هل أنت مستعد لإطلاق برنامج ولاء؟ دليل \"دراهم\" الشامل لتقدير التكلفة الحقيقية",
-    date: "٥ أكتوبر ٢٠٢٣",
+    date: "25 يناير 2025",
     imageUrl: "/lovable-uploads/7d9bf6e4-abd1-45fa-ad06-3c07b4b9686b.png",
     coverImage: "/lovable-uploads/7d9bf6e4-abd1-45fa-ad06-3c07b4b9686b.png",
     content: [
