@@ -1,56 +1,40 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { CheckCircle, Star, Gift, User, CreditCard, TrendingUp, Award, Shield, Crown, Sparkles, ChevronRight } from "lucide-react";
-
 const LoyaltyCards = () => {
-  const benefits = [
-    {
-      icon: <Star className="h-6 w-6" />,
-      title: "زيادة ولاء العملاء",
-      description: "تعزز بطاقات الولاء من ارتباط العملاء بعلامتك التجارية وتزيد من معدلات الاحتفاظ بهم."
-    },
-    {
-      icon: <TrendingUp className="h-6 w-6" />,
-      title: "زيادة المبيعات",
-      description: "يزيد متوسط قيمة المعاملات والتردد على المتجر مع برامج الولاء الفعالة."
-    },
-    {
-      icon: <User className="h-6 w-6" />,
-      title: "فهم أفضل للعملاء",
-      description: "جمع بيانات قيمة عن سلوك العملاء وتفضيلاتهم لتحسين عروضك."
-    }
-  ];
-
-  const features = [
-    {
-      title: "برامج النقاط المرنة",
-      description: "صمم نظام نقاط يناسب عملك مع خيارات متعددة للكسب والاسترداد."
-    },
-    {
-      title: "بطاقات رقمية وفعلية",
-      description: "اختر بين البطاقات الرقمية، البطاقات البلاستيكية أو كليهما حسب احتياجاتك."
-    },
-    {
-      title: "المكافآت المخصصة",
-      description: "حدد مكافآت فريدة ومخصصة لعملائك بناءً على سلوكهم الشرائي."
-    },
-    {
-      title: "التكامل السلس",
-      description: "تكامل سهل مع أنظمة نقاط البيع وأنظمة إدارة العملاء الحالية."
-    },
-    {
-      title: "لوحة تحكم شاملة",
-      description: "تتبع ومراقبة برنامج الولاء الخاص بك من خلال لوحة تحكم سهلة الاستخدام."
-    },
-    {
-      title: "تحليلات متقدمة",
-      description: "تقارير وتحليلات تفصيلية لقياس أداء برنامج الولاء وتأثيره على عملك."
-    }
-  ];
-
-  return (
-    <div className="min-h-screen flex flex-col" dir="rtl">
+  const benefits = [{
+    icon: <Star className="h-6 w-6" />,
+    title: "زيادة ولاء العملاء",
+    description: "تعزز بطاقات الولاء من ارتباط العملاء بعلامتك التجارية وتزيد من معدلات الاحتفاظ بهم."
+  }, {
+    icon: <TrendingUp className="h-6 w-6" />,
+    title: "زيادة المبيعات",
+    description: "يزيد متوسط قيمة المعاملات والتردد على المتجر مع برامج الولاء الفعالة."
+  }, {
+    icon: <User className="h-6 w-6" />,
+    title: "فهم أفضل للعملاء",
+    description: "جمع بيانات قيمة عن سلوك العملاء وتفضيلاتهم لتحسين عروضك."
+  }];
+  const features = [{
+    title: "برامج النقاط المرنة",
+    description: "صمم نظام نقاط يناسب عملك مع خيارات متعددة للكسب والاسترداد."
+  }, {
+    title: "بطاقات رقمية وفعلية",
+    description: "اختر بين البطاقات الرقمية، البطاقات البلاستيكية أو كليهما حسب احتياجاتك."
+  }, {
+    title: "المكافآت المخصصة",
+    description: "حدد مكافآت فريدة ومخصصة لعملائك بناءً على سلوكهم الشرائي."
+  }, {
+    title: "التكامل السلس",
+    description: "تكامل سهل مع أنظمة نقاط البيع وأنظمة إدارة العملاء الحالية."
+  }, {
+    title: "لوحة تحكم شاملة",
+    description: "تتبع ومراقبة برنامج الولاء الخاص بك من خلال لوحة تحكم سهلة الاستخدام."
+  }, {
+    title: "تحليلات متقدمة",
+    description: "تقارير وتحليلات تفصيلية لقياس أداء برنامج الولاء وتأثيره على عملك."
+  }];
+  return <div className="min-h-screen flex flex-col" dir="rtl">
       <Navbar />
       
       <main className="flex-grow pt-32 px-6">
@@ -184,15 +168,13 @@ const LoyaltyCards = () => {
           <div className="mb-20">
             <h2 className="text-3xl font-bold mb-8 text-center">فوائد برامج الولاء</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="feature-card p-8">
+              {benefits.map((benefit, index) => <div key={index} className="feature-card p-8">
                   <div className="text-primary mb-4 inline-flex p-4 bg-primary/10 rounded-full">
                     {benefit.icon}
                   </div>
                   <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
                   <p className="text-text/80">{benefit.description}</p>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
           
@@ -200,11 +182,7 @@ const LoyaltyCards = () => {
           <div className="mb-20 bg-primary/5 rounded-2xl overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div className="md:h-full">
-                <img 
-                  src="/lovable-uploads/69b73410-b7da-4aa0-9a35-00ac7c62e874.png" 
-                  alt="بطاقات ولاء دراهم" 
-                  className="w-full h-full object-cover"
-                />
+                <img alt="بطاقات ولاء دراهم" className="w-full h-full object-cover" src="/lovable-uploads/da1e9582-2257-4e62-a7c9-5b81477776c8.jpg" />
               </div>
               <div className="p-10">
                 <h2 className="text-3xl font-bold mb-4">برامج ولاء مبتكرة ومتطورة</h2>
@@ -256,8 +234,7 @@ const LoyaltyCards = () => {
           <div className="mb-20">
             <h2 className="text-3xl font-bold mb-8 text-center">مميزات حلول بطاقات الولاء</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {features.map((feature, index) => (
-                <div key={index} className="feature-card p-6">
+              {features.map((feature, index) => <div key={index} className="feature-card p-6">
                   <div className="flex items-start gap-3">
                     <CheckCircle className="text-primary mt-1 flex-shrink-0" />
                     <div>
@@ -265,8 +242,7 @@ const LoyaltyCards = () => {
                       <p className="text-text/80">{feature.description}</p>
                     </div>
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
           
@@ -285,8 +261,6 @@ const LoyaltyCards = () => {
       </main>
       
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default LoyaltyCards;
