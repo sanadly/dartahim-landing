@@ -26,6 +26,34 @@ const ArticleContent: React.FC<ArticleContentProps> = ({
     return <p className="mb-6 text-text/80 leading-relaxed">{content}</p>;
   };
 
+  // Get all article IDs to use for "related articles"
+  const allArticleIds = [1, 2, 3, 4, 5, 6, 7];
+
+  // Get article title based on ID
+  const getArticleTitle = (articleId: number) => {
+    switch(articleId) {
+      case 1: return 'دراهم تطلق خدمة المدفوعات الرقمية';
+      case 2: return 'شراكة استراتيجية مع مصرف ليبيا المركزي';
+      case 3: return 'دراهم تفوز بجائزة أفضل شركة ناشئة';
+      case 4: return 'تطبيق ولاء العملاء: مفتاح النمو المستدام';
+      case 5: return 'بناء شبكة ولاء العملاء الخاصة بك';
+      case 6: return 'عميلك أقرب إليك الآن: الحملات التسويقية المخصصة';
+      case 7: return 'دليل دراهم الشامل لتقدير تكلفة برنامج الولاء';
+      default: return '';
+    }
+  };
+
+  // Get article image based on ID
+  const getArticleImage = (articleId: number) => {
+    if (articleId === 1 || articleId === 4) {
+      return 'd8c5b993-2a67-47ca-9ad1-222ee8ff41e9.png';
+    } else if (articleId === 2 || articleId === 5 || articleId === 7) {
+      return '9b14e838-2969-48fd-be92-aa3e678c56d3.png';
+    } else {
+      return '69b73410-b7da-4aa0-9a35-00ac7c62e874.png';
+    }
+  };
+
   return (
     <article className="max-w-4xl mx-auto">
       <div className="mb-8">
@@ -59,26 +87,18 @@ const ArticleContent: React.FC<ArticleContentProps> = ({
       <div className="mt-12 pt-8 border-t border-border">
         <h3 className="font-bold text-xl mb-4">مقالات ذات صلة</h3>
         <div className="flex overflow-x-auto gap-6 pb-4">
-          {[1, 2, 3, 4, 5].filter(articleId => articleId !== id).slice(0, 3).map(articleId => (
+          {allArticleIds.filter(articleId => articleId !== id).slice(0, 3).map(articleId => (
             <Link to={`/news/${articleId}`} key={articleId} className="flex-shrink-0 w-72">
               <div className="feature-card group hover:shadow-md transition-all duration-300 h-full">
                 <div className="mb-4 overflow-hidden rounded-lg">
                   <img 
-                    src={`/lovable-uploads/${
-                      articleId === 1 || articleId === 4 ? 'd8c5b993-2a67-47ca-9ad1-222ee8ff41e9.png' : 
-                      articleId === 2 || articleId === 5 ? '9b14e838-2969-48fd-be92-aa3e678c56d3.png' : 
-                      '69b73410-b7da-4aa0-9a35-00ac7c62e874.png'
-                    }`} 
+                    src={`/lovable-uploads/${getArticleImage(articleId)}`} 
                     alt="مقال ذو صلة" 
                     className="w-full h-36 object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
                 <h4 className="font-bold">
-                  {articleId === 1 ? 'دراهم تطلق خدمة المدفوعات الرقمية' : 
-                   articleId === 2 ? 'شراكة استراتيجية مع مصرف ليبيا المركزي' : 
-                   articleId === 3 ? 'دراهم تفوز بجائزة أفضل شركة ناشئة' :
-                   articleId === 4 ? 'تطبيق ولاء العملاء: مفتاح النمو المستدام' :
-                   'بناء شبكة ولاء العملاء الخاصة بك'}
+                  {getArticleTitle(articleId)}
                 </h4>
               </div>
             </Link>
