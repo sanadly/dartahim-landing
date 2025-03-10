@@ -1,6 +1,7 @@
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { BarChart4, Target, Users, Mail, Smartphone, MessageSquare, BarChart2, Globe, Flag, ArrowUpRight, Zap, Check, CheckCircle, ChevronRight } from "lucide-react";
+import { BarChart4, Target, Users, Mail, Smartphone, MessageSquare, BarChart2, Globe, Flag, ArrowUpRight, Zap, Check } from "lucide-react";
 
 const MarketingPlatforms = () => {
   const benefits = [
@@ -295,119 +296,17 @@ const MarketingPlatforms = () => {
             </div>
           </div>
           
-          {/* CTA Section - Enhanced with visual engagement */}
-          <div className="bg-primary/5 rounded-2xl overflow-hidden mb-16 animate-fade-up">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <div className="p-10">
-                <h2 className="text-3xl font-bold mb-4 flex items-center gap-2">
-                  <div className="w-2 h-8 bg-primary rounded-full"></div>
-                  <span>ارفع مستوى تسويقك مع منصات دراهم</span>
-                </h2>
-                <p className="text-lg text-text/70 mb-6 leading-relaxed">
-                  حلول تسويقية مبتكرة تساعدك على فهم عملائك بشكل أفضل وبناء علاقات قوية معهم.
-                </p>
-                
-                <div className="space-y-4 mb-8">
-                  <div className="bg-white/50 p-4 rounded-lg flex items-start gap-3 hover:shadow-md transition-all">
-                    <div className="bg-primary/10 p-2 rounded-full">
-                      <CheckCircle className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold">تحليلات متقدمة</h3>
-                      <p className="text-text/70 text-sm">فهم سلوك العملاء واتجاهات السوق من خلال لوحات تحكم تفاعلية</p>
-                    </div>
-                  </div>
-                  
-                  <div className="bg-white/50 p-4 rounded-lg flex items-start gap-3 hover:shadow-md transition-all">
-                    <div className="bg-primary/10 p-2 rounded-full">
-                      <CheckCircle className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold">أتمتة التسويق</h3>
-                      <p className="text-text/70 text-sm">حملات تسويقية آلية مدفوعة بالبيانات تستهدف العملاء في الوقت المناسب</p>
-                    </div>
-                  </div>
-                  
-                  <div className="bg-white/50 p-4 rounded-lg flex items-start gap-3 hover:shadow-md transition-all">
-                    <div className="bg-primary/10 p-2 rounded-full">
-                      <CheckCircle className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold">تكامل متعدد القنوات</h3>
-                      <p className="text-text/70 text-sm">تجربة تسويقية موحدة عبر جميع نقاط الاتصال مع العملاء</p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <a href="#" className="button-primary group flex items-center justify-center gap-2">
-                    <span>أحجز موعد</span>
-                    <ChevronRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </a>
-                  <a href="/#contact" className="button-outline flex items-center justify-center gap-2">
-                    <span>تواصل معنا</span>
-                  </a>
-                </div>
-              </div>
-              
-              <div className="bg-gradient-to-br from-primary/20 to-accent/20 p-8 flex items-center justify-center">
-                <div className="relative max-w-md">
-                  {/* Interactive marketing dashboard visualization */}
-                  <div className="bg-white rounded-xl shadow-xl border border-primary/10 transform rotate-2 hover:rotate-0 transition-transform duration-500">
-                    <div className="p-6">
-                      <div className="flex justify-between items-center mb-6">
-                        <div className="flex items-center gap-2">
-                          <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                            <span className="text-primary font-bold">د</span>
-                          </div>
-                          <h3 className="font-bold">منصة التسويق المتكاملة</h3>
-                        </div>
-                      </div>
-                      
-                      <div className="space-y-4">
-                        <div>
-                          <div className="flex justify-between text-sm mb-1">
-                            <span>حملات نشطة</span>
-                            <span className="font-bold text-primary">12</span>
-                          </div>
-                          <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
-                            <div className="h-full bg-primary rounded-full animate-pulse" style={{ width: '75%' }}></div>
-                          </div>
-                        </div>
-                        
-                        <div>
-                          <div className="flex justify-between text-sm mb-1">
-                            <span>معدل التفاعل</span>
-                            <span className="font-bold text-primary">68%</span>
-                          </div>
-                          <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
-                            <div className="h-full bg-primary rounded-full animate-pulse" style={{ width: '68%' }}></div>
-                          </div>
-                        </div>
-                        
-                        <div>
-                          <div className="flex justify-between text-sm mb-1">
-                            <span>معدل التحويل</span>
-                            <span className="font-bold text-primary">32%</span>
-                          </div>
-                          <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
-                            <div className="h-full bg-primary rounded-full animate-pulse" style={{ width: '32%' }}></div>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <div className="mt-6 bg-gray-50 p-4 rounded-lg">
-                        <h4 className="font-bold mb-2">التوصيات الذكية</h4>
-                        <p className="text-sm text-text/70">زيادة عروض الكاشباك للعملاء الذين لم يقوموا بالشراء في آخر 30 يوم قد يرفع معدل التحويل بنسبة 15%.</p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Decorative elements */}
-                  <div className="absolute -top-4 -right-4 w-12 h-12 rounded-lg bg-primary/30 -rotate-12 animate-float" style={{ animationDelay: '0.2s' }}></div>
-                  <div className="absolute -bottom-6 -left-6 w-16 h-16 rounded-full bg-accent/30 animate-float" style={{ animationDelay: '0.5s' }}></div>
-                </div>
-              </div>
+          {/* Section "قصص نجاح" has been removed as requested */}
+          
+          {/* CTA Section */}
+          <div className="bg-primary/5 rounded-2xl p-10 text-center mb-16">
+            <h2 className="text-3xl font-bold mb-4">ارفع مستوى تسويقك مع منصات دراهم</h2>
+            <p className="text-lg text-text/70 max-w-3xl mx-auto mb-8">
+              تواصل معنا اليوم لمعرفة كيف يمكن لمنصات التسويق المتكاملة من دراهم أن تساعد في نمو أعمالك وتحسين علاقاتك مع العملاء.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="#" className="button-primary">أحجز موعد</a>
+              <a href="/#contact" className="button-outline">تواصل معنا</a>
             </div>
           </div>
         </div>

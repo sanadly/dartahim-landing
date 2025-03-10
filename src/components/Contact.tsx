@@ -44,7 +44,7 @@ const Contact = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           {/* Contact Form */}
-          <div className="feature-card p-8 animate-fade-up" style={{ animationDelay: '0.1s' }}>
+          <div className="feature-card p-8">
             <h3 className="text-xl font-bold mb-6">أرسل لنا رسالة</h3>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
@@ -102,7 +102,7 @@ const Contact = () => {
           {/* Contact Info */}
           <div className="space-y-8">
             {/* Contact Details */}
-            <div className="feature-card p-8 animate-fade-up" style={{ animationDelay: '0.3s' }}>
+            <div className="feature-card p-8">
               <h3 className="text-xl font-bold mb-6">معلومات الاتصال</h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
@@ -131,29 +131,29 @@ const Contact = () => {
               </div>
             </div>
             
-            {/* Social Media - Updated colors to match website */}
-            <div className="feature-card p-8 animate-fade-up" style={{ animationDelay: '0.5s' }}>
+            {/* Social Media */}
+            <div className="feature-card p-8">
               <h3 className="text-xl font-bold mb-6">تابعنا على وسائل التواصل</h3>
               <div className="flex flex-wrap gap-4">
-                <a href="https://www.facebook.com/darahim.ly" className="bg-primary text-white p-3 rounded-full hover:bg-primary/80 transition-colors">
+                <a href="https://www.facebook.com/darahim.ly" className="bg-blue-500 text-white p-3 rounded-full hover:bg-blue-600 transition-colors">
                   <Facebook size={20} />
                 </a>
-                <a href="#" className="bg-primary text-white p-3 rounded-full hover:bg-primary/80 transition-colors">
+                <a href="#" className="bg-indigo-500 text-white p-3 rounded-full hover:bg-indigo-600 transition-colors">
                   <Twitter size={20} />
                 </a>
-                <a href="#" className="bg-primary text-white p-3 rounded-full hover:bg-primary/80 transition-colors">
+                <a href="#" className="bg-pink-500 text-white p-3 rounded-full hover:bg-pink-600 transition-colors">
                   <Instagram size={20} />
                 </a>
-                <a href="https://www.linkedin.com/company/darahimly/" className="bg-primary text-white p-3 rounded-full hover:bg-primary/80 transition-colors">
+                <a href="https://www.linkedin.com/company/darahimly/" className="bg-blue-700 text-white p-3 rounded-full hover:bg-blue-800 transition-colors">
                   <Linkedin size={20} />
                 </a>
-                <a href="#" className="bg-primary text-white p-3 rounded-full hover:bg-primary/80 transition-colors">
+                <a href="#" className="bg-red-500 text-white p-3 rounded-full hover:bg-red-600 transition-colors">
                   <Youtube size={20} />
                 </a>
               </div>
               
               {/* Added CTA button under social links */}
-              <div className="mt-6 animate-fade-up" style={{ animationDelay: '0.6s' }}>
+              <div className="mt-6">
                 <a href="#" className="button-primary w-full text-center">أحجز موعد</a>
               </div>
             </div>

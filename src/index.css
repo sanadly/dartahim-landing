@@ -94,49 +94,4 @@
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
   }
-
-  /* Added Animations */
-  @keyframes float {
-    0% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-    100% {
-      transform: translateY(0px);
-    }
-  }
-
-  .animate-float {
-    animation: float 4s ease-in-out infinite;
-  }
-
-  .perspective-card {
-    perspective: 1000px;
-  }
-
-  .transform-card {
-    transform-style: preserve-3d;
-  }
-
-  .card-shine {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.25) 25%, 
-      rgba(255, 255, 255, 0) 50%
-    );
-    z-index: 1;
-    transform: translateZ(1px);
-  }
-
-  .floating-card {
-    animation: float 6s ease-in-out infinite;
-  }
 }
