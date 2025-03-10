@@ -1,3 +1,4 @@
+
 import { cn } from '@/lib/utils';
 const Hero = () => {
   return <section className="min-h-screen pt-32 pb-16 px-6 hero-pattern flex items-center relative overflow-hidden">
@@ -78,7 +79,7 @@ const Hero = () => {
                 <span className="text-text/70">12/27</span>
               </div>
               <div className="mt-2 h-20 w-full rounded-lg bg-white/5 backdrop-blur-sm flex justify-center items-center p-1">
-                <img alt="DARAHIM CARD barcode" className="h-full w-full object-contain" src="/lovable-uploads/3cb7ae22-2c64-4c5d-93e0-49fb60acb81a.png" />
+                <img alt="DARAHIM CARD barcode" className="h-full w-full object-contain" src="/lovable-uploads/9b14e838-2969-48fd-be92-aa3e678c56d3.png" />
               </div>
               <div className="mt-2 flex justify-between">
                 <span className="text-text/70">1234 5678 9012 3456</span>
