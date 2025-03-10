@@ -1,3 +1,4 @@
+
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import ArticleContent from "@/components/ArticleContent";
@@ -8,7 +9,7 @@ const NewsArticle7 = () => {
     title: "هل أنت مستعد لإطلاق برنامج ولاء؟ دليل \"دراهم\" الشامل لتقدير التكلفة الحقيقية",
     date: "٥ أكتوبر ٢٠٢٣",
     imageUrl: "/lovable-uploads/8403013f-eafe-4e9c-be77-241e2d56d4fe.png",
-    coverImage: "/lovable-uploads/8403013f-eafe-4e9c-be77-241e2d56d4fe.png",
+    coverImage: "/lovable-uploads/pricing-guide.jpg",
     content: [
       "لقد أدركت الآن قوة وأهمية برنامج الولاء لنمو عملك، وربما وضعت بالفعل خططك التسويقية وحددت نوع البرنامج والمكافآت التي ستقدمها. لكن السؤال الأهم الذي يطرح نفسه: كيف تحدد التكلفة الحقيقية لإطلاق برنامج ولاء ناجح؟",
       
@@ -19,7 +20,7 @@ const NewsArticle7 = () => {
       "قد يبدو غريبًا أن نبدأ بالميزانية من خلال التقنية، لكن في الواقع، التقنية هي حجر الزاوية في أي برنامج ولاء ناجح. ستحتاج إلى منصة تقنية قوية لتأسيس برنامجك عليها. الخيار الأساسي هنا هو: هل تبني البرنامج بنفسك، أم تعتمد على حل جاهز؟",
       
       "<div className='my-10 rounded-lg overflow-hidden shadow-md'>",
-      "<img src='/lovable-uploads/article7-tech-image.jpg' alt='تقنية برامج الولاء' className='w-full object-cover' />",
+      "<img src='/lovable-uploads/loyalty-tech.jpg' alt='تقنية برامج الولاء' className='w-full object-cover' />",
       "<p className='text-center text-sm text-text/60 mt-2'>تقنيات متطورة تدعم برامج الولاء الفعالة</p>",
       "</div>",
       
@@ -52,7 +53,7 @@ const NewsArticle7 = () => {
       "</ul>",
       
       "<div className='my-10 rounded-lg overflow-hidden shadow-md'>",
-      "<img src='/lovable-uploads/article7-loyalty-cards.jpg' alt='بطاقات ولاء متنوعة' className='w-full object-cover' />",
+      "<img src='/lovable-uploads/loyalty-cards.jpg' alt='بطاقات ولاء متنوعة' className='w-full object-cover' />",
       "<p className='text-center text-sm text-text/60 mt-2'>الحلول الجاهزة توفر أنظمة ولاء متكاملة بتكلفة أقل</p>",
       "</div>",
       

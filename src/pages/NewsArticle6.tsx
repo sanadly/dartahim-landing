@@ -20,7 +20,7 @@ const NewsArticle6 = () => {
       "تخيل أن تتواصل مع عملائك في أعياد ميلادهم بتهنئة خاصة ومكافأة بسيطة تعبر عن تقديرك. أو أن تبعث رسالة ودية للاطمئنان على عميل لم يزر متجرك منذ فترة، مع حافز بسيط لعودته. أو حتى أن تدعوهم لحضور افتتاح فرعك الجديد بعرض حصري خاص بهم.",
       
       "<div className='my-10 rounded-lg overflow-hidden shadow-md'>",
-      "<img src='/lovable-uploads/60805f98-983a-4681-b35e-a9f1b913f092.png' alt='إشعارات مخصصة في تطبيق ولاء العملاء' className='w-full object-cover' />",
+      "<img src='/lovable-uploads/custom-notifications.jpg' alt='إشعارات مخصصة في تطبيق ولاء العملاء' className='w-full object-cover' />",
       "<p className='text-center text-sm text-text/60 mt-2'>إشعارات مخصصة تعزز العلاقة مع العميل وتزيد من ولائه</p>",
       "</div>",
       

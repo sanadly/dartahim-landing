@@ -1,4 +1,4 @@
-import { NewspaperIcon, CalendarIcon, ChevronRightIcon } from "lucide-react";
+import { CalendarIcon, ChevronRightIcon } from "lucide-react";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { Link } from "react-router-dom";
@@ -19,7 +19,7 @@ const News = () => {
       summary: "لقد أدركت الآن قوة وأهمية برنامج الولاء لنمو عملك، وربما وضعت بالفعل خططك التسويقية. لكن السؤال الأهم: كيف تحدد التكلفة الحقيقية لإطلاق برنامج ولاء ناجح؟",
       date: "٥ أكتوبر ٢٠٢٣",
       imageUrl: "/lovable-uploads/8403013f-eafe-4e9c-be77-241e2d56d4fe.png",
-      coverImage: "/lovable-uploads/8403013f-eafe-4e9c-be77-241e2d56d4fe.png"
+      coverImage: "/lovable-uploads/pricing-guide.jpg"
     },
     {
       id: 6,

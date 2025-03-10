@@ -1,5 +1,6 @@
+
 import React from 'react';
-import { CalendarIcon, ArrowRight, ImageIcon } from "lucide-react";
+import { CalendarIcon, ArrowRight } from "lucide-react";
 import { Link } from 'react-router-dom';
 
 interface ArticleContentProps {
