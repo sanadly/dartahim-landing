@@ -1,3 +1,4 @@
+
 import { cn } from '@/lib/utils';
 const Hero = () => {
   return <section className="min-h-screen pt-32 pb-16 px-6 hero-pattern flex items-center relative overflow-hidden">
@@ -6,10 +7,51 @@ const Hero = () => {
     <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-primary/20 rounded-full blur-3xl"></div>
 
     <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-      {/* Hero Image - Now on the left for desktop */}
+      {/* Hero Content - Now on the left for desktop */}
+      <div style={{
+        animationDelay: '0.2s'
+      }} className="order-2 lg:order-1 animate-fade-up">
+        <div className="inline-block px-4 py-1 rounded-full bg-secondary/30 backdrop-blur-sm mb-4">
+          <span className="text-sm font-medium">المتخصصون في برامج الولاء و حلول التسويق الرقمية #1 في ليبيا            </span>
+        </div>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+          حلول <span className="text-gradient">البطاقات الرقمية</span> وبرامج المكافآت والولاء
+        </h1>
+        <p className="text-lg mb-8 text-text/80 max-w-xl">
+          دراهم هي الشركة الليبية الرائدة في حلول البطاقات الرقمية وبرامج المكافآت والولاء. نحن نمكّن الأفراد، الشركات، والتجار من تعظيم الفائدة من القيمة الرقمية، مع تجربة سلسة واستثنائية باستخدام تقنيات مبتكرة.
+        </p>
+        <div className="flex flex-wrap gap-4">
+          <a href="#" className="button-primary">أحجز موعد</a>
+          <a href="#why-us" className="button-outline">لماذا دراهم؟</a>
+        </div>
+
+        {/* Trust Indicators */}
+        <div className="mt-12 flex flex-wrap gap-8 items-center">
+          <div className="flex items-center gap-2">
+            <div className="bg-secondary/30 backdrop-blur-sm w-12 h-12 rounded-full flex items-center justify-center">
+              <span className="text-primary font-bold">+50</span>
+            </div>
+            <span className="text-sm">عميل في ليبيا</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="bg-secondary/30 backdrop-blur-sm w-12 h-12 rounded-full flex items-center justify-center">
+              <span className="text-primary font-bold">99%</span>
+            </div>
+            <span className="text-sm">رضا عملائنا</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="bg-secondary/30 backdrop-blur-sm w-12 h-12 rounded-full flex items-center justify-center">
+              <span className="text-primary font-bold">24/7</span>
+            </div>
+            <span className="text-sm">دعم فني</span>
+          </div>
+        </div>
+      </div>
+      
+      {/* Hero Image - Now on the right for desktop */}
       <div style={{
         animationDelay: '0.4s'
-      }} className="order-1 flex justify-center items-center animate-fade-in">
+      }} className="order-1 lg:order-2 flex justify-center items-center animate-fade-in">
         <div className="relative">
           {/* Decorative elements */}
           <div className="absolute top-10 -left-8 w-16 h-16 rounded-xl bg-secondary/70 backdrop-blur-sm animate-float" style={{
@@ -62,47 +104,6 @@ const Hero = () => {
               </div>
               <div className="mt-2 bg-white/20 backdrop-blur-sm h-6 w-full rounded-lg"></div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Hero Content - Now on the right for desktop */}
-      <div style={{
-        animationDelay: '0.2s'
-      }} className="order-2 animate-fade-up">
-        <div className="inline-block px-4 py-1 rounded-full bg-secondary/30 backdrop-blur-sm mb-4">
-          <span className="text-sm font-medium">المتخصصون في برامج الولاء و حلول التسويق الرقمية #1 في ليبيا            </span>
-        </div>
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-          حلول <span className="text-gradient">البطاقات الرقمية</span> وبرامج المكافآت والولاء
-        </h1>
-        <p className="text-lg mb-8 text-text/80 max-w-xl">
-          دراهم هي الشركة الليبية الرائدة في حلول البطاقات الرقمية وبرامج المكافآت والولاء. نحن نمكّن الأفراد، الشركات، والتجار من تعظيم الفائدة من القيمة الرقمية، مع تجربة سلسة واستثنائية باستخدام تقنيات مبتكرة.
-        </p>
-        <div className="flex flex-wrap gap-4">
-          <a href="#" className="button-primary">أحجز موعد</a>
-          <a href="#why-us" className="button-outline">لماذا دراهم؟</a>
-        </div>
-
-        {/* Trust Indicators */}
-        <div className="mt-12 flex flex-wrap gap-8 items-center">
-          <div className="flex items-center gap-2">
-            <div className="bg-secondary/30 backdrop-blur-sm w-12 h-12 rounded-full flex items-center justify-center">
-              <span className="text-primary font-bold">+50</span>
-            </div>
-            <span className="text-sm">عميل في ليبيا</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="bg-secondary/30 backdrop-blur-sm w-12 h-12 rounded-full flex items-center justify-center">
-              <span className="text-primary font-bold">99%</span>
-            </div>
-            <span className="text-sm">رضا عملائنا</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="bg-secondary/30 backdrop-blur-sm w-12 h-12 rounded-full flex items-center justify-center">
-              <span className="text-primary font-bold">24/7</span>
-            </div>
-            <span className="text-sm">دعم فني</span>
           </div>
         </div>
       </div>
