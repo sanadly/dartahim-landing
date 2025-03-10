@@ -25,37 +25,43 @@ const BookingButton = ({ className = "" }: { className?: string }) => {
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);
   const calendarRef = useRef<HTMLDivElement>(null);
   
-  // Check if Calendly script is loaded
+  // Load Calendly script if not already loaded
   useEffect(() => {
+    // Check if script is already loaded
     if (window.Calendly) {
       setIsScriptLoaded(true);
-    } else {
-      // Script onload event listener
-      const handleScriptLoad = () => setIsScriptLoaded(true);
-      
-      // Find if the script is already in the DOM
-      const existingScript = document.querySelector('script[src*="calendly.com"]');
-      
-      if (existingScript) {
-        // If script exists but not loaded yet, add event listener
-        existingScript.addEventListener('load', handleScriptLoad);
-        return () => existingScript.removeEventListener('load', handleScriptLoad);
-      }
-      
-      // Script doesn't exist, we should depend on the one in index.html
-      // which should trigger the window.Calendly assignment
-      const checkCalendlyInterval = setInterval(() => {
-        if (window.Calendly) {
-          setIsScriptLoaded(true);
-          clearInterval(checkCalendlyInterval);
-        }
-      }, 100);
-      
-      return () => clearInterval(checkCalendlyInterval);
+      return;
     }
+    
+    // Check if script tag is already in the document
+    const existingScript = document.querySelector('script[src*="calendly.com"]');
+    
+    if (existingScript) {
+      // If script exists but Calendly not available yet, wait for it
+      existingScript.addEventListener('load', () => {
+        setIsScriptLoaded(true);
+      });
+    } else {
+      // Create and load script if not present
+      const script = document.createElement('script');
+      script.src = 'https://assets.calendly.com/assets/external/widget.js';
+      script.async = true;
+      script.onload = () => setIsScriptLoaded(true);
+      document.head.appendChild(script);
+    }
+    
+    // Check periodically for Calendly
+    const interval = setInterval(() => {
+      if (window.Calendly) {
+        setIsScriptLoaded(true);
+        clearInterval(interval);
+      }
+    }, 200);
+    
+    return () => clearInterval(interval);
   }, []);
 
-  // Initialize Calendly when dialog opens
+  // Initialize Calendly when dialog opens and script is loaded
   useEffect(() => {
     if (isOpen && calendarRef.current && window.Calendly && isScriptLoaded) {
       window.Calendly.initInlineWidget({
@@ -84,16 +90,20 @@ const BookingButton = ({ className = "" }: { className?: string }) => {
           <DialogDescription className="sr-only">
             احجز موعدًا مع فريق دراهم
           </DialogDescription>
-          <div 
-            ref={calendarRef}
-            className="calendly-inline-widget" 
-            data-url="https://calendly.com/darahim-info/30min?primary_color=50ba64" 
-            style={{ minWidth: '320px', height: '700px' }}
-          />
-          {!isScriptLoaded && (
-            <div className="flex justify-center items-center p-4">
-              جارِ تحميل الجدول...
+          {!isScriptLoaded ? (
+            <div className="flex justify-center items-center p-8 h-[600px]">
+              <div className="text-center">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+                <p className="text-lg">جارِ تحميل الجدول...</p>
+              </div>
             </div>
+          ) : (
+            <div 
+              ref={calendarRef}
+              className="calendly-inline-widget" 
+              data-url="https://calendly.com/darahim-info/30min?primary_color=50ba64" 
+              style={{ minWidth: '320px', height: '700px' }}
+            />
           )}
         </DialogContent>
       </Dialog>
