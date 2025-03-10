@@ -52,7 +52,7 @@ const NewsArticle7 = () => {
       "</ul>",
       
       "<div className='my-10 rounded-lg overflow-hidden shadow-md'>",
-      "<img src='/lovable-uploads/8403013f-eafe-4e9c-be77-241e2d56d4fe.png' alt='حاسبة التكاليف' className='w-full h-12 object-cover' />",
+      "<img src='/lovable-uploads/8403013f-eafe-4e9c-be77-241e2d56d4fe.png' alt='حاسبة التكاليف' className='w-full h-fit object-cover' />",
       "<p className='text-center text-sm text-text/60 mt-2'>حساب التكاليف بدقة يساعد في اتخاذ القرار المناسب</p>",
       "</div>",
       
