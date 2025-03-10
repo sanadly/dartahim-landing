@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { CreditCard, Gift, BarChart4, ChevronRight, ArrowLeft, Code, Laptop, Smartphone } from 'lucide-react';
+import { CreditCard, Gift, BarChart4, ChevronRight, ArrowLeft, Code, Laptop, Smartphone, Award } from 'lucide-react';
 import { motion } from 'framer-motion';
 import BookingButton from './BookingButton';
 
@@ -92,6 +92,11 @@ const Hero = () => {
           <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
             <BookingButton className="text-sm md:text-base py-2 md:py-3" />
             <a href="#why-us" className="button-outline text-sm md:text-base py-2 md:py-3">لماذا دراهم؟</a>
+          </motion.div>
+          
+          <motion.div variants={itemVariants} className="flex items-center gap-1 bg-primary/10 px-2 py-1 rounded-full text-xs text-primary mt-4">
+            <Award size={12} className="text-primary" />
+            <span>شركة مُسجلة في ليبيا</span>
           </motion.div>
           
           {/* <motion.div variants={itemVariants} className="flex flex-wrap gap-4 md:gap-8 items-center mt-8 md:mt-10">
