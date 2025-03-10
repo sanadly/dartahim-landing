@@ -104,10 +104,9 @@ const WhoAreWe = () => {
               ))}
             </div>
           </div>
-/*
           {/* Milestones */}
           <div className="mb-20">
-            <h2 className="text-3xl font-bold mb-8 text-center">مراحل تطورنا</h2>
+            /*<h2 className="text-3xl font-bold mb-8 text-center">مراحل تطورنا</h2>*/
             <div className="relative">
               {/* Timeline Line */}
               <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-primary/20 hidden md:block"></div>
@@ -132,7 +131,6 @@ const WhoAreWe = () => {
               </div>
             </div>
           </div>
-          */
           {/* CTA */}
           <div className="bg-primary/5 rounded-2xl p-10 text-center mb-16">
             <h2 className="text-3xl font-bold mb-4">انضم إلى رحلتنا</h2>
