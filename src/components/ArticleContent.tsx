@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { CalendarIcon, ArrowRight, MapPinIcon } from "lucide-react";
+import { CalendarIcon, ArrowRight, MapPinIcon, ImageIcon } from "lucide-react";
 import { Link } from 'react-router-dom';
 
 interface ArticleContentProps {
@@ -18,12 +18,34 @@ const ArticleContent: React.FC<ArticleContentProps> = ({
   content, 
   imageUrl 
 }) => {
-  // Function to parse HTML strings in content
-  const renderContent = (content: string) => {
-    if (content.startsWith('<')) {
-      return <div dangerouslySetInnerHTML={{ __html: content }} />;
-    }
-    return <p className="mb-6 text-text/80 leading-relaxed">{content}</p>;
+  // Function to parse HTML strings in content and add placeholder images for demonstration
+  const renderContent = (content: string, index: number) => {
+    // Add placeholder images after every 3rd paragraph that isn't HTML
+    const shouldAddPlaceholder = index > 0 && index % 3 === 0 && !content.startsWith('<');
+    
+    return (
+      <React.Fragment key={index}>
+        {content.startsWith('<') ? (
+          <div dangerouslySetInnerHTML={{ __html: content }} />
+        ) : (
+          <p className="mb-6 text-text/80 leading-relaxed">{content}</p>
+        )}
+        
+        {shouldAddPlaceholder && (
+          <div className="my-8 rounded-xl overflow-hidden border border-border">
+            <div className="bg-primary/5 p-4 flex items-center justify-center flex-col">
+              <ImageIcon className="text-primary/40 h-16 w-16 mb-2" />
+              <p className="text-sm text-text/60 italic text-center">صورة توضيحية للمحتوى المذكور أعلاه</p>
+            </div>
+            <img 
+              src={`https://source.unsplash.com/random/800x400?loyalty,marketing,retail,${index}`} 
+              alt="صورة توضيحية" 
+              className="w-full h-52 object-cover"
+            />
+          </div>
+        )}
+      </React.Fragment>
+    );
   };
 
   // Get all article IDs to use for "related articles"
@@ -93,11 +115,7 @@ const ArticleContent: React.FC<ArticleContentProps> = ({
       </div>
       
       <div className="prose prose-lg max-w-none">
-        {content.map((paragraph, index) => (
-          <React.Fragment key={index}>
-            {renderContent(paragraph)}
-          </React.Fragment>
-        ))}
+        {content.map((paragraph, index) => renderContent(paragraph, index))}
       </div>
       
       <div className="mt-12 pt-8 border-t border-border">
