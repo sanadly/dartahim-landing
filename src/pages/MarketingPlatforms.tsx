@@ -3,11 +3,9 @@ import Footer from "@/components/Footer";
 import { BarChart4, Target, Users, Mail, Smartphone, MessageSquare, BarChart2, Globe, Flag, ArrowUpRight, Zap, Check, Star, Award, TrendingUp, PieChart } from "lucide-react";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-
 const MarketingPlatforms = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeTab, setActiveTab] = useState("email");
-  
   useEffect(() => {
     const onScroll = () => {
       const element = document.getElementById("cta-section");
@@ -18,126 +16,117 @@ const MarketingPlatforms = () => {
         }
       }
     };
-    
     window.addEventListener("scroll", onScroll);
     onScroll(); // Check on initial load
-    
+
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  const benefits = [
-    {
-      icon: <Target className="h-6 w-6" />,
-      title: "استهداف دقيق",
-      description: "الوصول للعملاء المناسبين في الوقت المناسب مع أدوات استهداف متقدمة."
-    },
-    {
-      icon: <BarChart4 className="h-6 w-6" />,
-      title: "قياس النتائج",
-      description: "تحليلات شاملة لقياس أداء حملاتك التسويقية وتحسينها باستمرار."
-    },
-    {
-      icon: <Users className="h-6 w-6" />,
-      title: "فهم أعمق للعملاء",
-      description: "بناء ملفات تعريف متكاملة للعملاء لفهم احتياجاتهم وتفضيلاتهم."
-    }
-  ];
-
-  const platforms = [
-    {
-      icon: <Mail className="h-6 w-6" />,
-      title: "منصة التسويق بالبريد الإلكتروني",
-      description: "إنشاء وإدارة حملات بريدية مخصصة مع تتبع دقيق للنتائج وأتمتة كاملة للرسائل."
-    },
-    {
-      icon: <Smartphone className="h-6 w-6" />,
-      title: "منصة الرسائل النصية",
-      description: "التواصل الفوري مع العملاء عبر الرسائل النصية للإعلانات والعروض الحصرية."
-    },
-    {
-      icon: <MessageSquare className="h-6 w-6" />,
-      title: "منصة الدردشة الآلية",
-      description: "روبوتات محادثة ذكية للرد على استفسارات العملاء وتقديم دعم على مدار الساعة."
-    },
-    {
-      icon: <BarChart2 className="h-6 w-6" />,
-      title: "منصة تحليلات العملاء",
-      description: "فهم سلوك العملاء واتجاهات المبيعات لاتخاذ قرارات تسويقية مدروسة."
-    }
-  ];
+  const benefits = [{
+    icon: <Target className="h-6 w-6" />,
+    title: "استهداف دقيق",
+    description: "الوصول للعملاء المناسبين في الوقت المناسب مع أدوات استهداف متقدمة."
+  }, {
+    icon: <BarChart4 className="h-6 w-6" />,
+    title: "قياس النتائج",
+    description: "تحليلات شاملة لقياس أداء حملاتك التسويقية وتحسينها باستمرار."
+  }, {
+    icon: <Users className="h-6 w-6" />,
+    title: "فهم أعمق للعملاء",
+    description: "بناء ملفات تعريف متكاملة للعملاء لفهم احتياجاتهم وتفضيلاتهم."
+  }];
+  const platforms = [{
+    icon: <Mail className="h-6 w-6" />,
+    title: "منصة التسويق بالبريد الإلكتروني",
+    description: "إنشاء وإدارة حملات بريدية مخصصة مع تتبع دقيق للنتائج وأتمتة كاملة للرسائل."
+  }, {
+    icon: <Smartphone className="h-6 w-6" />,
+    title: "منصة الرسائل النصية",
+    description: "التواصل الفوري مع العملاء عبر الرسائل النصية للإعلانات والعروض الحصرية."
+  }, {
+    icon: <MessageSquare className="h-6 w-6" />,
+    title: "منصة الدردشة الآلية",
+    description: "روبوتات محادثة ذكية للرد على استفسارات العملاء وتقديم دعم على مدار الساعة."
+  }, {
+    icon: <BarChart2 className="h-6 w-6" />,
+    title: "منصة تحليلات العملاء",
+    description: "فهم سلوك العملاء واتجاهات المبيعات لاتخاذ قرارات تسويقية مدروسة."
+  }];
 
   // New content for the interactive tab section
-  const marketingTabs = [
-    {
-      id: "email",
-      icon: <Mail className="h-5 w-5" />,
-      title: "التسويق بالبريد الإلكتروني",
-      content: {
-        title: "أطلق العنان لقوة التسويق بالبريد الإلكتروني",
-        description: "منصة متكاملة تتيح لك إنشاء وإدارة حملات بريدية متخصصة تصل إلى جمهورك المستهدف بدقة وفاعلية.",
-        features: [
-          "نماذج جاهزة احترافية تناسب مختلف القطاعات",
-          "تقسيم الجمهور بناءً على البيانات السلوكية والديموغرافية",
-          "تتبع معدلات الفتح والنقر وتحويل المبيعات",
-          "أتمتة سلسلة الرسائل حسب تفاعل المستخدم"
-        ],
-        metrics: [
-          { label: "متوسط معدل الفتح", value: "32%", icon: <Star className="h-4 w-4 text-yellow-400" /> },
-          { label: "معدل النقر", value: "15%", icon: <TrendingUp className="h-4 w-4 text-green-500" /> },
-          { label: "عائد الاستثمار", value: "380%", icon: <Award className="h-4 w-4 text-blue-500" /> }
-        ],
-        image: "/lovable-uploads/69b73410-b7da-4aa0-9a35-00ac7c62e874.png"
-      }
-    },
-    {
-      id: "sms",
-      icon: <Smartphone className="h-5 w-5" />,
-      title: "الرسائل النصية",
-      content: {
-        title: "وصول فوري مع الرسائل النصية",
-        description: "منصة رسائل نصية متطورة تتيح لك التواصل الفوري مع عملائك بمعدل وصول يتجاوز 98%.",
-        features: [
-          "إرسال رسائل جماعية بتكلفة منخفضة",
-          "رسائل مخصصة تحتوي على اسم العميل ومعلوماته",
-          "روابط مختصرة للتتبع وقياس الأداء",
-          "جدولة الرسائل في الأوقات المثالية"
-        ],
-        metrics: [
-          { label: "معدل القراءة", value: "98%", icon: <Star className="h-4 w-4 text-yellow-400" /> },
-          { label: "متوسط الاستجابة", value: "4.5 دقيقة", icon: <TrendingUp className="h-4 w-4 text-green-500" /> },
-          { label: "معدل التحويل", value: "28%", icon: <Award className="h-4 w-4 text-blue-500" /> }
-        ],
-        image: "/lovable-uploads/69b73410-b7da-4aa0-9a35-00ac7c62e874.png"
-      }
-    },
-    {
-      id: "analytics",
-      icon: <BarChart4 className="h-5 w-5" />,
-      title: "تحليلات متقدمة",
-      content: {
-        title: "تحليلات متقدمة تدعمها الذكاء الاصطناعي",
-        description: "اكتشف رؤى عميقة حول سلوك عملائك واتخذ قرارات مبنية على البيانات لتحسين استراتيجياتك التسويقية.",
-        features: [
-          "لوحات تحكم مخصصة تبرز المؤشرات الرئيسية",
-          "تحليل تفاعل العملاء عبر القنوات المختلفة",
-          "تنبؤات ذكية لتحسين توقيت الحملات",
-          "تقارير أداء مفصلة قابلة للتصدير"
-        ],
-        metrics: [
-          { label: "تحسين معدل الاستهداف", value: "56%", icon: <Target className="h-4 w-4 text-primary" /> },
-          { label: "تحسين العائد على الاستثمار", value: "120%", icon: <PieChart className="h-4 w-4 text-accent" /> },
-          { label: "توفير الوقت", value: "75%", icon: <Zap className="h-4 w-4 text-yellow-500" /> }
-        ],
-        image: "/lovable-uploads/69b73410-b7da-4aa0-9a35-00ac7c62e874.png"
-      }
+  const marketingTabs = [{
+    id: "email",
+    icon: <Mail className="h-5 w-5" />,
+    title: "التسويق بالبريد الإلكتروني",
+    content: {
+      title: "أطلق العنان لقوة التسويق بالبريد الإلكتروني",
+      description: "منصة متكاملة تتيح لك إنشاء وإدارة حملات بريدية متخصصة تصل إلى جمهورك المستهدف بدقة وفاعلية.",
+      features: ["نماذج جاهزة احترافية تناسب مختلف القطاعات", "تقسيم الجمهور بناءً على البيانات السلوكية والديموغرافية", "تتبع معدلات الفتح والنقر وتحويل المبيعات", "أتمتة سلسلة الرسائل حسب تفاعل المستخدم"],
+      metrics: [{
+        label: "متوسط معدل الفتح",
+        value: "32%",
+        icon: <Star className="h-4 w-4 text-yellow-400" />
+      }, {
+        label: "معدل النقر",
+        value: "15%",
+        icon: <TrendingUp className="h-4 w-4 text-green-500" />
+      }, {
+        label: "عائد الاستثمار",
+        value: "380%",
+        icon: <Award className="h-4 w-4 text-blue-500" />
+      }],
+      image: "/lovable-uploads/69b73410-b7da-4aa0-9a35-00ac7c62e874.png"
     }
-  ];
+  }, {
+    id: "sms",
+    icon: <Smartphone className="h-5 w-5" />,
+    title: "الرسائل النصية",
+    content: {
+      title: "وصول فوري مع الرسائل النصية",
+      description: "منصة رسائل نصية متطورة تتيح لك التواصل الفوري مع عملائك بمعدل وصول يتجاوز 98%.",
+      features: ["إرسال رسائل جماعية بتكلفة منخفضة", "رسائل مخصصة تحتوي على اسم العميل ومعلوماته", "روابط مختصرة للتتبع وقياس الأداء", "جدولة الرسائل في الأوقات المثالية"],
+      metrics: [{
+        label: "معدل القراءة",
+        value: "98%",
+        icon: <Star className="h-4 w-4 text-yellow-400" />
+      }, {
+        label: "متوسط الاستجابة",
+        value: "4.5 دقيقة",
+        icon: <TrendingUp className="h-4 w-4 text-green-500" />
+      }, {
+        label: "معدل التحويل",
+        value: "28%",
+        icon: <Award className="h-4 w-4 text-blue-500" />
+      }],
+      image: "/lovable-uploads/69b73410-b7da-4aa0-9a35-00ac7c62e874.png"
+    }
+  }, {
+    id: "analytics",
+    icon: <BarChart4 className="h-5 w-5" />,
+    title: "تحليلات متقدمة",
+    content: {
+      title: "تحليلات متقدمة تدعمها الذكاء الاصطناعي",
+      description: "اكتشف رؤى عميقة حول سلوك عملائك واتخذ قرارات مبنية على البيانات لتحسين استراتيجياتك التسويقية.",
+      features: ["لوحات تحكم مخصصة تبرز المؤشرات الرئيسية", "تحليل تفاعل العملاء عبر القنوات المختلفة", "تنبؤات ذكية لتحسين توقيت الحملات", "تقارير أداء مفصلة قابلة للتصدير"],
+      metrics: [{
+        label: "تحسين معدل الاستهداف",
+        value: "56%",
+        icon: <Target className="h-4 w-4 text-primary" />
+      }, {
+        label: "تحسين العائد على الاستثمار",
+        value: "120%",
+        icon: <PieChart className="h-4 w-4 text-accent" />
+      }, {
+        label: "توفير الوقت",
+        value: "75%",
+        icon: <Zap className="h-4 w-4 text-yellow-500" />
+      }],
+      image: "/lovable-uploads/69b73410-b7da-4aa0-9a35-00ac7c62e874.png"
+    }
+  }];
 
   // Get the active tab content
   const activeTabContent = marketingTabs.find(tab => tab.id === activeTab)?.content;
-
-  return (
-    <div className="min-h-screen flex flex-col" dir="rtl">
+  return <div className="min-h-screen flex flex-col" dir="rtl">
       <Navbar />
       
       <main className="flex-grow pt-32 px-6">
@@ -251,7 +240,9 @@ const MarketingPlatforms = () => {
                           <span className="text-sm">18-24</span>
                           <div className="flex items-center gap-2">
                             <div className="w-32 h-2 bg-gray-200 rounded-full overflow-hidden">
-                              <div className="bg-primary h-full rounded-full" style={{ width: '25%' }}></div>
+                              <div className="bg-primary h-full rounded-full" style={{
+                              width: '25%'
+                            }}></div>
                             </div>
                             <span className="text-sm">25%</span>
                           </div>
@@ -260,7 +251,9 @@ const MarketingPlatforms = () => {
                           <span className="text-sm">25-34</span>
                           <div className="flex items-center gap-2">
                             <div className="w-32 h-2 bg-gray-200 rounded-full overflow-hidden">
-                              <div className="bg-primary h-full rounded-full" style={{ width: '45%' }}></div>
+                              <div className="bg-primary h-full rounded-full" style={{
+                              width: '45%'
+                            }}></div>
                             </div>
                             <span className="text-sm">45%</span>
                           </div>
@@ -269,7 +262,9 @@ const MarketingPlatforms = () => {
                           <span className="text-sm">35-44</span>
                           <div className="flex items-center gap-2">
                             <div className="w-32 h-2 bg-gray-200 rounded-full overflow-hidden">
-                              <div className="bg-primary h-full rounded-full" style={{ width: '20%' }}></div>
+                              <div className="bg-primary h-full rounded-full" style={{
+                              width: '20%'
+                            }}></div>
                             </div>
                             <span className="text-sm">20%</span>
                           </div>
@@ -286,15 +281,13 @@ const MarketingPlatforms = () => {
           <div className="mb-20">
             <h2 className="text-3xl font-bold mb-8 text-center">فوائد منصات التسويق</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="feature-card p-8">
+              {benefits.map((benefit, index) => <div key={index} className="feature-card p-8">
                   <div className="text-primary mb-4 inline-flex p-4 bg-primary/10 rounded-full">
                     {benefit.icon}
                   </div>
                   <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
                   <p className="text-text/80">{benefit.description}</p>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
           
@@ -307,27 +300,16 @@ const MarketingPlatforms = () => {
                   توفر منصات التسويق من دراهم تجربة متكاملة تغطي جميع جوانب استراتيجيتك التسويقية، من جمع البيانات وتحليلها إلى إنشاء الحملات وقياس النتائج.
                 </p>
                 <ul className="space-y-3">
-                  {[
-                    "استهداف الجمهور بدقة عالية بناءً على السلوك والاهتمامات",
-                    "أتمتة الحملات التسويقية لتوفير الوقت والجهد",
-                    "تحسين العائد على الاستثمار من خلال تحليلات متقدمة",
-                    "توحيد جميع قنوات التسويق في منصة واحدة"
-                  ].map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-2">
+                  {["استهداف الجمهور بدقة عالية بناءً على السلوك والاهتمامات", "أتمتة الحملات التسويقية لتوفير الوقت والجهد", "تحسين العائد على الاستثمار من خلال تحليلات متقدمة", "توحيد جميع قنوات التسويق في منصة واحدة"].map((item, idx) => <li key={idx} className="flex items-start gap-2">
                       <div className="mt-1 bg-white rounded-full p-1">
                         <Check className="h-4 w-4 text-primary" />
                       </div>
                       <span className="text-text/80">{item}</span>
-                    </li>
-                  ))}
+                    </li>)}
                 </ul>
               </div>
               <div className="md:h-full">
-                <img 
-                  src="/lovable-uploads/69b73410-b7da-4aa0-9a35-00ac7c62e874.png" 
-                  alt="منصات التسويق" 
-                  className="w-full h-full object-cover"
-                />
+                <img alt="منصات التسويق" className="w-full h-full object-cover" src="/lovable-uploads/a60ccd7c-eb30-4c78-ae67-9c6337896ffc.jpg" />
               </div>
             </div>
           </div>
@@ -336,15 +318,13 @@ const MarketingPlatforms = () => {
           <div className="mb-20">
             <h2 className="text-3xl font-bold mb-8 text-center">منصاتنا التسويقية</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {platforms.map((platform, index) => (
-                <div key={index} className="feature-card p-8">
+              {platforms.map((platform, index) => <div key={index} className="feature-card p-8">
                   <div className="text-primary mb-4 inline-flex p-4 bg-primary/10 rounded-full">
                     {platform.icon}
                   </div>
                   <h3 className="text-xl font-bold mb-2">{platform.title}</h3>
                   <p className="text-text/80">{platform.description}</p>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
           
@@ -386,26 +366,14 @@ const MarketingPlatforms = () => {
             
             {/* Tab Navigation */}
             <div className="flex border-b overflow-x-auto">
-              {marketingTabs.map(tab => (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={cn(
-                    "px-6 py-4 flex items-center gap-2 font-medium transition-colors",
-                    activeTab === tab.id 
-                      ? "border-b-2 border-primary text-primary" 
-                      : "text-text/60 hover:text-primary hover:bg-primary/5"
-                  )}
-                >
+              {marketingTabs.map(tab => <button key={tab.id} onClick={() => setActiveTab(tab.id)} className={cn("px-6 py-4 flex items-center gap-2 font-medium transition-colors", activeTab === tab.id ? "border-b-2 border-primary text-primary" : "text-text/60 hover:text-primary hover:bg-primary/5")}>
                   {tab.icon}
                   {tab.title}
-                </button>
-              ))}
+                </button>)}
             </div>
             
             {/* Tab Content */}
-            {activeTabContent && (
-              <div className="p-6">
+            {activeTabContent && <div className="p-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                   <div>
                     <h3 className="text-2xl font-bold mb-3 text-primary">{activeTabContent.title}</h3>
@@ -414,45 +382,33 @@ const MarketingPlatforms = () => {
                     <div className="space-y-4 mb-8">
                       <h4 className="font-bold">المميزات الرئيسية:</h4>
                       <ul className="space-y-2">
-                        {activeTabContent.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-start gap-2">
+                        {activeTabContent.features.map((feature, idx) => <li key={idx} className="flex items-start gap-2">
                             <div className="mt-1">
                               <Check className="h-4 w-4 text-primary" />
                             </div>
                             <span>{feature}</span>
-                          </li>
-                        ))}
+                          </li>)}
                       </ul>
                     </div>
                     
                     <div className="grid grid-cols-3 gap-4">
-                      {activeTabContent.metrics.map((metric, idx) => (
-                        <div key={idx} className="bg-primary/5 p-4 rounded-lg text-center">
+                      {activeTabContent.metrics.map((metric, idx) => <div key={idx} className="bg-primary/5 p-4 rounded-lg text-center">
                           <div className="flex justify-center mb-2">{metric.icon}</div>
                           <div className="text-xl font-bold text-primary">{metric.value}</div>
                           <div className="text-xs text-text/70">{metric.label}</div>
-                        </div>
-                      ))}
+                        </div>)}
                     </div>
                   </div>
                   
                   <div className="rounded-lg overflow-hidden shadow-md">
-                    <img 
-                      src={activeTabContent.image} 
-                      alt={activeTabContent.title} 
-                      className="w-full h-full object-cover"
-                    />
+                    <img src={activeTabContent.image} alt={activeTabContent.title} className="w-full h-full object-cover" />
                   </div>
                 </div>
-              </div>
-            )}
+              </div>}
           </div>
           
           {/* Enhanced CTA Section */}
-          <div id="cta-section" className={cn(
-            "bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-10 mb-16 transition-all duration-700",
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
-          )}>
+          <div id="cta-section" className={cn("bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-10 mb-16 transition-all duration-700", isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20")}>
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="md:w-3/5">
                 <h2 className="text-3xl font-bold mb-4">ارفع مستوى تسويقك مع منصات دراهم</h2>
@@ -461,19 +417,24 @@ const MarketingPlatforms = () => {
                 </p>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                  {[
-                    { icon: <Users className="h-5 w-5" />, text: "استهداف دقيق لعملائك" },
-                    { icon: <TrendingUp className="h-5 w-5" />, text: "زيادة معدلات التحويل" },
-                    { icon: <Award className="h-5 w-5" />, text: "تحسين ولاء العملاء" },
-                    { icon: <BarChart4 className="h-5 w-5" />, text: "تقارير أداء متقدمة" }
-                  ].map((item, idx) => (
-                    <div key={idx} className="flex items-center gap-3 bg-white/50 rounded-lg p-3">
+                  {[{
+                  icon: <Users className="h-5 w-5" />,
+                  text: "استهداف دقيق لعملائك"
+                }, {
+                  icon: <TrendingUp className="h-5 w-5" />,
+                  text: "زيادة معدلات التحويل"
+                }, {
+                  icon: <Award className="h-5 w-5" />,
+                  text: "تحسين ولاء العملاء"
+                }, {
+                  icon: <BarChart4 className="h-5 w-5" />,
+                  text: "تقارير أداء متقدمة"
+                }].map((item, idx) => <div key={idx} className="flex items-center gap-3 bg-white/50 rounded-lg p-3">
                       <div className="bg-primary/20 p-2 rounded-lg text-primary">
                         {item.icon}
                       </div>
                       <span className="font-medium">{item.text}</span>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
                 
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -503,7 +464,9 @@ const MarketingPlatforms = () => {
                         <span className="text-sm text-primary">↑ 24%</span>
                       </div>
                       <div className="mt-2 h-2 bg-gray-200 rounded-full">
-                        <div className="h-2 bg-primary rounded-full" style={{ width: '75%' }}></div>
+                        <div className="h-2 bg-primary rounded-full" style={{
+                        width: '75%'
+                      }}></div>
                       </div>
                     </div>
                     
@@ -540,8 +503,6 @@ const MarketingPlatforms = () => {
       </main>
       
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default MarketingPlatforms;
