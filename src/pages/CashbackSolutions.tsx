@@ -10,6 +10,7 @@ import CashbackCTA from "@/components/cashback/CashbackCTA";
 import CashbackStatistics from "@/components/cashback/CashbackStatistics";
 import CaseStudyShowcase from "@/components/cashback/CaseStudyShowcase";
 import ImplementationTabs from "@/components/cashback/ImplementationTabs";
+import BookingButton from "@/components/BookingButton";
 
 const CashbackSolutions = () => {
   return (
