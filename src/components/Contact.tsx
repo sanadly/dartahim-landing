@@ -120,7 +120,7 @@ const Contact = () => {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    rows={5}
+                    rows={3}
                     className="w-full px-4 py-3 rounded-lg bg-white/50 border border-secondary/30 focus:outline-none focus:ring-2 focus:ring-primary/50"
                     placeholder="أدخل رسالتك هنا..."
                     required
