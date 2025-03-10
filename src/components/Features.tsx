@@ -1,7 +1,6 @@
 
-import { Check, ArrowLeft } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import BookingButton from '@/components/BookingButton';
 
 const Features = () => {
   const featuresList = [
@@ -57,13 +56,6 @@ const Features = () => {
           <p className="text-text/80 animate-fade-up" style={{ animationDelay: '0.2s' }}>
             نحن نقدم حلولًا مبتكرة تساعدك على تحقيق أهدافك بسهولة وكفاءة.
           </p>
-          
-          {/* Add CTA button with left arrow */}
-          <div className="mt-8">
-            <a href="/#contact" className="button-primary inline-flex items-center gap-2">
-              معًا نحقق النجاح تواصل معنا الآن <ArrowLeft className="h-4 w-4" />
-            </a>
-          </div>
         </div>
         
         {/* Features Cards */}

@@ -1,7 +1,7 @@
+
 import { useState } from "react";
 import { Facebook, Instagram, Twitter, Linkedin, Youtube, Phone, Mail, MapPin } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
-import BookingButton from "@/components/BookingButton";
 
 const Contact = () => {
   const [name, setName] = useState('');
@@ -160,7 +160,7 @@ const Contact = () => {
               
               {/* Added CTA button under social links */}
               <div className="mt-6">
-                <BookingButton className="w-full text-center" />
+                <a href="#" className="button-primary w-full text-center">أحجز موعد</a>
               </div>
             </div>
           </div>

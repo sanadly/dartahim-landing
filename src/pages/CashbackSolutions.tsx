@@ -10,7 +10,6 @@ import CashbackCTA from "@/components/cashback/CashbackCTA";
 import CashbackStatistics from "@/components/cashback/CashbackStatistics";
 import CaseStudyShowcase from "@/components/cashback/CaseStudyShowcase";
 import ImplementationTabs from "@/components/cashback/ImplementationTabs";
-import BookingButton from "@/components/BookingButton";
 
 const CashbackSolutions = () => {
   return (
@@ -25,9 +24,6 @@ const CashbackSolutions = () => {
             <p className="text-base md:text-xl text-text/70 max-w-3xl mx-auto">
               نقدم حلولاً متكاملة ومخصصة لتنفيذ أنظمة الكاشباك التي تساعد شركتك على زيادة المبيعات وتعزيز ولاء العملاء
             </p>
-            <div className="mt-8">
-              <BookingButton />
-            </div>
           </div>
           
           {/* Add Statistics Section - New Component */}
