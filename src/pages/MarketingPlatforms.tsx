@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import { BarChart4, Target, Users, Mail, Smartphone, MessageSquare, BarChart2, Globe, Flag, ArrowUpRight, Zap, Check, Star, Award, TrendingUp, PieChart } from "lucide-react";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { DatabaseIcon, Store, CreditCard, PieChart } from "lucide-react";
+import { DatabaseIcon, Store, CreditCard } from "lucide-react";
 
 const MarketingPlatforms = () => {
   const [isVisible, setIsVisible] = useState(false);
