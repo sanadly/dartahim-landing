@@ -10,7 +10,7 @@ const Team = () => {
       name: "محمد الزليطني",
       role: "المؤسس والرئيس التنفيذي",
       bio: "مهندس برمجيات مع أكثر من 10 سنوات من الخبرة في مجال التكنولوجيا المالية. قاد محمد العديد من المشاريع الناجحة في القطاع المصرفي قبل تأسيس دراهم.",
-      imageUrl: "/lovable-uploads/69b73410-b7da-4aa0-9a35-00ac7c62e874.png",
+      imageUrl: "/lovable-uploads/mo.jpeg",
       socialLinks: {
         email: "mohamed@darahem.com",
         twitter: "#",
@@ -23,7 +23,7 @@ const Team = () => {
       name: "سارة العبيدي",
       role: "المؤسس المشارك ورئيس التكنولوجيا",
       bio: "خبيرة في تطوير البرمجيات وأمن المعلومات مع خبرة أكثر من 8 سنوات. تخصصت سارة في تطوير أنظمة المدفوعات الآمنة وتقود فريق التطوير التقني في دراهم.",
-      imageUrl: "/lovable-uploads/9b14e838-2969-48fd-be92-aa3e678c56d3.png",
+      imageUrl: "/lovable-uploads/sara.jpeg",
       socialLinks: {
         email: "sara@darahem.com",
         twitter: "#",

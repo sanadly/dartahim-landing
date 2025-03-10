@@ -10,7 +10,7 @@ const founders = [
       name: "محمد الزليطني",
       role: "المؤسس والرئيس التنفيذي",
       bio: "مهندس برمجيات مع أكثر من 10 سنوات من الخبرة في مجال التكنولوجيا المالية. حاصل على درجة الماجستير من جامعة برلين التقنية، وقاد العديد من المشاريع الناجحة في القطاع المصرفي الألماني قبل تأسيس دراهم.",
-      imageUrl: "/lovable-uploads/69b73410-b7da-4aa0-9a35-00ac7c62e874.png",
+      imageUrl: "/lovable-uploads/mo.jpeg",
       socialLinks: {
         email: "mohamed@darahem.com",
         twitter: "#",
@@ -23,7 +23,7 @@ const founders = [
       name: "أحمد الحسن",
       role: "المدير العام",
       bio: "مهندس برمجيات مع أكثر من 15 سنوات من الخبرة في مجال التكنولوجيا المالية. حاصل على درجة الماجستير من جامعة القاهرة، وقاد العديد من المشاريع الناجحة في القطاع المصرفي المصري قبل تأسيس دراهم.",
-      imageUrl: "/lovable-uploads/12345678-9abc-def0-1234-56789abcdef0.png",
+      imageUrl: "/lovable-uploads/sara.jpeg",
       socialLinks: {
         email: "ahmed@darahem.com",
         twitter: "#",
