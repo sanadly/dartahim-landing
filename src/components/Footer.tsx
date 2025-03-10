@@ -1,20 +1,23 @@
+
 import { Heart, Facebook, Instagram, Twitter, Linkedin, Youtube } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const footerLinks = [{
     title: "الشركة",
     links: [{
       name: "من نحن",
-      url: "#"
+      url: "/who-are-we"
     }, {
       name: "فريق العمل",
-      url: "#"
+      url: "/team"
     }, {
       name: "الوظائف",
-      url: "#"
+      url: "/jobs"
     }, {
       name: "الأخبار",
-      url: "#"
+      url: "/news"
     }]
   }, {
     title: "المنتجات",
@@ -38,7 +41,7 @@ const Footer = () => {
       url: "#"
     }, {
       name: "اتصل بنا",
-      url: "#contact"
+      url: "/#contact"
     }]
   }];
   return <footer className="bg-primary/5 pt-16 pb-8 px-6">
@@ -49,9 +52,15 @@ const Footer = () => {
               <h4 className="font-bold text-lg mb-4">{column.title}</h4>
               <ul className="space-y-2">
                 {column.links.map((link, linkIdx) => <li key={linkIdx}>
-                    <a href={link.url} className="text-text/70 hover:text-primary transition-colors">
-                      {link.name}
-                    </a>
+                    {link.url.startsWith('/#') ? (
+                      <a href={link.url} className="text-text/70 hover:text-primary transition-colors">
+                        {link.name}
+                      </a>
+                    ) : (
+                      <Link to={link.url} className="text-text/70 hover:text-primary transition-colors">
+                        {link.name}
+                      </Link>
+                    )}
                   </li>)}
               </ul>
             </div>)}
@@ -78,9 +87,9 @@ const Footer = () => {
         {/* Footer Bottom */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center">
-            <a href="#" className="text-xl font-bold text-text flex items-center gap-2">
+            <Link to="/" className="text-xl font-bold text-text flex items-center gap-2">
               <img src="/lovable-uploads/d8c5b993-2a67-47ca-9ad1-222ee8ff41e9.png" alt="دراهم" className="h-20 object-fill" />
-            </a>
+            </Link>
           </div>
           
           <div className="text-text/70 text-sm flex items-center gap-1">
