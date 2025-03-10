@@ -67,7 +67,7 @@ const Hero = () => {
         </div>
         
         {/* Hero Content - Now on the right for desktop */}
-        <div className="order-2 animate-fade-up" style={{
+        <div className="order-2 lg:order-1 animate-fade-up" style={{
         animationDelay: '0.2s'
       }}>
           <div className="inline-block px-4 py-1 rounded-full bg-secondary/30 backdrop-blur-sm mb-4">
