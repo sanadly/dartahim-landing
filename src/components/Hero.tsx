@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { CreditCard, Gift, BarChart4, ChevronRight, ArrowLeft, Code, Smartphone, Settings } from 'lucide-react';
+import { CreditCard, Gift, BarChart4, ChevronRight, ArrowLeft } from 'lucide-react';
 import { motion } from 'framer-motion';
 import BookingButton from './BookingButton';
 
@@ -16,23 +16,23 @@ const Hero = () => {
 
   const services = [{
     id: 0,
-    title: "بطاقات الولاء المخصصة",
-    description: "حلول بطاقات رقمية مخصصة تعزز من ولاء عملائك",
+    title: "بطاقات الولاء",
+    description: "حلول بطاقات رقمية تعزز من ولاء عملائك",
     icon: <CreditCard className="h-5 w-5" />,
     color: "from-primary to-accent",
     link: "/loyalty-cards"
   }, {
     id: 1,
     title: "منصات التسويق",
-    description: "حلول رقمية متكاملة ومخصصة لتسويق منتجاتك وخدماتك",
+    description: "حلول رقمية متكاملة لتسويق منتجاتك وخدماتك",
     icon: <BarChart4 className="h-5 w-5" />,
     color: "from-secondary to-primary",
     link: "/marketing-platforms"
   }, {
     id: 2,
-    title: "تطبيقات مخصصة",
-    description: "تطوير تطبيقات مخصصة تناسب احتياجات عملك",
-    icon: <Smartphone className="h-5 w-5" />,
+    title: "حلول استرداد النقود",
+    description: "برامج استرداد نقدي تزيد من إقبال العملاء",
+    icon: <Gift className="h-5 w-5" />,
     color: "from-accent to-secondary",
     link: "/cashback-solutions"
   }];
@@ -76,41 +76,20 @@ const Hero = () => {
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
         <motion.div className="order-2 lg:order-1" initial="hidden" animate="visible" variants={containerVariants}>
           <motion.div variants={itemVariants} className="inline-block px-4 py-1 rounded-full bg-secondary/30 backdrop-blur-sm mb-4">
-            <span className="text-xs md:text-sm font-medium">المتخصصون في تطوير حلول وتطبيقات برامج الولاء المخصصة #1 في ليبيا</span>
+            <span className="text-xs md:text-sm font-medium">المتخصصون في برامج الولاء و حلول التسويق الرقمية #1 في ليبيا</span>
           </motion.div>
           
           <motion.h1 variants={itemVariants} className="text-3xl md:text-4xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
-            <span className="text-gradient">حلول مخصصة</span> وتطبيقات تناسب احتياجات عملك
+            حلول <span className="text-gradient">البطاقات الرقمية</span> وبرامج المكافآت والولاء
           </motion.h1>
           
           <motion.p variants={itemVariants} className="text-base md:text-lg mb-6 md:mb-8 text-text/80 max-w-xl">
-            دراهم هي الشركة الليبية الرائدة في تطوير حلول وتطبيقات مخصصة لبرامج الولاء والتسويق الرقمي. نصمم ونطور حلول فريدة تناسب احتياجات عملك وتساعدك على بناء علاقات أقوى مع عملائك، مع تجربة مستخدم سلسة واستثنائية.
+            دراهم هي الشركة الليبية الرائدة في حلول البطاقات الرقمية وبرامج المكافآت والولاء. نحن نمكّن الأفراد، الشركات، والتجار من تعظيم الفائدة من القيمة الرقمية، مع تجربة سلسة واستثنائية باستخدام تقنيات مبتكرة.
           </motion.p>
           
           <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
             <BookingButton className="text-sm md:text-base py-2 md:py-3" />
             <a href="#why-us" className="button-outline text-sm md:text-base py-2 md:py-3">لماذا دراهم؟</a>
-          </motion.div>
-          
-          <motion.div variants={itemVariants} className="flex flex-wrap gap-4 mt-8">
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 flex items-center gap-3 border border-white/20">
-              <div className="p-2 bg-primary/10 rounded-full">
-                <Code className="h-4 w-4 text-primary" />
-              </div>
-              <span className="text-sm">تطوير مخصص</span>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 flex items-center gap-3 border border-white/20">
-              <div className="p-2 bg-primary/10 rounded-full">
-                <Smartphone className="h-4 w-4 text-primary" />
-              </div>
-              <span className="text-sm">تطبيقات متوافقة</span>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 flex items-center gap-3 border border-white/20">
-              <div className="p-2 bg-primary/10 rounded-full">
-                <Settings className="h-4 w-4 text-primary" />
-              </div>
-              <span className="text-sm">حلول قابلة للتخصيص</span>
-            </div>
           </motion.div>
           
           <motion.div variants={itemVariants} className="flex flex-wrap gap-4 md:gap-8 items-center mt-8 md:mt-10">
@@ -215,13 +194,13 @@ const Hero = () => {
               <p className="text-xs md:text-sm text-text/70">
                 {activeCard === 0 && "بطاقات رقمية سهلة الاستخدام مع نظام نقاط مرن لمكافأة عملائك المخلصين."}
                 {activeCard === 1 && "منصات تحليلية متقدمة لقياس أداء حملاتك التسويقية وتحسين استراتيجيتك."}
-                {activeCard === 2 && "حلول استردا�� نقدي مبتكرة تشجع العملاء على زيادة قيمة مشترياتهم."}
+                {activeCard === 2 && "حلول استرداد نقدي مبتكرة تشجع العملاء على زيادة قيمة مشترياتهم."}
               </p>
             </div>
           </div>
 
           <div className="w-full mt-2">
-            <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4 text-center">حلولنا المخصصة</h3>
+            <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4 text-center">خدماتنا الرئيسية</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
               {services.map(service => <a key={service.id} href={service.link} className={cn("p-3 md:p-4 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/30 transition-all hover:shadow-lg flex flex-col", activeCard === service.id ? "ring-2 ring-primary shadow-md" : "")} onMouseEnter={() => setActiveCard(service.id)}>
                   <div className={`p-1.5 md:p-2 rounded-full bg-gradient-to-r ${service.color} w-fit mb-2 md:mb-3`}>
