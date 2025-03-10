@@ -9,7 +9,7 @@ const Hero = () => {
         {/* Hero Image - Now on the left for desktop */}
         <div style={{
         animationDelay: '0.4s'
-      }} className="order-1 lg:order-2 flex justify-center items-center animate-fade-in">
+      }} className="lg:order-2 flex justify-center items-center animate-fade-in">
           <div className="relative">
             {/* Decorative elements */}
             <div className="absolute top-10 -left-8 w-16 h-16 rounded-xl bg-secondary/70 backdrop-blur-sm animate-float" style={{
