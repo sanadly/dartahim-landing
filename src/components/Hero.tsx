@@ -20,9 +20,9 @@ const Hero = () => {
             <div className="absolute top-20 -right-4 w-8 h-8 rounded-lg bg-primary/70 backdrop-blur-sm animate-float" style={{ animationDelay: '0.6s' }}></div>
             
             {/* Main card visualization */}
-            <div className="w-[280px] md:w-[380px] h-[200px] rounded-3xl glass-card bg-gradient-to-br from-white/50 to-white/10 flex flex-col p-6 shadow-xl border border-white/20 relative overflow-hidden z-10">
+            <div className="w-[280px] md:w-[380px] h-[500px] rounded-3xl glass-card bg-gradient-to-br from-white/50 to-white/10 flex flex-col p-6 shadow-xl border border-white/20 relative overflow-hidden z-10">
               <div className="flex justify-between items-center mb-auto">
-                <div className="w-12 h-18 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
                   <span className="text-white font-bold">د</span>
                 </div>
                 <span className="text-xl font-bold">دراهم كارد</span>
@@ -33,7 +33,7 @@ const Hero = () => {
                   <span className="text-text/70">محمد أحمد</span>
                   <span className="text-text/70">12/27</span>
                 </div>
-                <div className="mt-2 bg-white/20 backdrop-blur-sm h-20 w-full rounded-lg"></div>
+                <div className="mt-2 bg-white/20 backdrop-blur-sm h-10 w-full rounded-lg"></div>
                 <div className="mt-2 flex justify-between">
                   <span className="text-text/70">1234 5678 9012 3456</span>
                   <span className="text-text/70">PREMIUM</span>
@@ -64,7 +64,7 @@ const Hero = () => {
         {/* Hero Content - Now on the right for desktop */}
         <div className="order-1 lg:order-2 animate-fade-up" style={{ animationDelay: '0.2s' }}>
           <div className="inline-block px-4 py-1 rounded-full bg-secondary/30 backdrop-blur-sm mb-4">
-            <span className="text-sm font-medium">نحن نقدم خدمات تسويق و حلول للشركات و التجار #1 في ليبيا</span>
+            <span className="text-sm font-medium">منصة المكافآت والولاء الرقمية #1 في ليبيا</span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
             حلول <span className="text-gradient">البطاقات الرقمية</span> وبرامج المكافآت والولاء
