@@ -16,6 +16,9 @@ import Team from "./pages/Team";
 import WhoAreWe from "./pages/WhoAreWe";
 import HelpCenter from "./pages/HelpCenter";
 import FAQ from "./pages/FAQ";
+import LoyaltyCards from "./pages/LoyaltyCards";
+import CashbackSolutions from "./pages/CashbackSolutions";
+import MarketingPlatforms from "./pages/MarketingPlatforms";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -39,6 +42,9 @@ const App = () => (
           <Route path="/who-are-we" element={<WhoAreWe />} />
           <Route path="/help-center" element={<HelpCenter />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/loyalty-cards" element={<LoyaltyCards />} />
+          <Route path="/cashback-solutions" element={<CashbackSolutions />} />
+          <Route path="/marketing-platforms" element={<MarketingPlatforms />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

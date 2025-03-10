@@ -23,13 +23,13 @@ const Footer = () => {
     title: "المنتجات",
     links: [{
       name: "بطاقات الولاء",
-      url: "#"
+      url: "/loyalty-cards"
     }, {
       name: "حلول الكاشباك",
-      url: "#"
+      url: "/cashback-solutions"
     }, {
       name: "منصات التسويق",
-      url: "#"
+      url: "/marketing-platforms"
     }]
   }, {
     title: "الدعم",
@@ -98,25 +98,22 @@ const Footer = () => {
             <span>في ليبيا {currentYear} ©</span>
           </div>
           
-          <div className="flex flex-col items-center gap-4">
-            <div className="flex gap-4">
-              <a href="https://www.facebook.com/darahim.ly" className="text-text/70 hover:text-primary transition-colors">
-                <Facebook size={18} />
-              </a>
-              <a href="#" className="text-text/70 hover:text-primary transition-colors">
-                <Twitter size={18} />
-              </a>
-              <a href="#" className="text-text/70 hover:text-primary transition-colors">
-                <Instagram size={18} />
-              </a>
-              <a href="https://www.linkedin.com/company/darahimly/" className="text-text/70 hover:text-primary transition-colors">
-                <Linkedin size={18} />
-              </a>
-              <a href="#" className="text-text/70 hover:text-primary transition-colors">
-                <Youtube size={18} />
-              </a>
-            </div>
-            <a href="#" className="button-primary text-sm px-4 py-2">أحجز موعد</a>
+          <div className="flex gap-4">
+            <a href="https://www.facebook.com/darahim.ly" className="text-text/70 hover:text-primary transition-colors">
+              <Facebook size={18} />
+            </a>
+            <a href="#" className="text-text/70 hover:text-primary transition-colors">
+              <Twitter size={18} />
+            </a>
+            <a href="#" className="text-text/70 hover:text-primary transition-colors">
+              <Instagram size={18} />
+            </a>
+            <a href="https://www.linkedin.com/company/darahimly/" className="text-text/70 hover:text-primary transition-colors">
+              <Linkedin size={18} />
+            </a>
+            <a href="#" className="text-text/70 hover:text-primary transition-colors">
+              <Youtube size={18} />
+            </a>
           </div>
         </div>
       </div>
