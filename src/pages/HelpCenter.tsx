@@ -1,19 +1,16 @@
-
 import React from 'react';
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Link } from 'react-router-dom';
 import { Search, HeadphonesIcon, MessageCircleQuestionIcon, BookOpenIcon, InboxIcon } from 'lucide-react';
-
 const HelpCenter = () => {
-  return (
-    <div className="min-h-screen flex flex-col" dir="rtl">
+  return <div className="min-h-screen flex flex-col" dir="rtl">
       <Navbar />
       
       <main className="flex-grow pt-32 px-6 pb-20">
         <div className="container mx-auto">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto text-right">
             <h1 className="text-3xl md:text-4xl font-bold mb-6 text-center">مركز المساعدة</h1>
             <p className="text-text/70 text-center mb-8">نحن هنا لمساعدتك. اختر من بين الخيارات أدناه أو ابحث عن إجابة لسؤالك</p>
             
@@ -22,11 +19,7 @@ const HelpCenter = () => {
               <div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none text-muted-foreground">
                 <Search size={18} />
               </div>
-              <input 
-                type="text"
-                placeholder="ابحث عن سؤال أو موضوع..." 
-                className="w-full rounded-full py-3 pr-12 pl-6 border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all"
-              />
+              <input type="text" placeholder="ابحث عن سؤال أو موضوع..." className="w-full rounded-full py-3 pr-12 pl-6 border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all" />
             </div>
             
             {/* Main help sections */}
@@ -64,18 +57,18 @@ const HelpCenter = () => {
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                   <Link to="/faq#loyalty-programs" className="block bg-background hover:bg-primary/5 transition-colors rounded-lg p-4 border border-border">
-                    <h3 className="font-bold">🏆 برامج الولاء</h3>
-                    <p className="text-sm text-text/70 mt-1">أسئلة حول تنفيذ وإدارة برامج الولاء</p>
+                    <h3 className="font-bold text-right">🏆 برامج الولاء</h3>
+                    <p className="text-sm text-text/70 mt-1 text-right">أسئلة حول تنفيذ وإدارة برامج الولاء</p>
                   </Link>
                   
                   <Link to="/faq#digital-payments" className="block bg-background hover:bg-primary/5 transition-colors rounded-lg p-4 border border-border">
-                    <h3 className="font-bold">💳 المدفوعات الرقمية</h3>
+                    <h3 className="font-bold text-right">💳 المدفوعات الرقمية</h3>
                     <p className="text-sm text-text/70 mt-1">معلومات حول أنظمة الدفع وطرق التسوية</p>
                   </Link>
                   
                   <Link to="/faq#app-usage" className="block bg-background hover:bg-primary/5 transition-colors rounded-lg p-4 border border-border">
-                    <h3 className="font-bold">📱 استخدام التطبيق</h3>
-                    <p className="text-sm text-text/70 mt-1">مساعدة في استخدام تطبيق دراهم</p>
+                    <h3 className="font-bold text-right">📱 استخدام التطبيق</h3>
+                    <p className="text-sm text-text/70 mt-1 text-right">مساعدة في استخدام تطبيق دراهم</p>
                   </Link>
                   
                   <Link to="/faq#customer-data" className="block bg-background hover:bg-primary/5 transition-colors rounded-lg p-4 border border-border">
@@ -152,17 +145,11 @@ const HelpCenter = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label className="block mb-2 text-sm font-medium">الاسم</label>
-                      <input 
-                        type="text" 
-                        className="w-full rounded-md border border-border p-2.5 bg-background focus:outline-none focus:ring-2 focus:ring-primary/30"
-                      />
+                      <input type="text" className="w-full rounded-md border border-border p-2.5 bg-background focus:outline-none focus:ring-2 focus:ring-primary/30" />
                     </div>
                     <div>
                       <label className="block mb-2 text-sm font-medium">البريد الإلكتروني</label>
-                      <input 
-                        type="email" 
-                        className="w-full rounded-md border border-border p-2.5 bg-background focus:outline-none focus:ring-2 focus:ring-primary/30"
-                      />
+                      <input type="email" className="w-full rounded-md border border-border p-2.5 bg-background focus:outline-none focus:ring-2 focus:ring-primary/30" />
                     </div>
                   </div>
                   
@@ -178,16 +165,10 @@ const HelpCenter = () => {
                   
                   <div>
                     <label className="block mb-2 text-sm font-medium">تفاصيل الطلب</label>
-                    <textarea 
-                      rows={5}
-                      className="w-full rounded-md border border-border p-2.5 bg-background focus:outline-none focus:ring-2 focus:ring-primary/30"
-                    ></textarea>
+                    <textarea rows={5} className="w-full rounded-md border border-border p-2.5 bg-background focus:outline-none focus:ring-2 focus:ring-primary/30"></textarea>
                   </div>
                   
-                  <button 
-                    type="submit"
-                    className="bg-primary text-white py-2.5 px-5 rounded-md hover:bg-primary/90 transition-colors w-full md:w-auto"
-                  >
+                  <button type="submit" className="bg-primary text-white py-2.5 px-5 rounded-md hover:bg-primary/90 transition-colors w-full md:w-auto">
                     إرسال الطلب
                   </button>
                 </form>
@@ -219,8 +200,6 @@ const HelpCenter = () => {
       </main>
       
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default HelpCenter;
