@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Award } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import BookingButton from './BookingButton';
 
@@ -47,6 +47,12 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="text-2xl font-bold text-text flex items-center gap-2">
           <img alt="دراهم" src="/lovable-uploads/69b73410-b7da-4aa0-9a35-00ac7c62e874.png" className="h-16 md:h-20 object-fill" />
+          <div className="flex flex-col items-start">
+            <div className="flex items-center gap-1 bg-primary/10 px-2 py-1 rounded-full text-xs text-primary">
+              <Award size={12} className="text-primary" />
+              <span>شركة مُسجلة في ليبيا</span>
+            </div>
+          </div>
         </Link>
 
         {/* Desktop menu */}

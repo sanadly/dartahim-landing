@@ -1,4 +1,4 @@
-import { Heart, Facebook, Instagram, Twitter, Linkedin, Youtube } from 'lucide-react';
+import { Heart, Facebook, Instagram, Twitter, Linkedin, Youtube, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -85,10 +85,14 @@ const Footer = () => {
         
         {/* Footer Bottom */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex items-center">
+          <div className="flex items-center gap-3">
             <Link to="/" className="text-xl font-bold text-text flex items-center gap-2">
               <img src="/lovable-uploads/d8c5b993-2a67-47ca-9ad1-222ee8ff41e9.png" alt="دراهم" className="h-20 object-fill" />
             </Link>
+            <div className="flex items-center gap-1 bg-primary/10 px-3 py-1.5 rounded-full text-sm text-primary">
+              <Award size={14} className="text-primary" />
+              <span>شركة مُسجلة في ليبيا</span>
+            </div>
           </div>
           
           <div className="text-text/70 text-sm flex items-center gap-1">
