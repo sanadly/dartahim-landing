@@ -28,7 +28,7 @@ const CashbackCTA = () => {
           </a>
         </div>
         
-        {/* Feature highlights */}
+        {/* Added feature highlights */}
         <div className="flex flex-wrap justify-center gap-4 mt-8">
           {[
             { icon: <Code className="h-4 w-4" />, text: "حلول مخصصة" },
