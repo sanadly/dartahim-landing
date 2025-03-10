@@ -25,60 +25,50 @@ const BookingButton = ({ className = "" }: { className?: string }) => {
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);
   const calendarRef = useRef<HTMLDivElement>(null);
   
-  // Load Calendly script if not already loaded
+  // Load Calendly script
   useEffect(() => {
-    // Check if script is already loaded
+    // Check if Calendly is already available in window
     if (window.Calendly) {
       setIsScriptLoaded(true);
       return;
     }
     
-    // Check if script tag is already in the document
-    const existingScript = document.querySelector('script[src*="calendly.com"]');
+    // Create and add script if not already loaded
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    script.onload = () => {
+      console.log('Calendly script loaded successfully');
+      setIsScriptLoaded(true);
+    };
+    document.head.appendChild(script);
     
-    if (existingScript) {
-      // If script exists but Calendly not available yet, wait for it
-      existingScript.addEventListener('load', () => {
-        setIsScriptLoaded(true);
-      });
-    } else {
-      // Create and load script if not present
-      const script = document.createElement('script');
-      script.src = 'https://assets.calendly.com/assets/external/widget.js';
-      script.async = true;
-      script.onload = () => setIsScriptLoaded(true);
-      document.head.appendChild(script);
-    }
-    
-    // Check periodically for Calendly
-    const interval = setInterval(() => {
-      if (window.Calendly) {
-        setIsScriptLoaded(true);
-        clearInterval(interval);
-      }
-    }, 200);
-    
-    return () => clearInterval(interval);
+    return () => {
+      // Cleanup if component unmounts before script loads
+      script.remove();
+    };
   }, []);
 
   // Initialize Calendly when dialog opens and script is loaded
   useEffect(() => {
     if (isOpen && calendarRef.current && window.Calendly && isScriptLoaded) {
+      console.log('Initializing Calendly widget with URL: https://calendly.com/darahim-info/30min');
       window.Calendly.initInlineWidget({
-        url: 'https://calendly.com/darahim-info/30min?primary_color=50ba64',
+        url: 'https://calendly.com/darahim-info/30min',
         parentElement: calendarRef.current,
         prefill: {},
         utm: {}
       });
-      
-      console.log('Calendly widget initialized');
     }
   }, [isOpen, isScriptLoaded]);
 
   return (
     <>
       <button 
-        onClick={() => setIsOpen(true)} 
+        onClick={() => {
+          console.log('Booking button clicked, opening dialog');
+          setIsOpen(true);
+        }} 
         className={`button-primary flex items-center gap-2 ${className}`}
       >
         أحجز موعد <ArrowLeft className="h-4 w-4" />
@@ -101,7 +91,6 @@ const BookingButton = ({ className = "" }: { className?: string }) => {
             <div 
               ref={calendarRef}
               className="calendly-inline-widget" 
-              data-url="https://calendly.com/darahim-info/30min?primary_color=50ba64" 
               style={{ minWidth: '320px', height: '700px' }}
             />
           )}
