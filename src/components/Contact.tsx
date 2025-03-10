@@ -88,7 +88,7 @@ const Contact = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg bg-white/50 border border-secondary/30 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                      className="w-full px-4 py-3 text-right rounded-lg bg-white/50 border border-secondary/30 focus:outline-none focus:ring-2 focus:ring-primary/50"
                       placeholder="أدخل بريدك الإلكتروني"
                       required
                     />
