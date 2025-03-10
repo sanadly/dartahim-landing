@@ -7,9 +7,9 @@ const Hero = () => {
       
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Hero Image - Now on the left for desktop */}
-        <div className="order-1 flex justify-center items-center animate-fade-in" style={{
+        <div style={{
         animationDelay: '0.4s'
-      }}>
+      }} className="order-1 lg:order-2 flex justify-center items-center animate-fade-in">
           <div className="relative">
             {/* Decorative elements */}
             <div className="absolute top-10 -left-8 w-16 h-16 rounded-xl bg-secondary/70 backdrop-blur-sm animate-float" style={{
