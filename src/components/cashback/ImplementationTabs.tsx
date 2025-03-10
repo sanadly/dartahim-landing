@@ -1,9 +1,7 @@
-
 import { useState } from "react";
 import { Search, Code, Rocket, Headphones, ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-
 const ImplementationTabs = () => {
   const [activeTab, setActiveTab] = useState(0);
 
@@ -100,10 +98,7 @@ const ImplementationTabs = () => {
       
       {/* Tabs Navigation */}
       <div className="flex mb-6 md:mb-8 bg-muted/40 rounded-full p-1 border overflow-x-auto">
-        {implementationTabs.map(tab => <button key={tab.id} onClick={() => setActiveTab(tab.id)} className={cn(
-            "flex items-center justify-center gap-1 md:gap-2 py-1 md:py-2 px-2 md:px-4 rounded-full transition-all flex-1 whitespace-nowrap text-xs md:text-base", 
-            activeTab === tab.id ? "bg-primary text-white shadow-sm" : "hover:bg-background/80 text-text/70"
-          )}>
+        {implementationTabs.map(tab => <button key={tab.id} onClick={() => setActiveTab(tab.id)} className={cn("flex items-center justify-center gap-1 md:gap-2 py-1 md:py-2 px-2 md:px-4 rounded-full transition-all flex-1 whitespace-nowrap text-xs md:text-base", activeTab === tab.id ? "bg-primary text-white shadow-sm" : "hover:bg-background/80 text-text/70")}>
             {tab.icon}
             <span className="hidden md:inline">{tab.title}</span>
             <span className="md:hidden">{tab.id + 1}</span>
@@ -113,7 +108,7 @@ const ImplementationTabs = () => {
       {/* Active Tab Content */}
       <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
         {/* Left column: Content */}
-        <div className="space-y-4 md:space-y-6 order-2 md:order-1">
+        <div className="space-y-4 md:space-y-6 order-1 md:order-1">
           <div>
             <h3 className="text-lg md:text-xl font-bold mb-2">{implementationTabs[activeTab].content.title}</h3>
             <p className="text-text/70 mb-4 text-sm md:text-base">{implementationTabs[activeTab].content.description}</p>
@@ -198,5 +193,4 @@ const ImplementationTabs = () => {
       </div>
     </div>;
 };
-
 export default ImplementationTabs;
