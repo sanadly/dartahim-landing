@@ -49,11 +49,12 @@ const Navbar = () => {
 
         {/* Desktop menu */}
         <div className="hidden md:flex items-center gap-8">
-          <a href="#contact" onClick={(e) => handleAnchorClick(e, '#contact')} className="hover:text-primary transition-colors">اتصل بنا</a>
           <Link to="/who-are-we" className="hover:text-primary transition-colors">من نحن</Link>
           <Link to="/news" className="hover:text-primary transition-colors">الأخبار</Link>
           <Link to="/our-team" className="hover:text-primary transition-colors">فريقنا</Link>
           <Link to="/jobs" className="hover:text-primary transition-colors">الوظائف</Link>
+          <a href="#contact" onClick={(e) => handleAnchorClick(e, '#contact')} className="hover:text-primary transition-colors">تواصل معنا</a>
+
           <a href="#" className="button-primary">أحجز موعد</a>
         </div>
 
