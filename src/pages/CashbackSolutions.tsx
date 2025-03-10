@@ -35,7 +35,6 @@ const CashbackSolutions = () => {
           </div>
           
           {/* Case Study - New Real World Example Component */}
-          <CaseStudyShowcase />
           
           {/* Benefits Section with enhanced business benefits */}
           <CashbackBenefits />
