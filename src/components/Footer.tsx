@@ -68,14 +68,14 @@ const Footer = () => {
         
         {/* Footer Middle - Newsletter */}
         <div className="py-8 border-t border-b border-primary/10 mb-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-center">
+            <div className="order-1 md:order-1 mb-4 md:mb-0">
               <h4 className="font-bold text-lg mb-2">اشترك في نشرتنا الإخبارية</h4>
               <p className="text-text/70 mb-0">احصل على آخر التحديثات والعروض الخاصة</p>
             </div>
-            <div>
-              <form className="flex gap-2">
-                <input type="email" placeholder="أدخل بريدك الإلكتروني" className="px-4 py-2 rounded-lg bg-white/50 border border-secondary/30 focus:outline-none focus:ring-2 focus:ring-primary/50 flex-grow" />
+            <div className="order-2 md:order-2">
+              <form className="flex gap-2 max-w-full">
+                <input type="email" placeholder="أدخل بريدك الإلكتروني" className="px-4 py-2 rounded-lg bg-white/50 border border-secondary/30 focus:outline-none focus:ring-2 focus:ring-primary/50 flex-grow min-w-0" />
                 <button type="submit" className="button-primary whitespace-nowrap">
                   اشترك الآن
                 </button>

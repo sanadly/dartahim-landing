@@ -16,12 +16,12 @@ const CashbackSolutions = () => {
     <div className="min-h-screen flex flex-col" dir="rtl">
       <Navbar />
       
-      <main className="flex-grow pt-32 px-6">
+      <main className="flex-grow pt-24 md:pt-32 px-4 md:px-6">
         <div className="container mx-auto max-w-7xl">
           {/* Hero Section */}
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">حلول الكاشباك للشركات</h1>
-            <p className="text-xl text-text/70 max-w-3xl mx-auto">
+          <div className="text-center mb-10 md:mb-16">
+            <h1 className="text-3xl md:text-5xl font-bold mb-3 md:mb-4">حلول الكاشباك للشركات</h1>
+            <p className="text-base md:text-xl text-text/70 max-w-3xl mx-auto">
               نقدم حلولاً متكاملة ومخصصة لتنفيذ أنظمة الكاشباك التي تساعد شركتك على زيادة المبيعات وتعزيز ولاء العملاء
             </p>
           </div>
@@ -30,11 +30,9 @@ const CashbackSolutions = () => {
           <CashbackStatistics />
           
           {/* Implementation Process - Improved Component */}
-          <div className="my-16">
+          <div className="my-10 md:my-16">
             <ImplementationTabs />
           </div>
-          
-          {/* Case Study - New Real World Example Component */}
           
           {/* Benefits Section with enhanced business benefits */}
           <CashbackBenefits />

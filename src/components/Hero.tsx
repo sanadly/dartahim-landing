@@ -65,13 +65,13 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen mt-2 pt-32 pb-16 px-6 hero-pattern flex items-center relative overflow-hidden">
+    <section className="min-h-screen mt-2 pt-20 md:pt-32 pb-16 px-4 md:px-6 hero-pattern flex items-center relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute -top-20 -left-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse-light"></div>
       <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-primary/20 rounded-full blur-3xl animate-pulse-light" style={{ animationDelay: '1s' }}></div>
       <div className="absolute top-1/3 left-1/3 w-40 h-40 bg-secondary/20 rounded-full blur-2xl animate-pulse-light" style={{ animationDelay: '2s' }}></div>
 
-      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
         {/* Hero Content */}
         <motion.div 
           className="order-2 lg:order-1"
@@ -80,43 +80,43 @@ const Hero = () => {
           variants={containerVariants}
         >
           <motion.div variants={itemVariants} className="inline-block px-4 py-1 rounded-full bg-secondary/30 backdrop-blur-sm mb-4">
-            <span className="text-sm font-medium">المتخصصون في برامج الولاء و حلول التسويق الرقمية #1 في ليبيا</span>
+            <span className="text-xs md:text-sm font-medium">المتخصصون في برامج الولاء و حلول التسويق الرقمية #1 في ليبيا</span>
           </motion.div>
           
-          <motion.h1 variants={itemVariants} className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+          <motion.h1 variants={itemVariants} className="text-3xl md:text-4xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
             حلول <span className="text-gradient">البطاقات الرقمية</span> وبرامج المكافآت والولاء
           </motion.h1>
           
-          <motion.p variants={itemVariants} className="text-lg mb-8 text-text/80 max-w-xl">
+          <motion.p variants={itemVariants} className="text-base md:text-lg mb-6 md:mb-8 text-text/80 max-w-xl">
             دراهم هي الشركة الليبية الرائدة في حلول البطاقات الرقمية وبرامج المكافآت والولاء. نحن نمكّن الأفراد، الشركات، والتجار من تعظيم الفائدة من القيمة الرقمية، مع تجربة سلسة واستثنائية باستخدام تقنيات مبتكرة.
           </motion.p>
           
           <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
-            <a href="#" className="button-primary flex items-center gap-2">
+            <a href="#" className="button-primary flex items-center gap-2 text-sm md:text-base py-2 md:py-3">
               أحجز موعد <ArrowRight className="h-4 w-4" />
             </a>
-            <a href="#why-us" className="button-outline">لماذا دراهم؟</a>
+            <a href="#why-us" className="button-outline text-sm md:text-base py-2 md:py-3">لماذا دراهم؟</a>
           </motion.div>
           
           {/* Trust Indicators with emojis */}
-          <motion.div variants={itemVariants} className="flex flex-wrap gap-8 items-center mt-10">
+          <motion.div variants={itemVariants} className="flex flex-wrap gap-4 md:gap-8 items-center mt-8 md:mt-10">
             <div className="flex items-center gap-2">
-              <div className="bg-secondary/30 backdrop-blur-sm w-12 h-12 rounded-full flex items-center justify-center">
-                <span className="text-primary font-bold">+50</span>
+              <div className="bg-secondary/30 backdrop-blur-sm w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center">
+                <span className="text-primary font-bold text-sm md:text-base">+50</span>
               </div>
-              <span className="text-sm">👥 عميل في ليبيا</span>
+              <span className="text-xs md:text-sm">👥 عميل في ليبيا</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="bg-secondary/30 backdrop-blur-sm w-12 h-12 rounded-full flex items-center justify-center">
-                <span className="text-primary font-bold">99%</span>
+              <div className="bg-secondary/30 backdrop-blur-sm w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center">
+                <span className="text-primary font-bold text-sm md:text-base">99%</span>
               </div>
-              <span className="text-sm">😍 رضا عملائنا</span>
+              <span className="text-xs md:text-sm">😍 رضا عملائنا</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="bg-secondary/30 backdrop-blur-sm w-12 h-12 rounded-full flex items-center justify-center">
-                <span className="text-primary font-bold">24/7</span>
+              <div className="bg-secondary/30 backdrop-blur-sm w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center">
+                <span className="text-primary font-bold text-sm md:text-base">24/7</span>
               </div>
-              <span className="text-sm">🛎️ دعم فني</span>
+              <span className="text-xs md:text-sm">🛎️ دعم فني</span>
             </div>
           </motion.div>
         </motion.div>
@@ -129,7 +129,7 @@ const Hero = () => {
           transition={{ duration: 0.7, delay: 0.2 }}
         >
           {/* 3D Card Showcase */}
-          <div className="relative perspective-1000 w-full max-w-md mb-10">
+          <div className="relative perspective-1000 w-full max-w-md mb-8 md:mb-10">
             {/* Featured product card - animated showcase */}
             <div 
               className="w-full relative transform transition-all duration-500"
@@ -139,61 +139,61 @@ const Hero = () => {
               }}
             >
               {/* Main card */}
-              <div className="w-[280px] md:w-[380px] h-[200px] rounded-3xl glass-card bg-gradient-to-br from-white/50 to-white/10 flex flex-col p-6 shadow-xl border border-white/20 relative overflow-hidden z-10 hover:shadow-2xl transition-all duration-300 mx-auto">
+              <div className="w-[240px] md:w-[320px] lg:w-[380px] h-[160px] md:h-[200px] rounded-3xl glass-card bg-gradient-to-br from-white/50 to-white/10 flex flex-col p-4 md:p-6 shadow-xl border border-white/20 relative overflow-hidden z-10 hover:shadow-2xl transition-all duration-300 mx-auto">
                 <div className="flex justify-between items-center mb-auto">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
                     <span className="text-white font-bold">د</span>
                   </div>
-                  <span className="text-xl font-bold">دراهم كارد</span>
+                  <span className="text-lg md:text-xl font-bold">دراهم كارد</span>
                 </div>
 
                 <div className="mt-auto">
                   <div className="flex justify-between">
-                    <span className="text-text/70">محمد أحمد</span>
-                    <span className="text-text/70">12/27</span>
+                    <span className="text-sm md:text-text/70">محمد أحمد</span>
+                    <span className="text-sm md:text-text/70">12/27</span>
                   </div>
-                  <div className="mt-2 h-16 w-full rounded-lg bg-white/5 backdrop-blur-sm flex justify-center items-center p-1">
+                  <div className="mt-2 h-12 md:h-16 w-full rounded-lg bg-white/5 backdrop-blur-sm flex justify-center items-center p-1">
                     <img alt="DARAHIM CARD barcode" className="h-full w-full object-contain" src="/lovable-uploads/9b14e838-2969-48fd-be92-aa3e678c56d3.png" />
                   </div>
-                  <div className="mt-2 flex justify-between text-sm">
+                  <div className="mt-2 flex justify-between text-xs md:text-sm">
                     <span className="text-text/70">1234 5678 9012 3456</span>
                     <span className="text-text/70">PREMIUM</span>
                   </div>
                 </div>
               </div>
 
-              {/* Floating secondary products */}
+              {/* Floating secondary products - hide some on very small screens */}
               <div 
-                className="absolute -top-6 -right-6 w-32 h-32 rounded-2xl bg-gradient-to-br from-secondary to-secondary/50 p-4 shadow-lg transform -rotate-12 -z-10 animate-float"
+                className="absolute -top-6 -right-6 w-24 md:w-32 h-24 md:h-32 rounded-2xl bg-gradient-to-br from-secondary to-secondary/50 p-4 shadow-lg transform -rotate-12 -z-10 animate-float hidden sm:block"
                 style={{ animationDelay: '0.5s' }}
               >
                 <div className="flex items-center justify-between">
-                  <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
-                    <BarChart4 className="h-4 w-4 text-white" />
+                  <div className="w-6 md:w-8 h-6 md:h-8 rounded-full bg-white/20 flex items-center justify-center">
+                    <BarChart4 className="h-3 md:h-4 w-3 md:w-4 text-white" />
                   </div>
                   <span className="text-xs text-white font-bold">تحليلات</span>
                 </div>
               </div>
 
               <div 
-                className="absolute -bottom-4 -left-4 w-36 h-36 rounded-2xl bg-gradient-to-br from-accent to-primary/50 p-4 shadow-lg transform rotate-6 -z-10 animate-float"
+                className="absolute -bottom-4 -left-4 w-28 md:w-36 h-28 md:h-36 rounded-2xl bg-gradient-to-br from-accent to-primary/50 p-4 shadow-lg transform rotate-6 -z-10 animate-float hidden sm:block"
                 style={{ animationDelay: '0.3s' }}
               >
                 <div className="flex items-center justify-between">
-                  <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
-                    <Gift className="h-4 w-4 text-white" />
+                  <div className="w-6 md:w-8 h-6 md:h-8 rounded-full bg-white/20 flex items-center justify-center">
+                    <Gift className="h-3 md:h-4 w-3 md:w-4 text-white" />
                   </div>
                   <span className="text-xs text-white font-bold">مكافآت</span>
                 </div>
               </div>
 
               <div 
-                className="absolute top-1/2 -translate-y-1/2 -left-20 w-28 h-28 rounded-2xl bg-gradient-to-br from-primary to-secondary/50 p-4 shadow-lg transform -rotate-12 -z-20 animate-float"
+                className="absolute top-1/2 -translate-y-1/2 -left-10 md:-left-20 w-20 md:w-28 h-20 md:h-28 rounded-2xl bg-gradient-to-br from-primary to-secondary/50 p-3 md:p-4 shadow-lg transform -rotate-12 -z-20 animate-float hidden sm:block"
                 style={{ animationDelay: '0.7s' }}
               >
                 <div className="flex items-center justify-between">
-                  <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
-                    <CreditCard className="h-3 w-3 text-white" />
+                  <div className="w-5 md:w-6 h-5 md:h-6 rounded-full bg-white/20 flex items-center justify-center">
+                    <CreditCard className="h-2 md:h-3 w-2 md:w-3 text-white" />
                   </div>
                   <span className="text-xs text-white font-bold">بطاقة</span>
                 </div>
@@ -201,12 +201,12 @@ const Hero = () => {
             </div>
 
             {/* Features that appear based on active card */}
-            <div className="mt-8 bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 shadow-lg">
-              <div className="flex items-center gap-2 mb-2">
-                <div className={`w-3 h-3 rounded-full bg-gradient-to-r ${services[activeCard].color}`}></div>
-                <h4 className="font-bold">{services[activeCard].title}</h4>
+            <div className="mt-6 md:mt-8 bg-white/10 backdrop-blur-sm rounded-xl p-3 md:p-4 border border-white/20 shadow-lg">
+              <div className="flex items-center gap-2 mb-1 md:mb-2">
+                <div className={`w-2 md:w-3 h-2 md:h-3 rounded-full bg-gradient-to-r ${services[activeCard].color}`}></div>
+                <h4 className="font-bold text-sm md:text-base">{services[activeCard].title}</h4>
               </div>
-              <p className="text-sm text-text/70">
+              <p className="text-xs md:text-sm text-text/70">
                 {activeCard === 0 && "بطاقات رقمية سهلة الاستخدام مع نظام نقاط مرن لمكافأة عملائك المخلصين."}
                 {activeCard === 1 && "منصات تحليلية متقدمة لقياس أداء حملاتك التسويقية وتحسين استراتيجيتك."}
                 {activeCard === 2 && "حلول استرداد نقدي مبتكرة تشجع العملاء على زيادة قيمة مشترياتهم."}
@@ -216,25 +216,25 @@ const Hero = () => {
 
           {/* Services Showcase - Moved to under the card */}
           <div className="w-full mt-2">
-            <h3 className="text-xl font-bold mb-4 text-center">خدماتنا الرئيسية</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4 text-center">خدماتنا الرئيسية</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
               {services.map((service) => (
                 <a 
                   key={service.id}
                   href={service.link}
                   className={cn(
-                    "p-4 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/30 transition-all hover:shadow-lg flex flex-col",
+                    "p-3 md:p-4 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/30 transition-all hover:shadow-lg flex flex-col",
                     activeCard === service.id ? "ring-2 ring-primary shadow-md" : ""
                   )}
                   onMouseEnter={() => setActiveCard(service.id)}
                 >
-                  <div className={`p-2 rounded-full bg-gradient-to-r ${service.color} w-fit mb-3`}>
+                  <div className={`p-1.5 md:p-2 rounded-full bg-gradient-to-r ${service.color} w-fit mb-2 md:mb-3`}>
                     {service.icon}
                   </div>
-                  <h4 className="font-bold mb-1">{service.title}</h4>
-                  <p className="text-sm text-text/70 mb-2">{service.description}</p>
+                  <h4 className="font-bold mb-1 text-sm md:text-base">{service.title}</h4>
+                  <p className="text-xs md:text-sm text-text/70 mb-2">{service.description}</p>
                   <div className="mt-auto flex items-center text-xs text-primary font-medium">
-                    اكتشف المزيد <ChevronRight className="h-3 w-3 mr-1" />
+                    اكتشف المزيد <ChevronRight className="h-2.5 md:h-3 w-2.5 md:w-3 mr-1" />
                   </div>
                 </a>
               ))}
