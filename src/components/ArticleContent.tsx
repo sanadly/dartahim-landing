@@ -65,12 +65,13 @@ const ArticleContent: React.FC<ArticleContentProps> = ({
 
   // Get article image based on ID
   const getArticleImage = (articleId: number) => {
-    if (articleId === 4) {
-      return 'd8c5b993-2a67-47ca-9ad1-222ee8ff41e9.png';
-    } else if (articleId === 5 || articleId === 7) {
-      return '9b14e838-2969-48fd-be92-aa3e678c56d3.png';
-    } else {
-      return '69b73410-b7da-4aa0-9a35-00ac7c62e874.png';
+    switch(articleId) {
+      case 4: return 'd8c5b993-2a67-47ca-9ad1-222ee8ff41e9.png';
+      case 5: return '9b14e838-2969-48fd-be92-aa3e678c56d3.png';
+      case 6: return '69b73410-b7da-4aa0-9a35-00ac7c62e874.png';
+      case 7: return '9b14e838-2969-48fd-be92-aa3e678c56d3.png';
+      case 8: return 'eurocis-1.png';
+      default: return '69b73410-b7da-4aa0-9a35-00ac7c62e874.png';
     }
   };
 
