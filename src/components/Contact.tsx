@@ -161,7 +161,6 @@ const Contact = () => {
               <div>
                 <h4 className="font-bold mb-1">البريد الإلكتروني</h4>
                 <p className="text-text/70">info@dartahim.ly</p>
-                <p className="text-text/70">support@dartahim.ly</p>
               </div>
             </div>
             
