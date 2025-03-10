@@ -1,3 +1,4 @@
+
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import ArticleContent from "@/components/ArticleContent";
@@ -17,11 +18,6 @@ const NewsArticle7 = () => {
       "<h2 className='text-2xl font-bold mt-12 mb-6'>الخطوة الأولى: اختيار التقنية المناسبة لبرنامج الولاء</h2>",
       
       "قد يبدو غريبًا أن نبدأ بالميزانية من خلال التقنية، لكن في الواقع، التقنية هي حجر الزاوية في أي برنامج ولاء ناجح. ستحتاج إلى منصة تقنية قوية لتأسيس برنامجك عليها. الخيار الأساسي هنا هو: هل تبني البرنامج بنفسك، أم تعتمد على حل جاهز؟",
-      
-      "<div className='my-10 rounded-lg overflow-hidden shadow-md'>",
-      "<img src='/lovable-uploads/83e04920-52ab-4ce9-b579-70c39a52d903.png' alt='تقنية برامج الولاء' className='w-full object-cover' />",
-      "<p className='text-center text-sm text-text/60 mt-2'>تقنيات متطورة تدعم برامج الولاء الفعالة</p>",
-      "</div>",
       
       "لاتخاذ قرار مستنير، يجب أن تنظر إلى الموضوع من ثلاثة جوانب:",
       
@@ -52,7 +48,7 @@ const NewsArticle7 = () => {
       "</ul>",
       
       "<div className='my-10 rounded-lg overflow-hidden shadow-md'>",
-      "<img src='/lovable-uploads/8403013f-eafe-4e9c-be77-241e2d56d4fe.png' alt='حاسبة التكاليف' className='w-full h-12 object-cover' />",
+      "<img src='/lovable-uploads/8403013f-eafe-4e9c-be77-241e2d56d4fe.png' alt='حاسبة التكاليف' className='w-full h-24 object-cover' />",
       "<p className='text-center text-sm text-text/60 mt-2'>حساب التكاليف بدقة يساعد في اتخاذ القرار المناسب</p>",
       "</div>",
       
