@@ -19,7 +19,7 @@ const LoyaltyImageSection = () => {
           </ul>
         </div>
         <div className="md:h-full">
-          <img alt="كاشباك دراهم" className="w-full h-full object-contain" src="/lovable-uploads/9d3431e8-f0b4-4b0c-a766-c4ba1bd2505d.jpg" />
+          <img alt="كاشباك دراهم" src="/lovable-uploads/9d3431e8-f0b4-4b0c-a766-c4ba1bd2505d.jpg" className="w-full h-full object-cover" />
         </div>
       </div>
     </div>;
