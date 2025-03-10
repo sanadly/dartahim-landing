@@ -39,15 +39,13 @@ const ArticleContent: React.FC<ArticleContentProps> = ({
   const getArticleTitle = (articleId: number) => {
     switch (articleId) {
       case 4:
-        return '📱 تطبيق ولاء العملاء: مفتاح النمو المستدام';
-      case 5:
-        return '🔄 بناء شبكة ولاء العملاء الخاصة بك';
+        return ' تطبيق ولاء العملاء: مفتاح النمو المستدام';
       case 6:
-        return '💌 عميلك أقرب إليك الآن: الحملات التسويقية المخصصة';
+        return ' عميلك أقرب إليك الآن: الحملات التسويقية المخصصة';
       case 7:
-        return '🧮 دليل دراهم الشامل لتقدير تكلفة برنامج الولاء';
+        return ' دليل دراهم الشامل لتقدير تكلفة برنامج الولاء';
       case 8:
-        return '📢 موعدنا في معرض EuroCIS في دوسلدورف! 🚀';
+        return ' موعدنا في معرض EuroCIS في دوسلدورف!';
       default:
         return '';
     }
@@ -57,17 +55,15 @@ const ArticleContent: React.FC<ArticleContentProps> = ({
   const getArticleImage = (articleId: number) => {
     switch (articleId) {
       case 4:
-        return '/lovable-uploads/f7341154-6b0b-4d67-837b-075f65bcade6.png';
-      case 5:
-        return '/lovable-uploads/23cf95d4-cc38-45ad-b52f-be19624de0d1.png';
+        return '/lovable-uploads/app.jpg';
       case 6:
         return '/lovable-uploads/notification.jpg';
       case 7:
-        return '/lovable-uploads/8403013f-eafe-4e9c-be77-241e2d56d4fe.png';
+        return '/lovable-uploads/7d9bf6e4-abd1-45fa-ad06-3c07b4b9686b.png';
       case 8:
         return '/lovable-uploads/düsseldorf.jpg';
       default:
-        return '/lovable-uploads/69b73410-b7da-4aa0-9a35-00ac7c62e874.png';
+        return '/lovable-uploads/7d9bf6e4-abd1-45fa-ad06-3c07b4b9686b.png';
     }
   };
 
