@@ -94,8 +94,8 @@ const Hero = () => {
             <a href="#why-us" className="button-outline text-sm md:text-base py-2 md:py-3">لماذا دراهم؟</a>
           </motion.div>
           
-          <motion.div variants={itemVariants} className="flex items-center gap-1 bg-primary/10 px-2 py-1 rounded-full text-xs text-primary mt-4">
-            <Award size={12} className="text-primary" />
+          <motion.div variants={itemVariants} className="flex justify-center items-center gap-2 bg-primary/10 px-4 py-2 rounded-full text-sm text-primary mt-6 w-fit mx-auto lg:mx-0">
+            <Award size={16} className="text-primary" />
             <span>شركة مُسجلة في ليبيا</span>
           </motion.div>
           
