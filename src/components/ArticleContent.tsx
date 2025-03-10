@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { CalendarIcon, ArrowRight, MapPinIcon, ImageIcon } from "lucide-react";
+import { CalendarIcon, ArrowRight, ImageIcon } from "lucide-react";
 import { Link } from 'react-router-dom';
 
 interface ArticleContentProps {
@@ -51,18 +51,6 @@ const ArticleContent: React.FC<ArticleContentProps> = ({
   // Get all article IDs to use for "related articles"
   const allArticleIds = [4, 5, 6, 7, 8];
 
-  // Get article location based on ID
-  const getArticleLocation = (articleId: number) => {
-    switch(articleId) {
-      case 4: return "مصراتة، ليبيا 🇱🇾";
-      case 5: return "طرابلس، ليبيا 🇱🇾";
-      case 6: return "بنغازي، ليبيا 🇱🇾";
-      case 7: return "طرابلس، ليبيا 🇱🇾";
-      case 8: return "دوسلدورف، ألمانيا 🇩🇪";
-      default: return "ليبيا 🇱🇾";
-    }
-  };
-
   // Get article title based on ID
   const getArticleTitle = (articleId: number) => {
     switch(articleId) {
@@ -99,10 +87,6 @@ const ArticleContent: React.FC<ArticleContentProps> = ({
             <CalendarIcon size={16} />
             <span>{date}</span>
           </div>
-          <div className="flex items-center gap-2">
-            <MapPinIcon size={16} />
-            <span>{getArticleLocation(id)}</span>
-          </div>
         </div>
       </div>
       
@@ -130,10 +114,6 @@ const ArticleContent: React.FC<ArticleContentProps> = ({
                     alt="مقال ذو صلة" 
                     className="w-full h-36 object-cover transition-transform duration-300 group-hover:scale-105"
                   />
-                </div>
-                <div className="flex items-center gap-2 text-sm text-text/60 mb-2">
-                  <MapPinIcon size={14} />
-                  <span>{getArticleLocation(articleId)}</span>
                 </div>
                 <h4 className="font-bold">
                   {getArticleTitle(articleId)}
