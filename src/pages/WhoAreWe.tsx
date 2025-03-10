@@ -3,6 +3,36 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
+
+const founders = [
+    {
+      id: 1,
+      name: "محمد الزليطني",
+      role: "المؤسس والرئيس التنفيذي",
+      bio: "مهندس برمجيات مع أكثر من 10 سنوات من الخبرة في مجال التكنولوجيا المالية. حاصل على درجة الماجستير من جامعة برلين التقنية، وقاد العديد من المشاريع الناجحة في القطاع المصرفي الألماني قبل تأسيس دراهم.",
+      imageUrl: "/lovable-uploads/69b73410-b7da-4aa0-9a35-00ac7c62e874.png",
+      socialLinks: {
+        email: "mohamed@darahem.com",
+        twitter: "#",
+        linkedin: "#",
+        github: "#"
+      }
+    },
+    {
+      id: 2,
+      name: "أحمد الحسن",
+      role: "المدير العام",
+      bio: "مهندس برمجيات مع أكثر من 15 سنوات من الخبرة في مجال التكنولوجيا المالية. حاصل على درجة الماجستير من جامعة القاهرة، وقاد العديد من المشاريع الناجحة في القطاع المصرفي المصري قبل تأسيس دراهم.",
+      imageUrl: "/lovable-uploads/12345678-9abc-def0-1234-56789abcdef0.png",
+      socialLinks: {
+        email: "ahmed@darahem.com",
+        twitter: "#",
+        linkedin: "#",
+        github: "#"
+      }
+    }
+];
+
 const WhoAreWe = () => {
   const [isVisible, setIsVisible] = useState<{
     [key: string]: boolean;
@@ -13,6 +43,7 @@ const WhoAreWe = () => {
     services: false,
     cta: false
   });
+
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['story', 'values', 'expertise', 'services', 'cta'];
@@ -34,6 +65,7 @@ const WhoAreWe = () => {
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
   const companyValues = [{
     icon: <Heart className="h-8 w-8" />,
     title: "الموثوقية",
@@ -51,6 +83,7 @@ const WhoAreWe = () => {
     title: "الشفافية",
     description: "نؤمن بأهمية الشفافية في جميع تعاملاتنا مع العملاء والشركاء والموظفين."
   }];
+
   const expertiseAreas = [{
     icon: <Award className="h-6 w-6" />,
     title: "خبرة عملية",
@@ -68,6 +101,7 @@ const WhoAreWe = () => {
     title: "البحث والتطوير",
     description: "نستثمر بشكل مستمر في البحث والتطوير لابتكار حلول مالية تناسب احتياجات السوق الليبي."
   }];
+
   const serviceFeatures = [{
     title: "بطاقات الولاء",
     description: "أنظمة ولاء متكاملة تساعد الشركات على زيادة ولاء العملاء وتعزيز المبيعات.",
@@ -87,6 +121,7 @@ const WhoAreWe = () => {
     color: "bg-accent/10",
     link: "/marketing-platforms"
   }];
+
   return <div className="min-h-screen flex flex-col">
       <Navbar />
       
@@ -99,23 +134,23 @@ const WhoAreWe = () => {
             </p>
           </div>
           
-          {/* Our Story Section - Enhanced with more details */}
+          {/* Our Story Section */}
           <div id="story" className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-20 items-center">
             <div className={cn("transition-all duration-700", isVisible.story ? "opacity-100 translate-x-0" : "opacity-0 translate-x-[-50px]")}>
               <h2 className="text-3xl font-bold mb-6">قصتنا</h2>
               <p className="text-text/80 mb-4 leading-relaxed">
-                تأسست شركة دراهم بواسطة مجموعة من الخبراء في مجال التكنولوجيا المالية والأنظمة الرقمية، بهدف تقديم حلول مالية مبتكرة للشركات والمؤسسات في ليبيا. انطلقت رؤيتنا من إدراكنا للتحديات التي تواجه قطاع الأعمال في إدارة أنظمة الولاء والمكافآت للعملاء.
+                تأسست شركة دراهم بواسطة مجموعة من الخبراء في مجال التكنولوجيا المالية والأنظمة الرقمية، مستفيدين من خبراتهم في السوق الألماني وتعليمهم في أفضل الجامعات الألمانية. هدفنا هو تقديم حلول مالية مبتكرة للشركات والمؤسسات في ليبيا، مستندين إلى أفضل الممارسات العالمية وخاصة من السوق الألماني المتطور.
               </p>
               <p className="text-text/80 mb-4 leading-relaxed">
-                بدأت رحلتنا في عام 2020 بتطوير منصات متخصصة في أنظمة الولاء الرقمية، ومع مرور الوقت توسعت خدماتنا لتشمل حلول الكاشباك المتطورة ومنصات التسويق المتكاملة. نفخر اليوم بتقديم حلول تقنية متكاملة مصممة خصيصًا لتلبية احتياجات السوق الليبي، مع مراعاة الخصوصية الثقافية والتحديات المحلية.
+                بدأت رحلتنا في عام 2020 بتطوير منصات متخصصة في أنظمة الولاء الرقمية، مستفيدين من خبرتنا في السوق الألماني وعلاقاتنا مع كبرى شركات التكنولوجيا المالية في ألمانيا. ومع مرور الوقت توسعت خدماتنا لتشمل حلول الكاشباك المتطورة ومنصات التسويق المتكاملة.
               </p>
               <p className="text-text/80 leading-relaxed">
-                تعمل دراهم اليوم مع العديد من الشركات والمؤسسات في مختلف القطاعات، بدءًا من التجزئة والمطاعم وصولًا إلى الخدمات المالية والتعليمية. نهجنا الاستشاري المتخصص يمكننا من تقديم حلول مخصصة تناسب احتياجات كل عميل، مع ضمان أعلى معايير الجودة والأمان.
+                نجمع بين الخبرة الألمانية والفهم العميق للسوق الليبي لتقديم حلول تقنية متكاملة مصممة خصيصاً لتلبية احتياجات السوق المحلي، مع الحفاظ على أعلى معايير الجودة والأمان المعتمدة عالمياً.
               </p>
             </div>
             <div className={cn("relative transition-all duration-700", isVisible.story ? "opacity-100 translate-x-0" : "opacity-0 translate-x-[50px]")}>
               <div className="absolute -z-10 top-0 right-0 w-72 h-72 bg-primary/10 rounded-full blur-2xl"></div>
-              <img alt="قصة دراهم" src="/lovable-uploads/bdfa7c4b-92a3-45d1-a576-a9b04c74bcc2.jpg" className="w-full rounded-2xl shadow-lg hover:shadow-xl transition-shadow object-cover" />
+              <img alt="قصة دراهم" src="/lovable-uploads/bdfa7c4b-92a3-45d1-a576-a9b04c74bcc2.jpg" className="w-full h-[400px] rounded-2xl shadow-lg hover:shadow-xl transition-shadow object-cover" />
             </div>
           </div>
           

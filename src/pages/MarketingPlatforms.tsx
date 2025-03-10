@@ -3,6 +3,8 @@ import Footer from "@/components/Footer";
 import { BarChart4, Target, Users, Mail, Smartphone, MessageSquare, BarChart2, Globe, Flag, ArrowUpRight, Zap, Check, Star, Award, TrendingUp, PieChart } from "lucide-react";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
+import { DatabaseIcon, Store, CreditCard, PieChart } from "lucide-react";
+
 const MarketingPlatforms = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeTab, setActiveTab] = useState("email");
@@ -52,7 +54,6 @@ const MarketingPlatforms = () => {
     description: "فهم سلوك العملاء واتجاهات المبيعات لاتخاذ قرارات تسويقية مدروسة."
   }];
 
-  // New content for the interactive tab section
   const marketingTabs = [{
     id: "email",
     icon: <Mail className="h-5 w-5" />,
@@ -124,14 +125,12 @@ const MarketingPlatforms = () => {
     }
   }];
 
-  // Get the active tab content
   const activeTabContent = marketingTabs.find(tab => tab.id === activeTab)?.content;
   return <div className="min-h-screen flex flex-col" dir="rtl">
       <Navbar />
       
       <main className="flex-grow pt-32 px-6">
         <div className="container mx-auto max-w-7xl">
-          {/* Hero Section */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">منصات التسويق</h1>
             <p className="text-xl text-text/70 max-w-3xl mx-auto">
@@ -139,7 +138,6 @@ const MarketingPlatforms = () => {
             </p>
           </div>
           
-          {/* Main Content - replaced image with custom component */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-20 items-center">
             <div>
               <h2 className="text-3xl font-bold mb-6">استراتيجيات تسويقية مبنية على البيانات</h2>
@@ -154,9 +152,7 @@ const MarketingPlatforms = () => {
               </p>
             </div>
             <div className="relative">
-              {/* Marketing Platforms Dashboard Component */}
               <div className="bg-white rounded-xl shadow-xl border border-primary/10 overflow-hidden">
-                {/* Dashboard Header */}
                 <div className="bg-primary p-4 text-white">
                   <div className="flex justify-between items-center">
                     <div className="flex items-center gap-2">
@@ -176,9 +172,7 @@ const MarketingPlatforms = () => {
                   </div>
                 </div>
                 
-                {/* Dashboard Content */}
                 <div className="p-4">
-                  {/* Statistics */}
                   <div className="grid grid-cols-3 gap-4 mb-4">
                     <div className="bg-primary/5 p-3 rounded-lg text-center">
                       <div className="text-2xl font-bold text-primary">87%</div>
@@ -194,7 +188,6 @@ const MarketingPlatforms = () => {
                     </div>
                   </div>
                   
-                  {/* Recent Campaigns */}
                   <div className="mb-4">
                     <div className="flex justify-between items-center mb-2">
                       <h4 className="font-bold text-sm">آخر الحملات</h4>
@@ -224,7 +217,6 @@ const MarketingPlatforms = () => {
                     </div>
                   </div>
                   
-                  {/* Audience Overview */}
                   <div>
                     <div className="flex justify-between items-center mb-2">
                       <h4 className="font-bold text-sm">نظرة على الجمهور</h4>
@@ -277,7 +269,6 @@ const MarketingPlatforms = () => {
             </div>
           </div>
           
-          {/* Benefits Section */}
           <div className="mb-20">
             <h2 className="text-3xl font-bold mb-8 text-center">فوائد منصات التسويق</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -291,7 +282,6 @@ const MarketingPlatforms = () => {
             </div>
           </div>
           
-          {/* Added image section for engagement */}
           <div className="mb-20 bg-primary/5 rounded-2xl overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div className="p-10">
@@ -314,7 +304,6 @@ const MarketingPlatforms = () => {
             </div>
           </div>
           
-          {/* Platforms Section */}
           <div className="mb-20">
             <h2 className="text-3xl font-bold mb-8 text-center">منصاتنا التسويقية</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -328,7 +317,6 @@ const MarketingPlatforms = () => {
             </div>
           </div>
           
-          {/* Integration Section */}
           <div className="bg-primary/5 rounded-2xl p-10 mb-20">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
               <div>
@@ -341,30 +329,40 @@ const MarketingPlatforms = () => {
                 </p>
               </div>
               <div className="grid grid-cols-2 gap-4">
-                <div className="feature-card p-6 text-center">
+                <div className="feature-card p-6 text-center hover:bg-white/80 transition-all">
+                  <div className="flex justify-center mb-3">
+                    <DatabaseIcon className="h-8 w-8 text-primary" />
+                  </div>
                   <h3 className="font-bold mb-0">تكامل مع أنظمة CRM</h3>
                 </div>
-                <div className="feature-card p-6 text-center">
+                <div className="feature-card p-6 text-center hover:bg-white/80 transition-all">
+                  <div className="flex justify-center mb-3">
+                    <Store className="h-8 w-8 text-primary" />
+                  </div>
                   <h3 className="font-bold mb-0">تكامل مع منصات التجارة الإلكترونية</h3>
                 </div>
-                <div className="feature-card p-6 text-center">
+                <div className="feature-card p-6 text-center hover:bg-white/80 transition-all">
+                  <div className="flex justify-center mb-3">
+                    <CreditCard className="h-8 w-8 text-primary" />
+                  </div>
                   <h3 className="font-bold mb-0">تكامل مع أنظمة نقاط البيع</h3>
                 </div>
-                <div className="feature-card p-6 text-center">
+                <div className="feature-card p-6 text-center hover:bg-white/80 transition-all">
+                  <div className="flex justify-center mb-3">
+                    <PieChart className="h-8 w-8 text-primary" />
+                  </div>
                   <h3 className="font-bold mb-0">تكامل مع منصات التحليل</h3>
                 </div>
               </div>
             </div>
           </div>
           
-          {/* Interactive Marketing Solutions Showcase - New Enhanced Section */}
           <div className="mb-20 rounded-2xl bg-white shadow-lg border border-primary/10 overflow-hidden">
             <div className="bg-primary p-6 text-white">
               <h2 className="text-2xl font-bold">استكشف حلولنا التسويقية المتكاملة</h2>
               <p className="text-white/80 mt-2">اكتشف كيف يمكن لمنصات التسويق من دراهم تحويل استراتيجيتك التسويقية</p>
             </div>
             
-            {/* Tab Navigation */}
             <div className="flex border-b overflow-x-auto">
               {marketingTabs.map(tab => <button key={tab.id} onClick={() => setActiveTab(tab.id)} className={cn("px-6 py-4 flex items-center gap-2 font-medium transition-colors", activeTab === tab.id ? "border-b-2 border-primary text-primary" : "text-text/60 hover:text-primary hover:bg-primary/5")}>
                   {tab.icon}
@@ -372,7 +370,6 @@ const MarketingPlatforms = () => {
                 </button>)}
             </div>
             
-            {/* Tab Content */}
             {activeTabContent && <div className="p-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                   <div>
@@ -407,7 +404,6 @@ const MarketingPlatforms = () => {
               </div>}
           </div>
           
-          {/* Enhanced CTA Section */}
           <div id="cta-section" className={cn("bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-10 mb-16 transition-all duration-700", isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20")}>
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="md:w-3/5">
