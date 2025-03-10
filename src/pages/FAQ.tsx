@@ -135,7 +135,7 @@ const FAQ = () => {
             {/* FAQ Accordion */}
             <div className="space-y-4">
               {filteredFAQs.length > 0 ? filteredFAQs.map((faq, index) => <div key={index} className="border border-border rounded-lg overflow-hidden">
-                    <button onClick={() => toggleFAQ(index)} className="w-full flex justify-between items-right p-5 bg-background hover:bg-primary/5 transition-colors text-right">
+                    <button onClick={() => toggleFAQ(index)} className="w-full flex justify-start items-right p-5 bg-background hover:bg-primary/5 transition-colors text-right">
                       <span className={faq.isOpen ? "text-primary" : ""}>
                         {faq.isOpen ? <MinusIcon size={20} /> : <PlusIcon size={20} />}
                       </span>
