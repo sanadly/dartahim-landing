@@ -51,7 +51,7 @@ const Features = () => {
             <span className="text-sm font-medium">المميزات</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6 animate-fade-up" style={{ animationDelay: '0.1s' }}>
-            منتج واحد، <span className="text-gradient">حلول لا حدود</span> لها
+            خدمة واحدة، <span className="text-gradient">حلول لا حدود</span> لها
           </h2>
           <p className="text-text/80 animate-fade-up" style={{ animationDelay: '0.2s' }}>
             نحن نقدم حلولًا مبتكرة تساعدك على تحقيق أهدافك بسهولة وكفاءة.
