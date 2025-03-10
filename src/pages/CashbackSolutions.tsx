@@ -1,3 +1,4 @@
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { 
@@ -22,7 +23,17 @@ import {
   LineChart, 
   User, 
   BarChart3,
-  ArrowRight
+  ArrowRight,
+  Code,
+  Server,
+  Users,
+  Layers,
+  FileCode,
+  Database,
+  Pen,
+  HelpCircle,
+  Wrench,
+  BookOpen
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -98,65 +109,70 @@ const CashbackSolutions = () => {
     }
   ];
 
-  const cashbackTabs = [
+  // New B2B focused implementation process tabs
+  const implementationTabs = [
     {
       id: 0,
-      title: "لوحة معلومات العميل",
-      icon: <User className="h-4 w-4" />,
+      title: "تحليل وتصميم",
+      icon: <Pen className="h-4 w-4" />,
       component: (
         <div className="p-4 bg-white/90 rounded-2xl shadow-lg border border-primary/20">
-          <div className="flex justify-between items-center mb-4">
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                <span className="text-white font-bold">ع</span>
+          <h3 className="font-bold mb-3">تحليل الاحتياجات وتصميم النظام</h3>
+          
+          <div className="mb-4 border-b border-dashed border-primary/20 pb-3">
+            <div className="flex items-start gap-3 mb-3">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
+                <HelpCircle className="h-4 w-4 text-primary" />
               </div>
               <div>
-                <h3 className="font-bold">عبدالله محمد</h3>
-                <p className="text-xs text-text/60">عميل منذ 2023</p>
+                <h4 className="font-medium text-sm mb-1">دراسة متطلبات العميل</h4>
+                <p className="text-xs text-text/70">نقوم بتحليل احتياجات عملك ومتطلبات برنامج الكاشباك لتحديد أفضل الحلول التي تناسب أهدافك.</p>
               </div>
             </div>
-            <div className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">
-              عميل مميز
+            
+            <div className="flex items-start gap-3 mb-3">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
+                <Briefcase className="h-4 w-4 text-primary" />
+              </div>
+              <div>
+                <h4 className="font-medium text-sm mb-1">تحليل العمليات التجارية</h4>
+                <p className="text-xs text-text/70">دراسة سير العمليات التجارية وتحديد نقاط التكامل مع نظام الكاشباك للحصول على أفضل النتائج.</p>
+              </div>
+            </div>
+            
+            <div className="flex items-start gap-3">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
+                <PieChart className="h-4 w-4 text-primary" />
+              </div>
+              <div>
+                <h4 className="font-medium text-sm mb-1">تصميم هيكل البرنامج</h4>
+                <p className="text-xs text-text/70">تصميم هيكل برنامج الكاشباك بما في ذلك معدلات الاسترداد، آليات الاحتساب، وطرق الاسترداد.</p>
+              </div>
             </div>
           </div>
           
-          <div className="grid grid-cols-2 gap-2 mb-4">
-            <div className="bg-secondary/10 rounded-lg p-3 text-center">
-              <div className="text-2xl font-bold text-primary">15,750</div>
-              <div className="text-xs text-text/70">إجمالي نقاط الكاشباك</div>
-            </div>
-            <div className="bg-primary/10 rounded-lg p-3 text-center">
-              <div className="text-2xl font-bold text-primary">157.5</div>
-              <div className="text-xs text-text/70">القيمة بالدينار</div>
-            </div>
+          <div className="bg-primary/5 p-3 rounded-lg mb-3">
+            <h5 className="text-xs font-medium mb-2">نتائج مرحلة التحليل والتصميم:</h5>
+            <ul className="text-xs space-y-1">
+              <li className="flex items-center gap-1">
+                <Check className="h-3 w-3 text-green-600" /> وثيقة متطلبات مفصلة
+              </li>
+              <li className="flex items-center gap-1">
+                <Check className="h-3 w-3 text-green-600" /> مخطط هيكلي للنظام
+              </li>
+              <li className="flex items-center gap-1">
+                <Check className="h-3 w-3 text-green-600" /> جدول زمني للتنفيذ
+              </li>
+              <li className="flex items-center gap-1">
+                <Check className="h-3 w-3 text-green-600" /> تقدير التكلفة التفصيلي
+              </li>
+            </ul>
           </div>
           
-          <div className="border-t border-dashed border-primary/20 pt-3 mb-3">
-            <h4 className="text-sm font-medium mb-2">آخر المعاملات</h4>
-            <div className="space-y-2 max-h-[120px] overflow-y-auto">
-              {[
-                { store: "سوبر ماركت البركة", amount: "+150", date: "اليوم", time: "13:45" },
-                { store: "مطعم البحر المتوسط", amount: "+85", date: "اليوم", time: "10:20" },
-                { store: "متجر الإلكترونيات", amount: "+320", date: "أمس", time: "16:30" },
-                { store: "صيدلية الشفاء", amount: "+45", date: "أمس", time: "09:15" }
-              ].map((tx, idx) => (
-                <div key={idx} className="flex justify-between items-center text-xs p-2 rounded-lg hover:bg-secondary/5">
-                  <div className="flex flex-col">
-                    <span className="font-medium">{tx.store}</span>
-                    <span className="text-text/50 text-[10px]">{tx.date} - {tx.time}</span>
-                  </div>
-                  <span className="text-green-600 font-medium">{tx.amount}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          
-          <div className="flex justify-between gap-2 mt-4">
-            <button className="bg-primary text-white text-sm py-2 px-4 rounded-lg flex-1 flex items-center justify-center gap-1">
-              استرداد النقاط <Gift className="h-3 w-3" />
-            </button>
-            <button className="border border-primary/30 text-primary text-sm py-2 px-3 rounded-lg flex items-center justify-center gap-1">
-              تحويل النقاط <RefreshCw className="h-3 w-3" />
+          <div className="flex justify-between items-center text-xs text-text/70">
+            <div>متوسط مدة المرحلة: 1-2 أسبوع</div>
+            <button className="text-primary font-medium hover:underline flex items-center gap-1">
+              معرفة المزيد <ChevronLeft className="h-3 w-3" />
             </button>
           </div>
         </div>
@@ -164,59 +180,61 @@ const CashbackSolutions = () => {
     },
     {
       id: 1,
-      title: "تحليلات الكاشباك",
-      icon: <BarChart3 className="h-4 w-4" />,
+      title: "التطوير والتكامل",
+      icon: <Code className="h-4 w-4" />,
       component: (
         <div className="p-4 bg-white/90 rounded-2xl shadow-lg border border-primary/20">
-          <h3 className="font-bold mb-3">تحليلات برنامج الكاشباك</h3>
+          <h3 className="font-bold mb-3">تطوير النظام والتكامل مع الأنظمة الحالية</h3>
           
-          <div className="grid grid-cols-3 gap-2 mb-4">
-            <div className="bg-primary/10 rounded-lg p-2 text-center">
-              <div className="text-lg font-bold text-primary">+32%</div>
-              <div className="text-xs text-text/70">زيادة المبيعات</div>
+          <div className="grid grid-cols-2 gap-3 mb-4">
+            <div className="bg-primary/10 rounded-lg p-3">
+              <div className="flex items-center gap-2 mb-2">
+                <FileCode className="h-4 w-4 text-primary" />
+                <h5 className="text-sm font-medium">تطوير واجهات المستخدم</h5>
+              </div>
+              <p className="text-xs text-text/80">تطوير واجهات مستخدم سهلة الاستخدام للعملاء والمسؤولين، مع مراعاة متطلبات العلامة التجارية.</p>
             </div>
-            <div className="bg-accent/10 rounded-lg p-2 text-center">
-              <div className="text-lg font-bold text-accent">+28%</div>
-              <div className="text-xs text-text/70">عودة العملاء</div>
-            </div>
-            <div className="bg-secondary/10 rounded-lg p-2 text-center">
-              <div className="text-lg font-bold text-secondary">+45%</div>
-              <div className="text-xs text-text/70">سلة المشتريات</div>
+            <div className="bg-secondary/10 rounded-lg p-3">
+              <div className="flex items-center gap-2 mb-2">
+                <Server className="h-4 w-4 text-secondary" />
+                <h5 className="text-sm font-medium">بناء البنية التحتية</h5>
+              </div>
+              <p className="text-xs text-text/80">إنشاء بنية تحتية قوية وآمنة تضمن موثوقية النظام وقدرته على التعامل مع حجم المعاملات المتوقع.</p>
             </div>
           </div>
           
-          <div className="bg-white/80 rounded-lg p-3 mb-3 border border-primary/10">
-            <div className="mb-1 flex justify-between items-center">
-              <h4 className="text-xs font-medium">توزيع الكاشباك حسب الفئة</h4>
-              <span className="text-xs text-text/50">الشهر الماضي</span>
-            </div>
-            
-            <div className="flex items-center justify-between gap-1 h-24">
-              {[65, 40, 75, 25, 55].map((height, idx) => (
-                <div key={idx} className="flex flex-col items-center flex-1">
-                  <div className="w-full bg-primary/10 rounded-t-sm relative" style={{ height: `${height}%` }}>
-                    <div className="absolute bottom-0 left-0 right-0 bg-primary rounded-t-sm" style={{ height: `${height * 0.7}%` }}></div>
-                  </div>
-                  <span className="text-[9px] mt-1 text-text/70">
-                    {idx === 0 ? "مطاعم" : idx === 1 ? "متاجر" : idx === 2 ? "إلكترونيات" : idx === 3 ? "صيدليات" : "أخرى"}
-                  </span>
+          <div className="border border-dashed border-primary/20 rounded-lg p-3 mb-4">
+            <h4 className="text-sm font-medium mb-2">خيارات التكامل مع الأنظمة الحالية</h4>
+            <div className="space-y-2 text-xs">
+              <div className="flex items-start gap-2">
+                <Database className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                <div>
+                  <span className="font-medium">تكامل قواعد البيانات:</span> ربط نظام الكاشباك مع قواعد بيانات العملاء والمنتجات لضمان التحديث الآني للمعلومات.
                 </div>
-              ))}
+              </div>
+              <div className="flex items-start gap-2">
+                <ShoppingCart className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                <div>
+                  <span className="font-medium">تكامل نقاط البيع:</span> دمج نظام الكاشباك مع أنظمة نقاط البيع للتعرف التلقائي على المشتريات واحتساب المكافآت.
+                </div>
+              </div>
+              <div className="flex items-start gap-2">
+                <Layers className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                <div>
+                  <span className="font-medium">واجهة برمجة التطبيقات (API):</span> توفير واجهات برمجية تتيح التكامل السلس مع تطبيقات الهاتف المحمول أو المواقع الإلكترونية.
+                </div>
+              </div>
             </div>
           </div>
           
-          <div className="border-t border-dashed border-primary/20 pt-2 text-xs">
-            <div className="flex justify-between mb-1">
-              <span>معدل استبدال النقاط:</span>
-              <span className="font-medium">78%</span>
-            </div>
-            <div className="flex justify-between mb-1">
-              <span>متوسط قيمة الكاشباك لكل طلب:</span>
-              <span className="font-medium">5.2%</span>
-            </div>
-            <div className="flex justify-between">
-              <span>عدد العملاء النشطين:</span>
-              <span className="font-medium">1,245</span>
+          <div className="bg-gradient-to-r from-primary/5 to-secondary/5 p-3 rounded-lg">
+            <h5 className="text-xs font-medium mb-1">التقنيات المستخدمة:</h5>
+            <div className="flex flex-wrap gap-2 text-[10px]">
+              {["Node.js", "React", "MongoDB", "PostgreSQL", "REST API", "Webhook", "AWS", "Docker"].map((tech, i) => (
+                <span key={i} className="px-2 py-1 bg-white/60 rounded-full">
+                  {tech}
+                </span>
+              ))}
             </div>
           </div>
         </div>
@@ -224,80 +242,159 @@ const CashbackSolutions = () => {
     },
     {
       id: 2,
-      title: "إدارة العروض",
-      icon: <Tag className="h-4 w-4" />,
+      title: "الاختبار والإطلاق",
+      icon: <Wrench className="h-4 w-4" />,
       component: (
         <div className="p-4 bg-white/90 rounded-2xl shadow-lg border border-primary/20">
-          <div className="flex justify-between items-center mb-3">
-            <h3 className="font-bold">عروض الكاشباك الحالية</h3>
-            <button className="text-xs text-primary flex items-center gap-1">
-              <span>إضافة عرض</span>
-              <span className="w-5 h-5 rounded-full bg-primary text-white inline-flex items-center justify-center">+</span>
-            </button>
-          </div>
+          <h3 className="font-bold mb-3">اختبار النظام وإطلاقه</h3>
           
           <div className="space-y-3 mb-4">
-            {[
-              { title: "كاشباك مضاعف نهاية الأسبوع", percent: "10%", status: "نشط", expiresIn: "ينتهي في 3 أيام", color: "bg-green-100 text-green-800" },
-              { title: "عروض الصيف", percent: "7%", status: "قادم", expiresIn: "يبدأ غداً", color: "bg-blue-100 text-blue-800" },
-              { title: "عملاء المرة الأولى", percent: "15%", status: "نشط", expiresIn: "مستمر", color: "bg-green-100 text-green-800" }
-            ].map((offer, idx) => (
-              <div key={idx} className="bg-white rounded-lg p-3 border border-primary/10 flex justify-between items-center">
-                <div>
-                  <div className="flex items-center gap-2">
-                    <Percent className="h-4 w-4 text-primary" />
-                    <h4 className="font-medium text-sm">{offer.title}</h4>
-                  </div>
-                  <p className="text-xs text-text/60 mt-1">{offer.expiresIn}</p>
+            <div className="border-b border-dashed border-primary/20 pb-2">
+              <h4 className="text-sm font-medium mb-2">مراحل الاختبار الشاملة</h4>
+              <div className="grid grid-cols-2 gap-2 text-xs">
+                <div className="bg-primary/5 p-2 rounded-lg">
+                  <div className="font-medium mb-1">اختبار الوظائف</div>
+                  <p className="text-text/70">التحقق من عمل جميع وظائف النظام حسب المتطلبات.</p>
                 </div>
-                <div className="flex items-center gap-2">
-                  <div className="text-primary font-bold">{offer.percent}</div>
-                  <div className={`px-2 py-0.5 rounded-full text-[10px] font-medium ${offer.color}`}>
-                    {offer.status}
+                <div className="bg-primary/5 p-2 rounded-lg">
+                  <div className="font-medium mb-1">اختبار الأداء</div>
+                  <p className="text-text/70">قياس سرعة النظام وقدرته على تحمل الأحمال المختلفة.</p>
+                </div>
+                <div className="bg-primary/5 p-2 rounded-lg">
+                  <div className="font-medium mb-1">اختبار الأمان</div>
+                  <p className="text-text/70">فحص مستوى أمان النظام ضد الاختراقات المحتملة.</p>
+                </div>
+                <div className="bg-primary/5 p-2 rounded-lg">
+                  <div className="font-medium mb-1">اختبار القبول</div>
+                  <p className="text-text/70">مراجعة النظام مع العميل للتأكد من تلبية جميع المتطلبات.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <h4 className="text-sm font-medium mb-2">استراتيجية الإطلاق</h4>
+              <div className="space-y-2 text-xs">
+                <div className="bg-secondary/10 p-2 rounded-lg flex items-start gap-2">
+                  <div className="w-5 h-5 bg-secondary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-secondary font-medium">1</span>
+                  </div>
+                  <div>
+                    <div className="font-medium">الإطلاق التجريبي</div>
+                    <p className="text-text/70">إطلاق النظام لمجموعة محدودة من العملاء لاختبار الأداء في بيئة حقيقية.</p>
+                  </div>
+                </div>
+                <div className="bg-secondary/10 p-2 rounded-lg flex items-start gap-2">
+                  <div className="w-5 h-5 bg-secondary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-secondary font-medium">2</span>
+                  </div>
+                  <div>
+                    <div className="font-medium">المراقبة والتحسين</div>
+                    <p className="text-text/70">مراقبة أداء النظام وإجراء التحسينات اللازمة بناءً على التغذية الراجعة.</p>
+                  </div>
+                </div>
+                <div className="bg-secondary/10 p-2 rounded-lg flex items-start gap-2">
+                  <div className="w-5 h-5 bg-secondary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-secondary font-medium">3</span>
+                  </div>
+                  <div>
+                    <div className="font-medium">الإطلاق الكامل</div>
+                    <p className="text-text/70">إطلاق النظام بشكل كامل لجميع المستخدمين مع حملة ترويجية مناسبة.</p>
                   </div>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
           
-          <h4 className="text-sm font-medium mb-2">فئات الكاشباك</h4>
-          <div className="grid grid-cols-2 gap-2 text-xs">
-            <div className="flex items-center gap-2 p-2 bg-secondary/10 rounded-lg">
-              <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center">
-                <Store className="h-3 w-3 text-primary" />
-              </div>
-              <div>
-                <div className="font-medium">المتاجر</div>
-                <div className="text-[10px] text-text/60">كاشباك 5%</div>
+          <div className="flex items-center justify-between text-xs">
+            <div className="text-green-600 font-medium flex items-center">
+              <Check className="h-4 w-4 mr-1" /> معدل نجاح الإطلاق: 98%
+            </div>
+            <div className="text-primary font-medium hover:underline cursor-pointer flex items-center">
+              طلب عرض تجريبي <ArrowRight className="h-3 w-3 mr-1" />
+            </div>
+          </div>
+        </div>
+      )
+    },
+    {
+      id: 3,
+      title: "الدعم والتطوير",
+      icon: <BookOpen className="h-4 w-4" />,
+      component: (
+        <div className="p-4 bg-white/90 rounded-2xl shadow-lg border border-primary/20">
+          <h3 className="font-bold mb-3">خدمات الدعم والتطوير المستمر</h3>
+          
+          <div className="grid grid-cols-2 gap-3 mb-4">
+            <div className="col-span-2 bg-primary/10 p-3 rounded-lg">
+              <h4 className="text-sm font-medium mb-2">باقات الدعم الفني</h4>
+              <div className="flex flex-wrap gap-3 text-xs">
+                <div className="flex-1 bg-white/80 p-2 rounded-lg border border-primary/10">
+                  <div className="font-medium mb-1 text-primary">الباقة الأساسية</div>
+                  <ul className="space-y-1">
+                    <li className="flex items-center gap-1">
+                      <Check className="h-3 w-3 text-green-600" /> دعم عبر البريد الإلكتروني
+                    </li>
+                    <li className="flex items-center gap-1">
+                      <Check className="h-3 w-3 text-green-600" /> وقت استجابة خلال 24 ساعة
+                    </li>
+                    <li className="flex items-center gap-1">
+                      <Check className="h-3 w-3 text-green-600" /> تحديثات النظام الدورية
+                    </li>
+                  </ul>
+                </div>
+                <div className="flex-1 bg-white/80 p-2 rounded-lg border border-primary/10">
+                  <div className="font-medium mb-1 text-secondary">الباقة المتقدمة</div>
+                  <ul className="space-y-1">
+                    <li className="flex items-center gap-1">
+                      <Check className="h-3 w-3 text-green-600" /> دعم على مدار الساعة
+                    </li>
+                    <li className="flex items-center gap-1">
+                      <Check className="h-3 w-3 text-green-600" /> وقت استجابة خلال 4 ساعات
+                    </li>
+                    <li className="flex items-center gap-1">
+                      <Check className="h-3 w-3 text-green-600" /> مدير حساب مخصص
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-            <div className="flex items-center gap-2 p-2 bg-secondary/10 rounded-lg">
-              <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center">
-                <Utensils className="h-3 w-3 text-primary" />
+          </div>
+          
+          <div className="border-t border-dashed border-primary/20 pt-3 mb-3">
+            <h4 className="text-sm font-medium mb-2">خدمات التطوير المستمر</h4>
+            <div className="space-y-2 text-xs">
+              <div className="flex items-start gap-2">
+                <LineChart className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                <div>
+                  <span className="font-medium">تحسين الأداء:</span> مراقبة وتحسين أداء النظام بشكل مستمر لضمان سرعة وكفاءة العمليات.
+                </div>
               </div>
-              <div>
-                <div className="font-medium">المطاعم</div>
-                <div className="text-[10px] text-text/60">كاشباك 8%</div>
+              <div className="flex items-start gap-2">
+                <Settings className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                <div>
+                  <span className="font-medium">إضافة ميزات جديدة:</span> تطوير وإضافة ميزات جديدة حسب احتياجات السوق والتغذية الراجعة من العملاء.
+                </div>
               </div>
-            </div>
-            <div className="flex items-center gap-2 p-2 bg-secondary/10 rounded-lg">
-              <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center">
-                <ShoppingCart className="h-3 w-3 text-primary" />
-              </div>
-              <div>
-                <div className="font-medium">التسوق ا��إلكتروني</div>
-                <div className="text-[10px] text-text/60">كاشباك 6%</div>
-              </div>
-            </div>
-            <div className="flex items-center gap-2 p-2 bg-secondary/10 rounded-lg">
-              <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center">
-                <Briefcase className="h-3 w-3 text-primary" />
-              </div>
-              <div>
-                <div className="font-medium">خدمات مهنية</div>
-                <div className="text-[10px] text-text/60">كاشباك 4%</div>
+              <div className="flex items-start gap-2">
+                <Shield className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                <div>
+                  <span className="font-medium">تحديثات الأمان:</span> إجراء تحديثات أمان دورية لحماية النظام والبيانات من التهديدات المحتملة.
+                </div>
               </div>
             </div>
+          </div>
+          
+          <div className="bg-secondary/5 p-3 rounded-lg flex items-center justify-between">
+            <div className="text-xs">
+              <span className="font-medium">نسبة رضا العملاء عن خدمات الدعم:</span>
+              <div className="w-32 bg-gray-200 rounded-full h-1.5 mt-1">
+                <div className="bg-primary h-1.5 rounded-full" style={{width: "95%"}}></div>
+              </div>
+              <span className="text-[10px] text-primary font-medium">95%</span>
+            </div>
+            <button className="text-white bg-primary text-xs py-1 px-3 rounded-lg hover:bg-primary/90 transition-colors">
+              اطلب استشارة مجانية
+            </button>
           </div>
         </div>
       )
@@ -312,16 +409,16 @@ const CashbackSolutions = () => {
         <div className="container mx-auto max-w-7xl">
           {/* Hero Section */}
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">حلول الكاشباك</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">حلول الكاشباك للشركات</h1>
             <p className="text-xl text-text/70 max-w-3xl mx-auto">
-              حفز مبيعاتك وعزز ولاء عملائك مع برامج الكاشباك المبتكرة من دراهم
+              نقدم حلولاً متكاملة ومخصصة لتنفيذ أنظمة الكاشباك التي تساعد شركتك على زيادة المبيعات وتعزيز ولاء العملاء
             </p>
           </div>
           
-          {/* Enhanced Interactive Cashback Dashboard Component */}
+          {/* Business Implementation Process - New B2B Focused Component */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-20 items-center">
             <div className="order-2 md:order-1">
-              {/* Interactive Cashback Platform Showcase */}
+              {/* Interactive Business Implementation Showcase */}
               <div className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl p-6 shadow-lg border border-primary/10 relative overflow-hidden">
                 {/* Background decorative elements */}
                 <div className="absolute -z-10 top-1/2 right-0 w-32 h-32 bg-primary/10 rounded-full blur-xl"></div>
@@ -329,7 +426,7 @@ const CashbackSolutions = () => {
                 
                 {/* Tabs Navigation */}
                 <div className="flex mb-6 bg-white/30 backdrop-blur-sm rounded-full p-1 border border-white/40 relative z-10">
-                  {cashbackTabs.map((tab) => (
+                  {implementationTabs.map((tab) => (
                     <button
                       key={tab.id}
                       onClick={() => setActiveTab(tab.id)}
@@ -353,47 +450,53 @@ const CashbackSolutions = () => {
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.3 }}
                 >
-                  {cashbackTabs[activeTab].component}
+                  {implementationTabs[activeTab].component}
                 </motion.div>
                 
-                {/* Sample Features Pills */}
-                <div className="flex flex-wrap gap-2 mt-4 justify-center">
-                  {[
-                    { icon: <Gift className="h-3 w-3" />, text: "استرداد فوري" },
-                    { icon: <CreditCard className="h-3 w-3" />, text: "تخصيص متقدم" },
-                    { icon: <Shield className="h-3 w-3" />, text: "معاملات آمنة" },
-                    { icon: <Settings className="h-3 w-3" />, text: "إعدادات مرنة" },
-                  ].map((pill, idx) => (
-                    <div key={idx} className="bg-white/40 backdrop-blur-sm rounded-full py-1 px-3 text-xs flex items-center gap-1 border border-white/40">
-                      {pill.icon}
-                      <span>{pill.text}</span>
-                    </div>
-                  ))}
+                {/* Implementation Process Timeline */}
+                <div className="mt-5 pt-4 border-t border-dashed border-primary/20">
+                  <div className="flex justify-between">
+                    {implementationTabs.map((tab, idx) => (
+                      <div 
+                        key={idx} 
+                        className={`flex flex-col items-center ${activeTab >= idx ? 'text-primary' : 'text-text/40'}`}
+                        style={{ width: `${100 / implementationTabs.length}%` }}
+                      >
+                        <div className={`w-3 h-3 rounded-full ${activeTab >= idx ? 'bg-primary' : 'bg-text/20'}`}></div>
+                        <div className="text-[9px] mt-1 text-center">
+                          {tab.title}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="relative h-0.5 bg-text/20 -mt-[9px] z-0">
+                    <div className="absolute top-0 left-0 h-full bg-primary transition-all" style={{ width: `${(activeTab / (implementationTabs.length - 1)) * 100}%` }}></div>
+                  </div>
                 </div>
               </div>
             </div>
             <div className="order-1 md:order-2">
-              <h2 className="text-3xl font-bold mb-6">برامج كاشباك مصممة لنمو أعمالك</h2>
+              <h2 className="text-3xl font-bold mb-6">حلول كاشباك مخصصة لشركتك</h2>
               <p className="text-text/80 mb-4 leading-relaxed">
-                تعتبر برامج الكاشباك من أكثر استراتيجيات التسويق فعالية لجذب العملاء والاحتفاظ بهم. توفر حلول الكاشباك من دراهم طريقة فعالة لمكافأة عملائك على كل عملية شراء، مما يشجعهم على العودة مراراً وتكراراً.
+                في دراهم، نفهم أن كل شركة لديها احتياجات فريدة لبرامج الكاشباك الخاصة بها. لذلك، نقدم خدمات شاملة لتطوير وتنفيذ وإدارة أنظمة الكاشباك المخصصة التي تتناسب مع نموذج أعمالك وأهدافك.
               </p>
               <p className="text-text/80 mb-4 leading-relaxed">
-                نقدم منصة متكاملة لإدارة برامج الكاشباك بكل سهولة، مع خيارات مرنة للتخصيص حسب احتياجات عملك. سواء كنت تدير متجراً صغيراً أو سلسلة متاجر كبيرة، يمكننا تصميم برنامج كاشباك يناسب أهدافك التجارية.
+                نحن لا نقدم فقط منصة جاهزة، بل نعمل معك كشريك استراتيجي لتصميم وتنفيذ حل متكامل يمكنك من تقديم برامج استرداد نقدي فعالة لعملائك، مع ضمان التكامل السلس مع أنظمتك الحالية.
               </p>
-              <p className="text-text/80 leading-relaxed">
-                مع حلول الكاشباك من دراهم، ستتمكن من زيادة متوسط قيمة المشتريات، تعزيز معدل تكرار الزيارات، وبناء قاعدة عملاء مخلصين على المدى الطويل.
+              <p className="text-text/80 leading-relaxed mb-6">
+                من التحليل الأولي وحتى التنفيذ النهائي والدعم المستمر، سيعمل فريقنا من الخبراء معك في كل خطوة لضمان نجاح برنامج الكاشباك الخاص بك.
               </p>
               
               {/* Added Feature List */}
-              <div className="mt-6">
-                <h3 className="font-bold text-lg mb-3">مميزات منصة دراهم للكاشباك:</h3>
+              <div className="mt-2">
+                <h3 className="font-bold text-lg mb-3">ما يميز خدماتنا:</h3>
                 <ul className="space-y-2">
                   {[
-                    "تخصيص كامل لبرامج الكاشباك حسب احتياجات عملك",
-                    "لوحة تحكم سهلة الاستخدام لإدارة العروض والمكافآت",
-                    "تكامل مع أنظمة نقاط البيع والمتاجر الإلكترونية",
-                    "تقارير تحليلية تفصيلية لقياس أداء البرنامج",
-                    "تطبيق جوال للعملاء لمتابعة رصيدهم واستخدام الكاشباك"
+                    "فريق تطوير متخصص في أنظمة الكاشباك للشركات",
+                    "حلول مخصصة حسب احتياجات كل شركة ونموذج أعمالها",
+                    "تكامل مع أنظمة نقاط البيع والمتاجر الإلكترونية الحالية",
+                    "لوحات تحكم متطورة لإدارة برامج الكاشباك وتحليل النتائج",
+                    "دعم فني وتقني مستمر لضمان أداء النظام بكفاءة"
                   ].map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-2">
                       <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
@@ -503,9 +606,9 @@ const CashbackSolutions = () => {
               viewport={{ once: true }}
               className="relative z-10"
             >
-              <h2 className="text-3xl font-bold mb-4">جاهز لتنفيذ برنامج كاشباك فعال؟</h2>
+              <h2 className="text-3xl font-bold mb-4">جاهز لتنفيذ برنامج كاشباك فعال لشركتك؟</h2>
               <p className="text-lg text-text/70 max-w-3xl mx-auto mb-8">
-                تواصل معنا اليوم لمعرفة كيف يمكن لحلول الكاشباك من دراهم أن تساعد في نمو أعمالك وزيادة ولاء عملائك.
+                تواصل معنا اليوم لمعرفة كيف يمكن لحلول الكاشباك المخصصة من دراهم أن تساعد في نمو أعمالك وزيادة ولاء عملائك.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="#" className="button-primary flex items-center justify-center gap-2">
@@ -519,10 +622,10 @@ const CashbackSolutions = () => {
               {/* Added feature highlights */}
               <div className="flex flex-wrap justify-center gap-4 mt-8">
                 {[
-                  { icon: <Gift className="h-4 w-4" />, text: "برامج مخصصة" },
-                  { icon: <Clock className="h-4 w-4" />, text: "تفعيل فوري" },
-                  { icon: <Shield className="h-4 w-4" />, text: "حماية كاملة" },
-                  { icon: <PieChart className="h-4 w-4" />, text: "تقارير تفصيلية" }
+                  { icon: <Code className="h-4 w-4" />, text: "حلول مخصصة" },
+                  { icon: <Server className="h-4 w-4" />, text: "تكامل مع أنظمتك" },
+                  { icon: <Shield className="h-4 w-4" />, text: "أمان البيانات" },
+                  { icon: <Users className="h-4 w-4" />, text: "دعم مستمر" }
                 ].map((feature, idx) => (
                   <div key={idx} className="flex items-center gap-2 bg-white/30 backdrop-blur-sm rounded-full py-2 px-4 text-sm border border-white/40">
                     <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center">

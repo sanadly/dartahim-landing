@@ -1,5 +1,5 @@
 
-import { Info, Clock, Target, Briefcase, Heart, Shield, Users, TrendingUp, CheckCircle, Zap } from "lucide-react";
+import { Info, Clock, Target, Briefcase, Heart, Shield, Users, TrendingUp, CheckCircle, Zap, Award, GraduationCap, Building, Lightbulb } from "lucide-react";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { useState, useEffect } from "react";
@@ -9,29 +9,14 @@ const WhoAreWe = () => {
   const [isVisible, setIsVisible] = useState<{[key: string]: boolean}>({
     story: false,
     values: false,
-    stats: false,
+    expertise: false,
     services: false,
     cta: false
   });
   
-  // Stats counter animation
-  const [stats, setStats] = useState({
-    clients: 0,
-    transactions: 0,
-    growth: 0,
-    partners: 0
-  });
-  
-  const targetStats = {
-    clients: 5000,
-    transactions: 120000,
-    growth: 85,
-    partners: 50
-  };
-  
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['story', 'values', 'stats', 'services', 'cta'];
+      const sections = ['story', 'values', 'expertise', 'services', 'cta'];
       
       sections.forEach(section => {
         const element = document.getElementById(section);
@@ -50,34 +35,6 @@ const WhoAreWe = () => {
     
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  
-  // Stats counter animation
-  useEffect(() => {
-    if (isVisible.stats) {
-      const duration = 2000; // ms
-      const steps = 50;
-      const stepTime = duration / steps;
-      
-      let currentStep = 0;
-      
-      const interval = setInterval(() => {
-        if (currentStep < steps) {
-          setStats({
-            clients: Math.floor((targetStats.clients / steps) * currentStep),
-            transactions: Math.floor((targetStats.transactions / steps) * currentStep),
-            growth: Math.floor((targetStats.growth / steps) * currentStep),
-            partners: Math.floor((targetStats.partners / steps) * currentStep),
-          });
-          currentStep++;
-        } else {
-          setStats(targetStats);
-          clearInterval(interval);
-        }
-      }, stepTime);
-      
-      return () => clearInterval(interval);
-    }
-  }, [isVisible.stats]);
 
   const companyValues = [
     {
@@ -99,6 +56,29 @@ const WhoAreWe = () => {
       icon: <Briefcase className="h-8 w-8" />,
       title: "الشفافية",
       description: "نؤمن بأهمية الشفافية في جميع تعاملاتنا مع العملاء والشركاء والموظفين."
+    }
+  ];
+
+  const expertiseAreas = [
+    {
+      icon: <Award className="h-6 w-6" />,
+      title: "خبرة عملية",
+      description: "فريق عمل متخصص يملك خبرة عملية في مجال الخدمات المالية الرقمية تمتد لأكثر من 10 سنوات."
+    },
+    {
+      icon: <GraduationCap className="h-6 w-6" />,
+      title: "خلفية أكاديمية",
+      description: "نضم متخصصين حاصلين على شهادات أكاديمية عليا في مجالات الهندسة المالية وتكنولوجيا المعلومات."
+    },
+    {
+      icon: <Building className="h-6 w-6" />,
+      title: "شراكات دولية",
+      description: "نتعاون مع مؤسسات ومنظمات عالمية لتطبيق أفضل الممارسات في القطاع المالي."
+    },
+    {
+      icon: <Lightbulb className="h-6 w-6" />,
+      title: "البحث والتطوير",
+      description: "نستثمر بشكل مستمر في البحث والتطوير لابتكار حلول مالية تناسب احتياجات السوق الليبي."
     }
   ];
 
@@ -139,7 +119,7 @@ const WhoAreWe = () => {
             </p>
           </div>
           
-          {/* Our Story Section */}
+          {/* Our Story Section - Enhanced with more details */}
           <div id="story" className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-20 items-center">
             <div className={cn(
               "transition-all duration-700",
@@ -147,13 +127,13 @@ const WhoAreWe = () => {
             )}>
               <h2 className="text-3xl font-bold mb-6">قصتنا</h2>
               <p className="text-text/80 mb-4 leading-relaxed">
-                بدأت رحلة دراهم من رؤية لتحويل طريقة تعامل الناس في ليبيا مع المال. لاحظنا التحديات التي يواجهها الناس في إجراء المعاملات المالية، والاعتماد الكبير على النقد، ومحدودية الوصول إلى الخدمات المالية الرقمية.
+                تأسست شركة دراهم بواسطة مجموعة من الخبراء في مجال التكنولوجيا المالية والأنظمة الرقمية، بهدف تقديم حلول مالية مبتكرة للشركات والمؤسسات في ليبيا. انطلقت رؤيتنا من إدراكنا للتحديات التي تواجه قطاع الأعمال في إدارة أنظمة الولاء والمكافآت للعملاء.
               </p>
               <p className="text-text/80 mb-4 leading-relaxed">
-                تأسست دراهم في عام 2020 بهدف إنشاء نظام مالي رقمي سهل الاستخدام، آمن، وموثوق به للمستخدمين والشركات في ليبيا. منذ ذلك الوقت، نمت دراهم لتصبح منصة متكاملة توفر مجموعة متنوعة من الخدمات المالية، بما في ذلك المدفوعات الإلكترونية، بطاقات الولاء، وحلول الكاشباك.
+                بدأت رحلتنا في عام 2020 بتطوير منصات متخصصة في أنظمة الولاء الرقمية، ومع مرور الوقت توسعت خدماتنا لتشمل حلول الكاشباك المتطورة ومنصات التسويق المتكاملة. نفخر اليوم بتقديم حلول تقنية متكاملة مصممة خصيصًا لتلبية احتياجات السوق الليبي، مع مراعاة الخصوصية الثقافية والتحديات المحلية.
               </p>
               <p className="text-text/80 leading-relaxed">
-                اليوم، نفخر بخدمة آلاف العملاء والشركاء في جميع أنحاء ليبيا، ونواصل الابتكار وتطوير حلول مالية تلبي احتياجات السوق المتغيرة.
+                تعمل دراهم اليوم مع العديد من الشركات والمؤسسات في مختلف القطاعات، بدءًا من التجزئة والمطاعم وصولًا إلى الخدمات المالية والتعليمية. نهجنا الاستشاري المتخصص يمكننا من تقديم حلول مخصصة تناسب احتياجات كل عميل، مع ضمان أعلى معايير الجودة والأمان.
               </p>
             </div>
             <div className={cn(
@@ -169,93 +149,6 @@ const WhoAreWe = () => {
             </div>
           </div>
           
-          {/* Stats Section - New Component */}
-          <div id="stats" className="mb-20">
-            <div className={cn(
-              "bg-gradient-to-r from-primary/5 to-accent/5 rounded-2xl p-10 transition-all duration-700",
-              isVisible.stats ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
-            )}>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-                <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{stats.clients}+</div>
-                  <p className="text-text/70">عميل</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{stats.transactions}+</div>
-                  <p className="text-text/70">معاملة</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{stats.growth}%</div>
-                  <p className="text-text/70">نسبة النمو</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{stats.partners}+</div>
-                  <p className="text-text/70">شريك تجاري</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          {/* Dashboard Component - New Visual Element */}
-          <div className="mb-20">
-            <div className="bg-white rounded-xl shadow-lg border border-primary/10 overflow-hidden">
-              <div className="bg-primary p-4 text-white">
-                <h3 className="font-bold text-lg">لوحة تحكم منتجات دراهم</h3>
-              </div>
-              <div className="p-6">
-                <div className="grid grid-cols-3 gap-4 mb-6">
-                  <div className="bg-primary/5 p-4 rounded-lg text-center">
-                    <div className="text-2xl font-bold text-primary">بطاقات الولاء</div>
-                    <div className="text-sm text-text/70">زيادة الولاء بنسبة 45%</div>
-                  </div>
-                  <div className="bg-secondary/5 p-4 rounded-lg text-center">
-                    <div className="text-2xl font-bold text-primary">حلول الكاشباك</div>
-                    <div className="text-sm text-text/70">زيادة المبيعات بنسبة 32%</div>
-                  </div>
-                  <div className="bg-accent/5 p-4 rounded-lg text-center">
-                    <div className="text-2xl font-bold text-primary">منصات التسويق</div>
-                    <div className="text-sm text-text/70">معدل تحويل أعلى بنسبة 28%</div>
-                  </div>
-                </div>
-                
-                <div className="bg-gray-50 p-4 rounded-lg mb-4">
-                  <h4 className="font-bold mb-3">مؤشرات أداء منتجاتنا</h4>
-                  <div className="space-y-3">
-                    <div>
-                      <div className="flex justify-between mb-1">
-                        <span className="text-sm">بطاقات الولاء</span>
-                        <span className="text-sm font-medium">85%</span>
-                      </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2">
-                        <div className="bg-primary h-2 rounded-full" style={{width: "85%"}}></div>
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <div className="flex justify-between mb-1">
-                        <span className="text-sm">حلول الكاشباك</span>
-                        <span className="text-sm font-medium">75%</span>
-                      </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2">
-                        <div className="bg-secondary h-2 rounded-full" style={{width: "75%"}}></div>
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <div className="flex justify-between mb-1">
-                        <span className="text-sm">منصات التسويق</span>
-                        <span className="text-sm font-medium">90%</span>
-                      </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2">
-                        <div className="bg-accent h-2 rounded-full" style={{width: "90%"}}></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
           {/* Our Vision and Mission */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
             <div className={cn(
@@ -267,7 +160,7 @@ const WhoAreWe = () => {
                 <span>رؤيتنا</span>
               </h3>
               <p className="text-text/80 leading-relaxed">
-                نطمح أن تكون دراهم المنصة المالية الرقمية الرائدة في ليبيا، ممكنة الأفراد والشركات من إجراء المعاملات المالية بسهولة وأمان، والمساهمة في تطوير اقتصاد رقمي شامل ومستدام.
+                نطمح أن تكون دراهم الشريك الاستراتيجي الأول للشركات والمؤسسات في ليبيا في مجال حلول الولاء الرقمية وأنظمة الكاشباك، من خلال تقديم خدمات متميزة ومبتكرة تساهم في تطوير بيئة الأعمال الرقمية في ليبيا، وتمكين الشركات من النمو وتحقيق أهدافها.
               </p>
             </div>
             <div className={cn(
@@ -279,7 +172,7 @@ const WhoAreWe = () => {
                 <span>مهمتنا</span>
               </h3>
               <p className="text-text/80 leading-relaxed">
-                مهمتنا هي توفير حلول مالية رقمية مبتكرة، آمنة، وسهلة الاستخدام للجميع في ليبيا، مع تمكين الشركات من النمو وتحسين تجربة العملاء، والمساهمة في التحول الرقمي للاقتصاد الليبي.
+                مهمتنا هي تمكين الشركات والمؤسسات من تطوير علاقات أقوى مع عملائها من خلال توفير حلول رقمية متكاملة لبرامج الولاء والكاشباك، مع تقديم الاستشارات المتخصصة التي تساعد على تحسين تجربة العملاء وزيادة الإيرادات، مستندين إلى خبرتنا الأكاديمية والعملية في هذا المجال.
               </p>
             </div>
           </div>
@@ -310,7 +203,40 @@ const WhoAreWe = () => {
             </div>
           </div>
           
-          {/* Our Services - New Section */}
+          {/* Our Expertise - New Section */}
+          <div id="expertise" className="mb-20">
+            <h2 className={cn(
+              "text-3xl font-bold mb-8 text-center transition-all duration-500",
+              isVisible.expertise ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            )}>خبرتنا ومؤهلاتنا</h2>
+            <p className={cn(
+              "text-text/70 max-w-3xl mx-auto text-center mb-10 transition-all duration-500 delay-100",
+              isVisible.expertise ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            )}>
+              نجمع بين الخبرة العملية والمؤهلات الأكاديمية لتقديم أفضل الحلول التقنية والاستشارية في مجال التكنولوجيا المالية
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {expertiseAreas.map((area, index) => (
+                <div 
+                  key={index} 
+                  className={cn(
+                    "feature-card p-8 hover:scale-[1.02] transition-all duration-500",
+                    isVisible.expertise ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
+                  )}
+                  style={{ transitionDelay: `${index * 150}ms` }}
+                >
+                  <div className="bg-accent/10 p-3 rounded-lg inline-flex mb-4">
+                    {area.icon}
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">{area.title}</h3>
+                  <p className="text-text/80 mb-4">{area.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          {/* Our Services */}
           <div id="services" className="mb-20">
             <h2 className={cn(
               "text-3xl font-bold mb-8 text-center transition-all duration-500",
@@ -320,7 +246,7 @@ const WhoAreWe = () => {
               "text-text/70 max-w-3xl mx-auto text-center mb-10 transition-all duration-500 delay-100",
               isVisible.services ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             )}>
-              نقدم مجموعة متكاملة من الحلول المالية الرقمية المصممة خصيصًا لتلبية احتياجات الشركات والأفراد في ليبيا
+              نقدم مجموعة متكاملة من الحلول الرقمية المخصصة للشركات والمؤسسات لتعزيز علاقاتها مع العملاء وزيادة إيراداتها
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -355,9 +281,9 @@ const WhoAreWe = () => {
             "bg-primary/5 rounded-2xl p-10 text-center mb-16 transition-all duration-700",
             isVisible.cta ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
           )}>
-            <h2 className="text-3xl font-bold mb-4">انضم إلى رحلتنا</h2>
+            <h2 className="text-3xl font-bold mb-4">تعاون معنا لتطوير أعمالك</h2>
             <p className="text-lg text-text/70 max-w-3xl mx-auto mb-8">
-              نحن ملتزمون بتطوير خدمات مالية رقمية تلبي احتياجات المستخدمين والشركات في ليبيا. تواصل معنا اليوم لمعرفة المزيد عن خدماتنا وكيف يمكننا مساعدتك.
+              نحن ملتزمون بتقديم حلول مبتكرة ومخصصة لكل عميل، تلبي احتياجاته الخاصة وتساعده على تحقيق أهدافه. تواصل معنا اليوم للحصول على استشارة مجانية حول كيفية تطوير علاقتك مع عملائك.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="#" className="button-primary hover:scale-105 transition-transform">أحجز موعد</a>
