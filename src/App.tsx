@@ -11,6 +11,7 @@ import NewsArticle1 from "./pages/NewsArticle1";
 import NewsArticle2 from "./pages/NewsArticle2";
 import NewsArticle3 from "./pages/NewsArticle3";
 import NewsArticle4 from "./pages/NewsArticle4";
+import NewsArticle5 from "./pages/NewsArticle5";
 import Team from "./pages/Team";
 import WhoAreWe from "./pages/WhoAreWe";
 import NotFound from "./pages/NotFound";
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/news/2" element={<NewsArticle2 />} />
           <Route path="/news/3" element={<NewsArticle3 />} />
           <Route path="/news/4" element={<NewsArticle4 />} />
+          <Route path="/news/5" element={<NewsArticle5 />} />
           <Route path="/our-team" element={<Team />} />
           <Route path="/who-are-we" element={<WhoAreWe />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

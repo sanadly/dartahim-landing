@@ -18,6 +18,14 @@ const ArticleContent: React.FC<ArticleContentProps> = ({
   content, 
   imageUrl 
 }) => {
+  // Function to parse HTML strings in content
+  const renderContent = (content: string) => {
+    if (content.startsWith('<')) {
+      return <div dangerouslySetInnerHTML={{ __html: content }} />;
+    }
+    return <p className="mb-6 text-text/80 leading-relaxed">{content}</p>;
+  };
+
   return (
     <article className="max-w-4xl mx-auto">
       <div className="mb-8">
@@ -42,23 +50,23 @@ const ArticleContent: React.FC<ArticleContentProps> = ({
       
       <div className="prose prose-lg max-w-none">
         {content.map((paragraph, index) => (
-          <p key={index} className="mb-6 text-text/80 leading-relaxed">
-            {paragraph}
-          </p>
+          <React.Fragment key={index}>
+            {renderContent(paragraph)}
+          </React.Fragment>
         ))}
       </div>
       
       <div className="mt-12 pt-8 border-t border-border">
         <h3 className="font-bold text-xl mb-4">مقالات ذات صلة</h3>
         <div className="flex overflow-x-auto gap-6 pb-4">
-          {[1, 2, 3, 4].filter(articleId => articleId !== id).slice(0, 3).map(articleId => (
+          {[1, 2, 3, 4, 5].filter(articleId => articleId !== id).slice(0, 3).map(articleId => (
             <Link to={`/news/${articleId}`} key={articleId} className="flex-shrink-0 w-72">
               <div className="feature-card group hover:shadow-md transition-all duration-300 h-full">
                 <div className="mb-4 overflow-hidden rounded-lg">
                   <img 
                     src={`/lovable-uploads/${
                       articleId === 1 || articleId === 4 ? 'd8c5b993-2a67-47ca-9ad1-222ee8ff41e9.png' : 
-                      articleId === 2 ? '9b14e838-2969-48fd-be92-aa3e678c56d3.png' : 
+                      articleId === 2 || articleId === 5 ? '9b14e838-2969-48fd-be92-aa3e678c56d3.png' : 
                       '69b73410-b7da-4aa0-9a35-00ac7c62e874.png'
                     }`} 
                     alt="مقال ذو صلة" 
@@ -69,7 +77,8 @@ const ArticleContent: React.FC<ArticleContentProps> = ({
                   {articleId === 1 ? 'دراهم تطلق خدمة المدفوعات الرقمية' : 
                    articleId === 2 ? 'شراكة استراتيجية مع مصرف ليبيا المركزي' : 
                    articleId === 3 ? 'دراهم تفوز بجائزة أفضل شركة ناشئة' :
-                   'تطبيق ولاء العملاء: مفتاح النمو المستدام'}
+                   articleId === 4 ? 'تطبيق ولاء العملاء: مفتاح النمو المستدام' :
+                   'بناء شبكة ولاء العملاء الخاصة بك'}
                 </h4>
               </div>
             </Link>
