@@ -1,9 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { BarChart4, Target, Users, Mail, Smartphone, MessageSquare, BarChart2, Globe, Flag, ArrowUpRight, Zap, Check, Star, Award, TrendingUp, PieChart } from "lucide-react";
+import { BarChart4, Target, Users, Mail, Smartphone, MessageSquare, BarChart2, Globe, Flag, ArrowUpRight, Zap, Check, Star, Award, TrendingUp, PieChart, DatabaseIcon, Store, CreditCard } from "lucide-react";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { DatabaseIcon, Store, CreditCard } from "lucide-react";
 
 const MarketingPlatforms = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -409,7 +408,7 @@ const MarketingPlatforms = () => {
               <div className="md:w-3/5">
                 <h2 className="text-3xl font-bold mb-4">ارفع مستوى تسويقك مع منصات دراهم</h2>
                 <p className="text-lg text-text/70 mb-6">
-                  حلول متكاملة تجمع بين تحليلات البيانات المتقدمة والذكاء الاصطناعي لتحويل تجربة عملائك وزيادة عائد استثمارك التسويقي.
+                  حلول متكاملة تجمع بين تحليلات البيانات المتقدمة والذكاء الاصطناعي لتحويل تجربة عملائك وزيادة عائد استثمارك التس��يقي.
                 </p>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
