@@ -150,7 +150,7 @@ const Contact = () => {
               </div>
               <div>
                 <h4 className="font-bold mb-1">اتصل بنا</h4>
-                <p className="text-text/70 dir-rtl">+218 94-6753753</p>
+                <p className="text-text/70 dir-rtl">094-6753753</p>
               </div>
             </div>
             
