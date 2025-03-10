@@ -9,6 +9,7 @@ import CashbackUseCases from "@/components/cashback/CashbackUseCases";
 import CashbackCTA from "@/components/cashback/CashbackCTA";
 import CashbackStatistics from "@/components/cashback/CashbackStatistics";
 import CaseStudyShowcase from "@/components/cashback/CaseStudyShowcase";
+import ImplementationTabs from "@/components/cashback/ImplementationTabs";
 
 const CashbackSolutions = () => {
   return (
@@ -28,8 +29,10 @@ const CashbackSolutions = () => {
           {/* Add Statistics Section - New Component */}
           <CashbackStatistics />
           
-          {/* Business Implementation Process - B2B Focused Component */}
-          <BusinessSolution />
+          {/* Implementation Process - Improved Component */}
+          <div className="my-16">
+            <ImplementationTabs />
+          </div>
           
           {/* Case Study - New Real World Example Component */}
           <CaseStudyShowcase />
@@ -39,12 +42,6 @@ const CashbackSolutions = () => {
           
           {/* Loyalty Image Section */}
           <LoyaltyImageSection />
-          
-          {/* Features Section */}
-          <CashbackFeatures />
-          
-          {/* Use Cases with icons */}
-          <CashbackUseCases />
           
           {/* CTA Section */}
           <CashbackCTA />
