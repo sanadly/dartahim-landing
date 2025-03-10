@@ -8,7 +8,7 @@ const NewsArticle4 = () => {
     id: 4,
     title: "تطبيق ولاء العملاء: مفتاح النمو المستدام في سوق التجزئة الليبي",
     date: "٢٠ يوليو ٢٠٢٣",
-    imageUrl: "/lovable-uploads/f7341154-6b0b-4d67-837b-075f65bcade6.png",
+    imageUrl: "/lovable-uploads/growth.jpg",
     content: [
       "يشهد قطاع التجزئة في ليبيا تطورًا متسارعًا، حيث يتزايد وعي المستهلكين وتتنوع خياراتهم. لم يعد العملاء يكتفون بالأسعار التنافسية وتوفر المنتجات، بل أصبحوا يبحثون عن تجربة تسوق متكاملة ومجزية، وعن علاقة حقيقية مع العلامات التجارية التي يختارونها. في هذا السياق، يبرز تطبيق ولاء العملاء المخصص كأداة استراتيجية لا غنى عنها لتحقيق النمو المستدام والربحية على المدى الطويل.",
       
@@ -23,12 +23,7 @@ const NewsArticle4 = () => {
       
       "<li><strong>توقعات العملاء المتزايدة:</strong> يتوقع العملاء اليوم تجارب تسوق شخصية ومريحة وسلسة، تجمع بين العالمين المادي والرقمي. يريدون أن يشعروا بالتقدير والاهتمام، وأن يحصلوا على قيمة حقيقية مقابل ولائهم.</li>",
       "</ul>",
-      
-      "<div className='my-10 rounded-lg overflow-hidden shadow-md'>",
-      "<img src='/lovable-uploads/60805f98-983a-4681-b35e-a9f1b913f092.png' alt='صورة توضيحية لتطبيق الولاء' className='w-full object-cover' />",
-      "<p className='text-center text-sm text-text/60 mt-2'>تطبيق ولاء العملاء يساعد الشركات على تتبع وتحليل سلوك المستهلكين</p>",
-      "</div>",
-      
+            
       "<h2 className='text-2xl font-bold mt-12 mb-6'>بيانات العملاء: نفط العصر الرقمي</h2>",
       
       "في هذا العصر، البيانات هي النفط الجديد. تطبيق الولاء المخصص ليس مجرد وسيلة لتجميع النقاط، بل هو منجم ذهب للمعلومات القيمة. إنه يمكّنكم من:",
@@ -56,7 +51,7 @@ const NewsArticle4 = () => {
       "</ul>",
       
       "<div className='my-10 rounded-lg overflow-hidden shadow-md'>",
-      "<img src='/lovable-uploads/48beae6f-27e4-4e5d-b218-3c1239d4b982.png' alt='بطاقات الولاء' className='w-full object-cover' />",
+      "<img src='/lovable-uploads/card.png' alt='بطاقات الولاء' className='w-full object-cover' />",
       "<p className='text-center text-sm text-text/60 mt-2'>بطاقات ولاء العملاء الإلكترونية تحل محل البطاقات التقليدية</p>",
       "</div>",
       

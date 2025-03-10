@@ -65,7 +65,7 @@ const Team = () => {
                   {founder.bio}
                 </p>
                 
-                <div className="flex justify-center gap-4">
+                {/* <div className="flex justify-center gap-4">
                   <a href={`mailto:${founder.socialLinks.email}`} className="p-2 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors">
                     <Mail size={20} />
                   </a>
@@ -78,7 +78,7 @@ const Team = () => {
                   <a href={founder.socialLinks.github} className="p-2 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors">
                     <Github size={20} />
                   </a>
-                </div>
+                </div> */}
               </div>
             ))}
           </div>
