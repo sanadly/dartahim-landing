@@ -1,6 +1,7 @@
 
-import { Check } from 'lucide-react';
+import { Check, Code, Laptop, Smartphone } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import BookingButton from './BookingButton';
 
 const Features = () => {
   const featuresList = [
@@ -39,6 +40,24 @@ const Features = () => {
     }
   ];
 
+  const customSolutions = [
+    {
+      icon: <Code className="h-5 w-5 text-primary" />,
+      title: "تطوير مخصص",
+      description: "نطور برمجيات وحلول مخصصة تلبي احتياجات عملك الفريدة"
+    },
+    {
+      icon: <Laptop className="h-5 w-5 text-primary" />,
+      title: "تطبيقات ويب",
+      description: "تطبيقات ويب متقدمة وسريعة وآمنة تعزز تواجدك الرقمي"
+    },
+    {
+      icon: <Smartphone className="h-5 w-5 text-primary" />,
+      title: "تطبيقات موبايل",
+      description: "تطبيقات هاتف متطورة لنظامي Android و iOS لتعزيز تواصلك مع العملاء"
+    }
+  ];
+
   return (
     <section id="features" className="section-padding px-6 relative">
       {/* Background decorative element */}
@@ -59,7 +78,7 @@ const Features = () => {
         </div>
         
         {/* Features Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
           {featuresList.map((feature) => (
             <div 
               key={feature.id}
@@ -87,6 +106,32 @@ const Features = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Custom Solutions Section */}
+        <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 shadow-lg mb-12">
+          <h3 className="text-xl md:text-2xl font-bold mb-4 text-center">حلول مخصصة لعملك</h3>
+          <p className="text-text/80 text-center mb-6">
+            نصمم ونطور حلول وتطبيقات مخصصة تناسب طبيعة عملك واحتياجاتك الفريدة
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {customSolutions.map((solution, index) => (
+              <div key={index} className="bg-white/30 rounded-xl p-5 hover:shadow-md transition-all">
+                <div className="bg-primary/20 p-3 rounded-full w-fit mb-3">
+                  {solution.icon}
+                </div>
+                <h4 className="font-bold mb-2">{solution.title}</h4>
+                <p className="text-sm text-text/70">
+                  {solution.description}
+                </p>
+              </div>
+            ))}
+          </div>
+          
+          <div className="flex justify-center mt-6">
+            <BookingButton className="text-sm py-2" />
+          </div>
         </div>
       </div>
     </section>

@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { CreditCard, Gift, BarChart4, ChevronRight, ArrowLeft, Code, Laptop, Smartphone } from 'lucide-react';
@@ -213,56 +214,6 @@ const Hero = () => {
                   </div>
                 </a>)}
             </div>
-          </div>
-        </motion.div>
-      </div>
-
-      <div className="w-full my-12 lg:my-16">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.7 }}
-          className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 shadow-lg"
-        >
-          <h3 className="text-xl md:text-2xl font-bold mb-4 text-center">حلول مخصصة لعملك</h3>
-          <p className="text-text/80 text-center mb-6">
-            نصمم ونطور حلول وتطبيقات مخصصة تناسب طبيعة عملك واحتياجاتك الفريدة
-          </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-white/30 rounded-xl p-5 hover:shadow-md transition-all">
-              <div className="bg-primary/20 p-3 rounded-full w-fit mb-3">
-                <Code className="h-5 w-5 text-primary" />
-              </div>
-              <h4 className="font-bold mb-2">تطوير مخصص</h4>
-              <p className="text-sm text-text/70">
-                نطور برمجيات وحلول مخصصة تلبي احتياجات عملك الفريدة
-              </p>
-            </div>
-            
-            <div className="bg-white/30 rounded-xl p-5 hover:shadow-md transition-all">
-              <div className="bg-secondary/20 p-3 rounded-full w-fit mb-3">
-                <Laptop className="h-5 w-5 text-primary" />
-              </div>
-              <h4 className="font-bold mb-2">تطبيقات ويب</h4>
-              <p className="text-sm text-text/70">
-                تطبيقات ويب متقدمة وسريعة وآمنة تعزز تواجدك الرقمي
-              </p>
-            </div>
-            
-            <div className="bg-white/30 rounded-xl p-5 hover:shadow-md transition-all">
-              <div className="bg-accent/20 p-3 rounded-full w-fit mb-3">
-                <Smartphone className="h-5 w-5 text-primary" />
-              </div>
-              <h4 className="font-bold mb-2">تطبيقات موبايل</h4>
-              <p className="text-sm text-text/70">
-                تطبيقات هاتف متطورة لنظامي Android و iOS لتعزيز تواصلك مع العملاء
-              </p>
-            </div>
-          </div>
-          
-          <div className="flex justify-center mt-6">
-            <BookingButton className="text-sm py-2" text="احجز استشارة مجانية" />
           </div>
         </motion.div>
       </div>
