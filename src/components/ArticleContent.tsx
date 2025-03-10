@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { CalendarIcon, ArrowRight, ImageIcon } from "lucide-react";
 import { Link } from 'react-router-dom';
@@ -9,7 +8,7 @@ interface ArticleContentProps {
   date: string;
   content: string[];
   imageUrl: string;
-  coverImage?: string; // Added an optional separate coverImage property
+  coverImage?: string;
 }
 
 const ArticleContent: React.FC<ArticleContentProps> = ({
@@ -18,19 +17,18 @@ const ArticleContent: React.FC<ArticleContentProps> = ({
   date,
   content,
   imageUrl,
-  coverImage // Using the new coverImage property
+  coverImage
 }) => {
-  // Function to parse HTML strings in content and add placeholder images for demonstration
   const renderContent = (content: string, index: number) => {
-    // Add placeholder images after every 3rd paragraph that isn't HTML
-    const shouldAddPlaceholder = index > 0 && index % 3 === 0 && !content.startsWith('<');
-    return <React.Fragment key={index}>
-        {content.startsWith('<') ? <div dangerouslySetInnerHTML={{
-        __html: content
-      }} className="my-8" /> : <p className="mb-8 text-text/80 leading-relaxed">{content}</p>}
-        
-        {shouldAddPlaceholder}
-      </React.Fragment>;
+    return (
+      <React.Fragment key={index}>
+        {content.startsWith('<') ? (
+          <div dangerouslySetInnerHTML={{ __html: content }} className="my-8" />
+        ) : (
+          <p className="mb-8 text-text/80 leading-relaxed">{content}</p>
+        )}
+      </React.Fragment>
+    );
   };
 
   // Get all article IDs to use for "related articles"
@@ -64,7 +62,7 @@ const ArticleContent: React.FC<ArticleContentProps> = ({
       case 6:
         return '/lovable-uploads/notification.jpg';
       case 7:
-        return '/lovable-uploads/3c0b21a6-55f6-44aa-8575-2e27f8a8a8a4.png';
+        return '/lovable-uploads/8403013f-eafe-4e9c-be77-241e2d56d4fe.png';
       case 8:
         return '/lovable-uploads/düsseldorf.jpg';
       default:

@@ -1,10 +1,8 @@
-
 import { NewspaperIcon, CalendarIcon, ChevronRightIcon } from "lucide-react";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { Link } from "react-router-dom";
 
-// Define static article data
 const News = () => {
   const articles = [
     {
@@ -12,31 +10,31 @@ const News = () => {
       title: "📢 موعدنا في معرض EuroCIS في دوسلدورف! 🚀",
       summary: "أكبر معرض متخصص في تكنولوجيا تجارة التجزئة، حيث سنلتقي بكبرى الشركات العالمية، ونعقد شراكات مميزة، ونستكشف أحدث الابتكارات في المجال.",
       date: "١٢ فبراير ٢٠٢٤",
-      imageUrl: "/lovable-uploads/eurocis-1.png", // Static image for article content
-      coverImage: "/lovable-uploads/düsseldorf.jpg" // Static cover image for listing
+      imageUrl: "/lovable-uploads/eurocis-1.png",
+      coverImage: "/lovable-uploads/düsseldorf.jpg"
     },
     {
       id: 7,
       title: "🧮 هل أنت مستعد لإطلاق برنامج ولاء؟ دليل دراهم الشامل لتقدير التكلفة الحقيقية",
       summary: "لقد أدركت الآن قوة وأهمية برنامج الولاء لنمو عملك، وربما وضعت بالفعل خططك التسويقية. لكن السؤال الأهم: كيف تحدد التكلفة الحقيقية لإطلاق برنامج ولاء ناجح؟",
       date: "٥ أكتوبر ٢٠٢٣",
-      imageUrl: "/lovable-uploads/22c769d2-3966-4aad-93c4-1a1f07222872.png", // Inner article image
-      coverImage: "/lovable-uploads/3c0b21a6-55f6-44aa-8575-2e27f8a8a8a4.png" // Cover image for listing
+      imageUrl: "/lovable-uploads/8403013f-eafe-4e9c-be77-241e2d56d4fe.png",
+      coverImage: "/lovable-uploads/8403013f-eafe-4e9c-be77-241e2d56d4fe.png"
     },
     {
       id: 6,
       title: "💌 عميلك أقرب إليك الآن: اكتشف قوة الحملات التسويقية المخصصة في تطبيق دراهم",
       summary: "في عالم الأعمال اليوم، العلاقة مع العميل ليست مجرد معاملة بيع وشراء، بل هي شراكة حقيقية. اكتشف كيف تساعدك ميزة الحملات التسويقية المخصصة في تطبيق دراهم على تعزيز علاقتك مع عملائك.",
       date: "١٠ سبتمبر ٢٠٢٣",
-      imageUrl: "/lovable-uploads/02c3c264-3de6-4eaf-9f6f-3e695a9724e1.png", // Inner article image
-      coverImage: "/lovable-uploads/notification.jpg" // Cover image for listing
+      imageUrl: "/lovable-uploads/02c3c264-3de6-4eaf-9f6f-3e695a9724e1.png",
+      coverImage: "/lovable-uploads/notification.jpg"
     },
     {
       id: 5,
       title: "🔄 بناء شبكة ولاء العملاء الخاصة بك: رؤية دراهم للنمو المستقبلي",
       summary: "برامج الولاء ليست مجرد وسيلة لتحقيق مكاسب فورية. إنها استثمار استراتيجي لبناء ميزة تنافسية مستدامة ونمو طويل الأجل في سوق التجزئة الليبي المتطور.",
       date: "١٥ أغسطس ٢٠٢٣",
-      imageUrl: "/lovable-uploads/9b14e838-2969-48fd-be92-aa3e678c56d3.png", 
+      imageUrl: "/lovable-uploads/9b14e838-2969-48fd-be92-aa3e678c56d3.png",
       coverImage: "/lovable-uploads/23cf95d4-cc38-45ad-b52f-be19624de0d1.png"
     },
     {
