@@ -115,7 +115,7 @@ const Contact = () => {
                   <Phone className="h-5 w-5 text-primary mt-1" />
                   <div>
                     <h4 className="font-bold">رقم الهاتف</h4>
-                    <p className="text-text/70">+218 91-XXX-XXXX</p>
+                    <p className="text-text/70">+218 94‑6753753</p>
                   </div>
                 </div>
                 
