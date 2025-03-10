@@ -25,7 +25,7 @@ const Hero = () => {
           <a href="#why-us" className="button-outline">لماذا دراهم؟</a>
         </div>
 
-        {/* Trust Indicators */}
+        {/* Trust Indicators with emojis */}
         <div className="mt-12 flex flex-wrap gap-8 items-center">
           <div className="flex items-center gap-2">
             <div className="bg-secondary/30 backdrop-blur-sm w-12 h-12 rounded-full flex items-center justify-center">

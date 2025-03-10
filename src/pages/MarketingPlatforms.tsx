@@ -1,7 +1,7 @@
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { BarChart4, Target, Users, Mail, Smartphone, MessageSquare, BarChart2, Globe, Flag } from "lucide-react";
+import { BarChart4, Target, Users, Mail, Smartphone, MessageSquare, BarChart2, Globe, Flag, ArrowUpRight, Zap, Check } from "lucide-react";
 
 const MarketingPlatforms = () => {
   const benefits = [
@@ -69,7 +69,7 @@ const MarketingPlatforms = () => {
             </p>
           </div>
           
-          {/* Main Content */}
+          {/* Main Content - replaced image with custom component */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-20 items-center">
             <div>
               <h2 className="text-3xl font-bold mb-6">استراتيجيات تسويقية مبنية على البيانات</h2>
@@ -84,12 +84,120 @@ const MarketingPlatforms = () => {
               </p>
             </div>
             <div className="relative">
-              <div className="absolute -z-10 top-0 right-0 w-72 h-72 bg-primary/10 rounded-full blur-2xl"></div>
-              <img 
-                src="/lovable-uploads/d8c5b993-2a67-47ca-9ad1-222ee8ff41e9.png" 
-                alt="منصات التسويق" 
-                className="w-full h-auto rounded-2xl shadow-lg"
-              />
+              {/* Marketing Platforms Dashboard Component */}
+              <div className="bg-white rounded-xl shadow-xl border border-primary/10 overflow-hidden">
+                {/* Dashboard Header */}
+                <div className="bg-primary p-4 text-white">
+                  <div className="flex justify-between items-center">
+                    <div className="flex items-center gap-2">
+                      <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
+                        <span className="text-white font-bold text-sm">د</span>
+                      </div>
+                      <h3 className="font-bold">منصة دراهم للتسويق</h3>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="p-1 rounded-md hover:bg-white/10 cursor-pointer">
+                        <Zap className="h-5 w-5" />
+                      </div>
+                      <div className="p-1 rounded-md hover:bg-white/10 cursor-pointer">
+                        <Users className="h-5 w-5" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Dashboard Content */}
+                <div className="p-4">
+                  {/* Statistics */}
+                  <div className="grid grid-cols-3 gap-4 mb-4">
+                    <div className="bg-primary/5 p-3 rounded-lg text-center">
+                      <div className="text-2xl font-bold text-primary">87%</div>
+                      <div className="text-xs text-text/70">معدل الفتح</div>
+                    </div>
+                    <div className="bg-primary/5 p-3 rounded-lg text-center">
+                      <div className="text-2xl font-bold text-primary">12k</div>
+                      <div className="text-xs text-text/70">مشتركين</div>
+                    </div>
+                    <div className="bg-primary/5 p-3 rounded-lg text-center">
+                      <div className="text-2xl font-bold text-primary">32%</div>
+                      <div className="text-xs text-text/70">معدل التحويل</div>
+                    </div>
+                  </div>
+                  
+                  {/* Recent Campaigns */}
+                  <div className="mb-4">
+                    <div className="flex justify-between items-center mb-2">
+                      <h4 className="font-bold text-sm">آخر الحملات</h4>
+                      <span className="text-primary text-xs cursor-pointer">عرض الكل</span>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="bg-secondary/10 p-3 rounded-lg flex justify-between items-center">
+                        <div>
+                          <div className="font-medium text-sm">حملة العيد</div>
+                          <div className="text-xs text-text/70">إرسال: 12,500 | فتح: 10,875</div>
+                        </div>
+                        <div className="text-green-600 flex items-center text-sm">
+                          <span>87%</span>
+                          <ArrowUpRight className="h-3 w-3 ml-1" />
+                        </div>
+                      </div>
+                      <div className="bg-secondary/10 p-3 rounded-lg flex justify-between items-center">
+                        <div>
+                          <div className="font-medium text-sm">عروض الصيف</div>
+                          <div className="text-xs text-text/70">إرسال: 8,200 | فتح: 6,560</div>
+                        </div>
+                        <div className="text-green-600 flex items-center text-sm">
+                          <span>80%</span>
+                          <ArrowUpRight className="h-3 w-3 ml-1" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Audience Overview */}
+                  <div>
+                    <div className="flex justify-between items-center mb-2">
+                      <h4 className="font-bold text-sm">نظرة على الجمهور</h4>
+                      <span className="text-primary text-xs cursor-pointer">تحليل مفصل</span>
+                    </div>
+                    <div className="bg-secondary/10 p-3 rounded-lg">
+                      <div className="flex justify-between mb-2">
+                        <span className="text-xs text-text/70">الفئة العمرية</span>
+                        <span className="text-xs text-text/70">النسبة</span>
+                      </div>
+                      <div className="space-y-2">
+                        <div className="flex justify-between items-center">
+                          <span className="text-sm">18-24</span>
+                          <div className="flex items-center gap-2">
+                            <div className="w-32 h-2 bg-gray-200 rounded-full overflow-hidden">
+                              <div className="bg-primary h-full rounded-full" style={{ width: '25%' }}></div>
+                            </div>
+                            <span className="text-sm">25%</span>
+                          </div>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span className="text-sm">25-34</span>
+                          <div className="flex items-center gap-2">
+                            <div className="w-32 h-2 bg-gray-200 rounded-full overflow-hidden">
+                              <div className="bg-primary h-full rounded-full" style={{ width: '45%' }}></div>
+                            </div>
+                            <span className="text-sm">45%</span>
+                          </div>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span className="text-sm">35-44</span>
+                          <div className="flex items-center gap-2">
+                            <div className="w-32 h-2 bg-gray-200 rounded-full overflow-hidden">
+                              <div className="bg-primary h-full rounded-full" style={{ width: '20%' }}></div>
+                            </div>
+                            <span className="text-sm">20%</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           
@@ -106,6 +214,40 @@ const MarketingPlatforms = () => {
                   <p className="text-text/80">{benefit.description}</p>
                 </div>
               ))}
+            </div>
+          </div>
+          
+          {/* Added image section for engagement */}
+          <div className="mb-20 bg-primary/5 rounded-2xl overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div className="p-10">
+                <h2 className="text-3xl font-bold mb-4">حلول تسويقية متكاملة</h2>
+                <p className="text-text/80 mb-6">
+                  توفر منصات التسويق من دراهم تجربة متكاملة تغطي جميع جوانب استراتيجيتك التسويقية، من جمع البيانات وتحليلها إلى إنشاء الحملات وقياس النتائج.
+                </p>
+                <ul className="space-y-3">
+                  {[
+                    "استهداف الجمهور بدقة عالية بناءً على السلوك والاهتمامات",
+                    "أتمتة الحملات التسويقية لتوفير الوقت والجهد",
+                    "تحسين العائد على الاستثمار من خلال تحليلات متقدمة",
+                    "توحيد جميع قنوات التسويق في منصة واحدة"
+                  ].map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                      <div className="mt-1 bg-white rounded-full p-1">
+                        <Check className="h-4 w-4 text-primary" />
+                      </div>
+                      <span className="text-text/80">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="md:h-full">
+                <img 
+                  src="/lovable-uploads/69b73410-b7da-4aa0-9a35-00ac7c62e874.png" 
+                  alt="منصات التسويق" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
           </div>
           
@@ -154,24 +296,7 @@ const MarketingPlatforms = () => {
             </div>
           </div>
           
-          {/* Case Studies */}
-          <div className="mb-20">
-            <h2 className="text-3xl font-bold mb-8 text-center">قصص نجاح</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="feature-card p-8">
-                <h3 className="text-xl font-bold mb-2">سلسلة متاجر التجزئة</h3>
-                <p className="text-text/80 mb-4">
-                  حققت سلسلة متاجر محلية زيادة بنسبة 40% في مبيعاتها خلال 6 أشهر من استخدام منصات التسويق المتكاملة من دراهم، من خلال حملات مستهدفة وتحليل سلوك العملاء.
-                </p>
-              </div>
-              <div className="feature-card p-8">
-                <h3 className="text-xl font-bold mb-2">مطعم شهير</h3>
-                <p className="text-text/80 mb-4">
-                  تمكن مطعم محلي من زيادة عدد الزوار بنسبة 35% وزيادة معدل تكرار الزيارات من خلال استخدام منصة الرسائل النصية وبرنامج الولاء المدمج مع حلول دراهم.
-                </p>
-              </div>
-            </div>
-          </div>
+          {/* Section "قصص نجاح" has been removed as requested */}
           
           {/* CTA Section */}
           <div className="bg-primary/5 rounded-2xl p-10 text-center mb-16">

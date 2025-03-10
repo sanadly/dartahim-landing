@@ -1,189 +1,160 @@
 
-import { useState } from 'react';
-import { Mail, Phone, Send, Facebook, Instagram, Linkedin, Twitter, Youtube } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
+import { useState } from "react";
+import { Facebook, Instagram, Twitter, Linkedin, Youtube, Phone, Mail, MapPin } from 'lucide-react';
+import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
+  const { toast } = useToast();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
+    // Simulate API call
     setTimeout(() => {
-      setIsSubmitting(false);
       toast({
-        title: "تم إرسال الرسالة بنجاح",
-        description: "سنقوم بالرد عليك في أقرب وقت ممكن",
+        title: "تم استلام رسالتك",
+        description: "سنتواصل معك في أقرب وقت ممكن.",
       });
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        message: ''
-      });
+      
+      // Reset form
+      setName('');
+      setEmail('');
+      setMessage('');
+      setIsSubmitting(false);
     }, 1500);
   };
 
   return (
-    <section id="contact" className="section-padding px-6 relative bg-gradient-to-b from-background to-secondary/10">
-      <div className="container mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-16 max-w-3xl mx-auto">
-          <div className="inline-block px-4 py-1 rounded-full bg-primary/20 backdrop-blur-sm mb-4 animate-fade-up">
-            <span className="text-sm font-medium">اتصل بنا</span>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 animate-fade-up" style={{ animationDelay: '0.1s' }}>
-            نحن هنا <span className="text-gradient">لمساعدتك</span>
-          </h2>
-          <p className="text-text/80 animate-fade-up" style={{ animationDelay: '0.2s' }}>
-            تواصل معنا للحصول على المزيد من المعلومات حول خدماتنا وكيف يمكننا مساعدتك في تحقيق أهدافك
+    <section id="contact" className="py-16 px-6 relative overflow-hidden" dir="rtl">
+      <div className="absolute -top-20 -right-20 w-96 h-96 bg-primary/20 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-accent/20 rounded-full blur-3xl -z-10"></div>
+      
+      <div className="container mx-auto max-w-6xl">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">تواصل معنا</h2>
+          <p className="text-text/70 max-w-2xl mx-auto">
+            نحن هنا للإجابة على استفساراتك. يمكنك التواصل معنا من خلال النموذج أدناه أو عبر وسائل التواصل المختلفة.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">          
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           {/* Contact Form */}
-          <div>
-            <div className="bg-white/70 backdrop-blur-md rounded-2xl p-8 shadow-lg border border-white/30">
-              <h3 className="text-xl font-bold mb-6">أرسل لنا رسالة</h3>
+          <div className="feature-card p-8">
+            <h3 className="text-xl font-bold mb-6">أرسل لنا رسالة</h3>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <label htmlFor="name" className="block mb-2 text-sm font-medium">
+                  الاسم
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                  required
+                />
+              </div>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="name" className="block mb-2 text-sm font-medium">
-                      الاسم الكامل
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg bg-white/50 border border-secondary/30 focus:outline-none focus:ring-2 focus:ring-primary/50"
-                      placeholder="أدخل اسمك الكامل"
-                      required
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="email" className="block mb-2 text-sm font-medium">
-                      البريد الإلكتروني
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 text-right rounded-lg bg-white/50 border border-secondary/30 focus:outline-none focus:ring-2 focus:ring-primary/50"
-                      placeholder="أدخل بريدك الإلكتروني"
-                      required
-                    />
-                  </div>
-                </div>
-                
-                <div>
-                  <label htmlFor="phone" className=" mb-2 text-sm font-medium">
-                    رقم الهاتف
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg bg-white/50 border border-secondary/30 focus:outline-none focus:ring-2 focus:ring-primary/50"
-                    placeholder="أدخل رقم هاتفك"
-                    dir="rtl"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block mb-2 text-sm font-medium">
-                    الرسالة
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    rows={3}
-                    className="w-full px-4 py-3 rounded-lg bg-white/50 border border-secondary/30 focus:outline-none focus:ring-2 focus:ring-primary/50"
-                    placeholder="أدخل رسالتك هنا..."
-                    required
-                  ></textarea>
-                </div>
-                
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="button-primary w-full flex items-center justify-center gap-2"
-                >
-                  {isSubmitting ? 'جاري الإرسال...' : (
-                    <>
-                      <Send size={18} />
-                      <span>إرسال الرسالة</span>
-                    </>
-                  )}
-                </button>
-              </form>
-            </div>
+              <div>
+                <label htmlFor="email" className="block mb-2 text-sm font-medium">
+                  البريد الإلكتروني
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                  required
+                />
+              </div>
+              
+              <div>
+                <label htmlFor="message" className="block mb-2 text-sm font-medium">
+                  رسالتك
+                </label>
+                <textarea
+                  id="message"
+                  rows={4}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                  required
+                ></textarea>
+              </div>
+              
+              <button 
+                type="submit" 
+                className="button-primary w-full"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? 'جاري الإرسال...' : 'إرسال الرسالة'}
+              </button>
+            </form>
           </div>
-
+          
           {/* Contact Info */}
-          <div className="flex flex-col space-y-8 md:pr-8">
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <Phone size={20} className="text-primary" />
-              </div>
-              <div>
-                <h4 className="font-bold mb-1">اتصل بنا</h4>
-                <p className="text-text/70 dir-rtl">094-6753753</p>
-              </div>
-            </div>
-            
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <Mail size={20} className="text-primary" />
-              </div>
-              <div>
-                <h4 className="font-bold mb-1">البريد الإلكتروني</h4>
-                <p className="text-text/70">info@dartahim.ly</p>
+          <div className="space-y-8">
+            {/* Contact Details */}
+            <div className="feature-card p-8">
+              <h3 className="text-xl font-bold mb-6">معلومات الاتصال</h3>
+              <div className="space-y-4">
+                <div className="flex items-start gap-4">
+                  <Phone className="h-5 w-5 text-primary mt-1" />
+                  <div>
+                    <h4 className="font-bold">رقم الهاتف</h4>
+                    <p className="text-text/70">+218 91-XXX-XXXX</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <Mail className="h-5 w-5 text-primary mt-1" />
+                  <div>
+                    <h4 className="font-bold">البريد الإلكتروني</h4>
+                    <p className="text-text/70">info@darahim.ly</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <MapPin className="h-5 w-5 text-primary mt-1" />
+                  <div>
+                    <h4 className="font-bold">العنوان</h4>
+                    <p className="text-text/70">طرابلس، ليبيا</p>
+                  </div>
+                </div>
               </div>
             </div>
             
             {/* Social Media */}
-            <div className="mt-8">
-              <h4 className="font-bold mb-4">تابعنا على</h4>
-              <div className="flex gap-4">
-                <a href="https://www.facebook.com/darahim.ly" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
-                  <Facebook size={20} className="text-primary" />
+            <div className="feature-card p-8">
+              <h3 className="text-xl font-bold mb-6">تابعنا على وسائل التواصل</h3>
+              <div className="flex flex-wrap gap-4">
+                <a href="https://www.facebook.com/darahim.ly" className="bg-blue-500 text-white p-3 rounded-full hover:bg-blue-600 transition-colors">
+                  <Facebook size={20} />
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
-                  <Instagram size={20} className="text-primary" />
+                <a href="#" className="bg-indigo-500 text-white p-3 rounded-full hover:bg-indigo-600 transition-colors">
+                  <Twitter size={20} />
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
-                  <Twitter size={20} className="text-primary" />
+                <a href="#" className="bg-pink-500 text-white p-3 rounded-full hover:bg-pink-600 transition-colors">
+                  <Instagram size={20} />
                 </a>
-                <a href="https://www.linkedin.com/company/darahimly" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
-                  <Linkedin size={20} className="text-primary" />
+                <a href="https://www.linkedin.com/company/darahimly/" className="bg-blue-700 text-white p-3 rounded-full hover:bg-blue-800 transition-colors">
+                  <Linkedin size={20} />
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
-                  <Youtube size={20} className="text-primary" />
+                <a href="#" className="bg-red-500 text-white p-3 rounded-full hover:bg-red-600 transition-colors">
+                  <Youtube size={20} />
                 </a>
+              </div>
+              
+              {/* Added CTA button under social links */}
+              <div className="mt-6">
+                <a href="#" className="button-primary w-full text-center">أحجز موعد</a>
               </div>
             </div>
           </div>
