@@ -1,7 +1,29 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { BarChart, Percent, Coins, RefreshCw, Shield, Settings, ShoppingCart, Utensils, Store, Briefcase, ChevronRight, CreditCard, Tag, Gift, Clock, Check, ChevronLeft, PieChart, LineChart, User, BarChart3 } from "lucide-react";
+import { 
+  BarChart, 
+  Percent, 
+  Coins, 
+  RefreshCw, 
+  Shield, 
+  Settings, 
+  ShoppingCart, 
+  Utensils, 
+  Store, 
+  Briefcase, 
+  ChevronRight, 
+  CreditCard, 
+  Tag, 
+  Gift, 
+  Clock, 
+  Check, 
+  ChevronLeft, 
+  PieChart, 
+  LineChart, 
+  User, 
+  BarChart3,
+  ArrowRight
+} from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -76,7 +98,6 @@ const CashbackSolutions = () => {
     }
   ];
 
-  // Interactive Cashback App Showcase tabs
   const cashbackTabs = [
     {
       id: 0,
@@ -264,7 +285,7 @@ const CashbackSolutions = () => {
                 <ShoppingCart className="h-3 w-3 text-primary" />
               </div>
               <div>
-                <div className="font-medium">التسوق الإلكتروني</div>
+                <div className="font-medium">التسوق ا��إلكتروني</div>
                 <div className="text-[10px] text-text/60">كاشباك 6%</div>
               </div>
             </div>
