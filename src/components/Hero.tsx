@@ -1,17 +1,19 @@
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { CreditCard, Gift, BarChart4, ChevronRight, ArrowRight } from 'lucide-react';
+import { CreditCard, Gift, BarChart4, ChevronRight, ArrowLeft } from 'lucide-react';
 import { motion } from 'framer-motion';
+import BookingButton from './BookingButton';
+
 const Hero = () => {
   const [activeCard, setActiveCard] = useState(0);
 
-  // Auto-rotate the active card every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveCard(prev => (prev + 1) % 3);
     }, 2500);
     return () => clearInterval(interval);
   }, []);
+
   const services = [{
     id: 0,
     title: "بطاقات الولاء",
@@ -35,7 +37,6 @@ const Hero = () => {
     link: "/cashback-solutions"
   }];
 
-  // Animation variants
   const containerVariants = {
     hidden: {
       opacity: 0
@@ -62,8 +63,8 @@ const Hero = () => {
       }
     }
   };
+
   return <section className="min-h-screen mt-2 pt-20 md:pt-32 pb-16 px-4 md:px-6 hero-pattern flex items-center relative overflow-hidden">
-      {/* Background Elements */}
       <div className="absolute -top-20 -left-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse-light"></div>
       <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-primary/20 rounded-full blur-3xl animate-pulse-light" style={{
       animationDelay: '1s'
@@ -73,10 +74,9 @@ const Hero = () => {
     }}></div>
 
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-        {/* Hero Content */}
         <motion.div className="order-2 lg:order-1" initial="hidden" animate="visible" variants={containerVariants}>
           <motion.div variants={itemVariants} className="inline-block px-4 py-1 rounded-full bg-secondary/30 backdrop-blur-sm mb-4">
-            <span className="text-xs md:text-sm font-medium">المتخصصون في برامج الولاء و حلول التسويق الرقمية #1 في ليبيا</span>
+            <span className="text-xs md:text-sm font-medium">المتخصصون في برامج الولاء و ح��ول التسويق الرقمية #1 في ليبيا</span>
           </motion.div>
           
           <motion.h1 variants={itemVariants} className="text-3xl md:text-4xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
@@ -88,13 +88,10 @@ const Hero = () => {
           </motion.p>
           
           <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
-            <a href="#" className="button-primary flex items-center gap-2 text-sm md:text-base py-2 md:py-3">
-              أحجز موعد <ArrowRight className="h-4 w-4" />
-            </a>
+            <BookingButton className="text-sm md:text-base py-2 md:py-3" />
             <a href="#why-us" className="button-outline text-sm md:text-base py-2 md:py-3">لماذا دراهم؟</a>
           </motion.div>
           
-          {/* Trust Indicators with emojis */}
           <motion.div variants={itemVariants} className="flex flex-wrap gap-4 md:gap-8 items-center mt-8 md:mt-10">
             <div className="flex items-center gap-2">
               <div className="bg-secondary/30 backdrop-blur-sm w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center">
@@ -117,7 +114,6 @@ const Hero = () => {
           </motion.div>
         </motion.div>
         
-        {/* Interactive Card Showcase */}
         <motion.div initial={{
         opacity: 0,
         scale: 0.9
@@ -128,14 +124,11 @@ const Hero = () => {
         duration: 0.7,
         delay: 0.2
       }} className="order-2 lg:order-2 flex flex-col justify-center items-center">
-          {/* 3D Card Showcase */}
           <div className="relative perspective-1000 w-full max-w-md mb-8 md:mb-10">
-            {/* Featured product card - animated showcase */}
             <div className="w-full relative transform transition-all duration-500" style={{
             transform: `rotateY(${activeCard * 5}deg) rotateX(${activeCard * 2}deg)`,
             transformStyle: 'preserve-3d'
           }}>
-              {/* Main card */}
               <div className="w-[240px] md:w-[320px] lg:w-[380px] h-[160px] md:h-[200px] rounded-3xl glass-card bg-gradient-to-br from-white/50 to-white/10 flex flex-col p-4 md:p-6 shadow-xl border border-white/20 relative overflow-hidden z-10 hover:shadow-2xl transition-all duration-300 mx-auto">
                 <div className="flex justify-between items-center mb-auto">
                   <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
@@ -159,7 +152,6 @@ const Hero = () => {
                 </div>
               </div>
 
-              {/* Floating secondary products - hide some on very small screens */}
               <div className="absolute -top-6 -right-6 w-24 md:w-32 h-24 md:h-32 rounded-2xl bg-gradient-to-br from-secondary to-secondary/50 p-4 shadow-lg transform -rotate-12 -z-10 animate-float hidden sm:block" style={{
               animationDelay: '0.5s'
             }}>
@@ -194,7 +186,6 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* Features that appear based on active card */}
             <div className="mt-6 md:mt-8 bg-white/10 backdrop-blur-sm rounded-xl p-3 md:p-4 border border-white/20 shadow-lg">
               <div className="flex items-center gap-2 mb-1 md:mb-2">
                 <div className={`w-2 md:w-3 h-2 md:h-3 rounded-full bg-gradient-to-r ${services[activeCard].color}`}></div>
@@ -208,7 +199,6 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Services Showcase - Moved to under the card */}
           <div className="w-full mt-2">
             <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4 text-center">خدماتنا الرئيسية</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
@@ -228,4 +218,5 @@ const Hero = () => {
       </div>
     </section>;
 };
+
 export default Hero;

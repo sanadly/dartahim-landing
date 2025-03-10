@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import BookingButton from './BookingButton';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -55,7 +56,7 @@ const Navbar = () => {
           <Link to="/our-team" className="hover:text-primary transition-colors">فريقنا</Link>
           <Link to="/jobs" className="hover:text-primary transition-colors">الوظائف</Link>
           <a href="#contact" onClick={(e) => handleAnchorClick(e, '#contact')} className="hover:text-primary transition-colors">تواصل معنا</a>
-          <a href="#" className="button-primary">أحجز موعد</a>
+          <BookingButton />
         </div>
 
         {/* Mobile menu button */}
@@ -79,7 +80,7 @@ const Navbar = () => {
         <Link to="/our-team" className="hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>فريقنا</Link>
         <Link to="/jobs" className="hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>الوظائف</Link>
         <a href="#contact" onClick={(e) => { handleAnchorClick(e, '#contact'); setMobileMenuOpen(false); }} className="hover:text-primary transition-colors">تواصل معنا</a>
-        <a href="#" className="button-primary" onClick={() => setMobileMenuOpen(false)}>أحجز موعد</a>
+        <BookingButton />
       </div>
     </nav>
   );

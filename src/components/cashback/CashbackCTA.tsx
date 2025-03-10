@@ -1,6 +1,7 @@
 
-import { ArrowRight, ChevronLeft, Code, Server, Shield, Users } from "lucide-react";
+import { ChevronLeft, Code, Server, Shield, Users } from "lucide-react";
 import { motion } from "framer-motion";
+import BookingButton from "@/components/BookingButton";
 
 const CashbackCTA = () => {
   return (
@@ -21,9 +22,7 @@ const CashbackCTA = () => {
           تواصل معنا اليوم لمعرفة كيف يمكن لحلول الكاشباك المخصصة من دراهم أن تساعد في نمو أعمالك وزيادة ولاء عملائك.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="#" className="button-primary flex items-center justify-center gap-2">
-            أحجز موعد <ArrowRight className="h-4 w-4" />
-          </a>
+          <BookingButton />
           <a href="/#contact" className="button-outline flex items-center justify-center gap-2">
             تواصل معنا <ChevronLeft className="h-4 w-4" />
           </a>

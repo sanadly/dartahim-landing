@@ -2,6 +2,7 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import ArticleContent from "@/components/ArticleContent";
+import BookingButton from "@/components/BookingButton";
 
 const NewsArticle5 = () => {
   const articleData = {
