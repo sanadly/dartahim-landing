@@ -40,8 +40,9 @@ const Navbar = () => {
     }
   };
   
-  return <nav className={cn('fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 md:px-6 py-2 md:py-4', 
-                            scrolled ? 'glass-nav shadow-sm' : 'bg-transparent')}>
+  return (
+    <nav className={cn('fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 md:px-6 py-2 md:py-4', 
+      scrolled ? 'glass-nav shadow-sm' : 'bg-transparent')}>
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="text-2xl font-bold text-text flex items-center gap-2">
           <img alt="دراهم" src="/lovable-uploads/69b73410-b7da-4aa0-9a35-00ac7c62e874.png" className="h-16 md:h-20 object-fill" />
@@ -54,34 +55,34 @@ const Navbar = () => {
           <Link to="/our-team" className="hover:text-primary transition-colors">فريقنا</Link>
           <Link to="/jobs" className="hover:text-primary transition-colors">الوظائف</Link>
           <a href="#contact" onClick={(e) => handleAnchorClick(e, '#contact')} className="hover:text-primary transition-colors">تواصل معنا</a>
-
           <a href="#" className="button-primary">أحجز موعد</a>
         </div>
 
         {/* Mobile menu button */}
-        <button className="md:hidden text-text bg-white/50 backdrop-blur-sm p-2 rounded-full" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+        <button 
+          className="md:hidden text-text bg-white/50 backdrop-blur-sm p-2 rounded-full" 
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {/* Mobile menu */}
-      <div className={cn("fixed inset-0 bg-background/95 backdrop-blur-md flex flex-col items-center justify-center gap-6 text-lg transition-all duration-300 md:hidden z-50", 
-                         mobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none -z-10")}>
-        <a href="#contact" onClick={(e) => { handleAnchorClick(e, '#contact'); setMobileMenuOpen(false); }} className="hover:text-primary transition-colors">اتصل بنا</a>
+      <div className={cn(
+        "fixed inset-x-0 top-[72px] bg-background/95 backdrop-blur-md md:hidden",
+        "flex flex-col items-center justify-start pt-8 pb-12 gap-6 text-lg transition-all duration-300",
+        "border-b border-white/10",
+        mobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
+      )}>
         <Link to="/who-are-we" className="hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>من نحن</Link>
         <Link to="/news" className="hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>الأخبار</Link>
-        <Link to="/team" className="hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>فريقنا</Link>
+        <Link to="/our-team" className="hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>فريقنا</Link>
         <Link to="/jobs" className="hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>الوظائف</Link>
-        <a href="#" className="button-primary mt-4" onClick={() => setMobileMenuOpen(false)}>ابدأ الآن</a>
-        
-        {/* Close button inside mobile menu */}
-        <button 
-          className="absolute top-6 right-6 bg-white/20 backdrop-blur-sm p-2 rounded-full" 
-          onClick={() => setMobileMenuOpen(false)}
-        >
-          <X size={24} />
-        </button>
+        <a href="#contact" onClick={(e) => { handleAnchorClick(e, '#contact'); setMobileMenuOpen(false); }} className="hover:text-primary transition-colors">تواصل معنا</a>
+        <a href="#" className="button-primary" onClick={() => setMobileMenuOpen(false)}>أحجز موعد</a>
       </div>
-    </nav>;
+    </nav>
+  );
 };
+
 export default Navbar;
