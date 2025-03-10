@@ -30,7 +30,10 @@ const NewsArticle8 = () => {
       "</ul>",
       
       "<div className='my-8 rounded-lg overflow-hidden'>",
+      
       "<img src='/lovable-uploads/eurocis-2.png' alt='لقطة أخرى من معرض EuroCIS' className='w-full object-cover' />",
+
+
       "<p className='text-center text-sm text-text/60 mt-2'>جانب من المناقشات والعروض التقنية في المعرض</p>",
       "</div>",
       
