@@ -1,23 +1,26 @@
-
 import { cn } from '@/lib/utils';
-
 const Hero = () => {
-  return (
-    <section 
-      className="min-h-screen pt-32 pb-16 px-6 hero-pattern flex items-center relative overflow-hidden"
-    >
+  return <section className="min-h-screen pt-32 pb-16 px-6 hero-pattern flex items-center relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute -top-20 -left-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl"></div>
       <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-primary/20 rounded-full blur-3xl"></div>
       
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Hero Image - Now on the left for desktop */}
-        <div className="order-1 flex justify-center items-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
+        <div className="order-1 flex justify-center items-center animate-fade-in" style={{
+        animationDelay: '0.4s'
+      }}>
           <div className="relative">
             {/* Decorative elements */}
-            <div className="absolute top-10 -left-8 w-16 h-16 rounded-xl bg-secondary/70 backdrop-blur-sm animate-float" style={{ animationDelay: '0s' }}></div>
-            <div className="absolute -bottom-6 left-20 w-12 h-12 rounded-full bg-accent/70 backdrop-blur-sm animate-float" style={{ animationDelay: '0.3s' }}></div>
-            <div className="absolute top-20 -right-4 w-8 h-8 rounded-lg bg-primary/70 backdrop-blur-sm animate-float" style={{ animationDelay: '0.6s' }}></div>
+            <div className="absolute top-10 -left-8 w-16 h-16 rounded-xl bg-secondary/70 backdrop-blur-sm animate-float" style={{
+            animationDelay: '0s'
+          }}></div>
+            <div className="absolute -bottom-6 left-20 w-12 h-12 rounded-full bg-accent/70 backdrop-blur-sm animate-float" style={{
+            animationDelay: '0.3s'
+          }}></div>
+            <div className="absolute top-20 -right-4 w-8 h-8 rounded-lg bg-primary/70 backdrop-blur-sm animate-float" style={{
+            animationDelay: '0.6s'
+          }}></div>
             
             {/* Main card visualization */}
             <div className="w-[280px] md:w-[380px] h-[200px] rounded-3xl glass-card bg-gradient-to-br from-white/50 to-white/10 flex flex-col p-6 shadow-xl border border-white/20 relative overflow-hidden z-10">
@@ -34,11 +37,7 @@ const Hero = () => {
                   <span className="text-text/70">12/27</span>
                 </div>
                 <div className="mt-2 h-20 w-full rounded-lg bg-white/5 backdrop-blur-sm flex justify-center items-center p-1">
-                  <img 
-                    src="/lovable-uploads/c8e4e38d-4388-4d5b-8a0c-2dbb2b4261ae.png" 
-                    alt="DARAHIM CARD barcode" 
-                    className="h-full w-full object-contain"
-                  />
+                  <img alt="DARAHIM CARD barcode" className="h-full w-full object-contain" src="/lovable-uploads/9b14e838-2969-48fd-be92-aa3e678c56d3.png" />
                 </div>
                 <div className="mt-2 flex justify-between">
                   <span className="text-text/70">1234 5678 9012 3456</span>
@@ -68,7 +67,9 @@ const Hero = () => {
         </div>
         
         {/* Hero Content - Now on the right for desktop */}
-        <div className="order-2 animate-fade-up" style={{ animationDelay: '0.2s' }}>
+        <div className="order-2 animate-fade-up" style={{
+        animationDelay: '0.2s'
+      }}>
           <div className="inline-block px-4 py-1 rounded-full bg-secondary/30 backdrop-blur-sm mb-4">
             <span className="text-sm font-medium">المتخصصون في برامج الولاء و حلول التسويق الرقمية #1 في ليبيا            </span>
           </div>
@@ -106,8 +107,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
