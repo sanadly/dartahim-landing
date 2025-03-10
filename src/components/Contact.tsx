@@ -169,7 +169,7 @@ const Contact = () => {
             <div className="mt-8">
               <h4 className="font-bold mb-4">تابعنا على</h4>
               <div className="flex gap-4">
-                <a href="#" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
+                <a href="https://www.facebook.com/darahim.ly" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
                   <Facebook size={20} className="text-primary" />
                 </a>
                 <a href="#" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
@@ -178,7 +178,7 @@ const Contact = () => {
                 <a href="#" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
                   <Twitter size={20} className="text-primary" />
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
+                <a href="https://www.linkedin.com/company/darahimly" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
                   <Linkedin size={20} className="text-primary" />
                 </a>
                 <a href="#" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">

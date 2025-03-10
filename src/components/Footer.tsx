@@ -90,7 +90,7 @@ const Footer = () => {
           </div>
           
           <div className="flex gap-4">
-            <a href="#" className="text-text/70 hover:text-primary transition-colors">
+            <a href="https://www.facebook.com/darahim.ly" className="text-text/70 hover:text-primary transition-colors">
               <Facebook size={18} />
             </a>
             <a href="#" className="text-text/70 hover:text-primary transition-colors">
@@ -99,7 +99,7 @@ const Footer = () => {
             <a href="#" className="text-text/70 hover:text-primary transition-colors">
               <Instagram size={18} />
             </a>
-            <a href="#" className="text-text/70 hover:text-primary transition-colors">
+            <a href="https://www.linkedin.com/company/darahimly/" className="text-text/70 hover:text-primary transition-colors">
               <Linkedin size={18} />
             </a>
             <a href="#" className="text-text/70 hover:text-primary transition-colors">
