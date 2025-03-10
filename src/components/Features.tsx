@@ -108,7 +108,7 @@ const Features = () => {
           ))}
         </div>
 
-        {/* Custom Solutions Section */}
+        {/* Custom Solutions Section
         <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 shadow-lg mb-12">
           <h3 className="text-xl md:text-2xl font-bold mb-4 text-center">حلول مخصصة لعملك</h3>
           <p className="text-text/80 text-center mb-6">
@@ -132,7 +132,7 @@ const Features = () => {
           <div className="flex justify-center mt-6">
             <BookingButton className="text-sm py-2" />
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

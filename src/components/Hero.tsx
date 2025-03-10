@@ -93,7 +93,7 @@ const Hero = () => {
             <a href="#why-us" className="button-outline text-sm md:text-base py-2 md:py-3">لماذا دراهم؟</a>
           </motion.div>
           
-          <motion.div variants={itemVariants} className="flex flex-wrap gap-4 md:gap-8 items-center mt-8 md:mt-10">
+          {/* <motion.div variants={itemVariants} className="flex flex-wrap gap-4 md:gap-8 items-center mt-8 md:mt-10">
             <div className="flex items-center gap-2">
               <div className="bg-secondary/30 backdrop-blur-sm w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center">
                 <span className="text-primary font-bold text-sm md:text-base">+50</span>
@@ -113,7 +113,7 @@ const Hero = () => {
               <span className="text-xs md:text-sm">🛎️ دعم فني</span>
             </div>
           </motion.div>
-        </motion.div>
+        </motion.div> */}
         
         <motion.div initial={{
         opacity: 0,
