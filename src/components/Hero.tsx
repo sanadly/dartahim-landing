@@ -11,7 +11,7 @@ const Hero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveCard((prev) => (prev + 1) % 3);
-    }, 5000);
+    }, 2500);
     
     return () => clearInterval(interval);
   }, []);
