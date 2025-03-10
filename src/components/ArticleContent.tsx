@@ -2,19 +2,23 @@
 import React from 'react';
 import { CalendarIcon, ArrowRight, ImageIcon } from "lucide-react";
 import { Link } from 'react-router-dom';
+
 interface ArticleContentProps {
   id: number;
   title: string;
   date: string;
   content: string[];
   imageUrl: string;
+  coverImage?: string; // Added an optional separate coverImage property
 }
+
 const ArticleContent: React.FC<ArticleContentProps> = ({
   id,
   title,
   date,
   content,
-  imageUrl
+  imageUrl,
+  coverImage // Using the new coverImage property
 }) => {
   // Function to parse HTML strings in content and add placeholder images for demonstration
   const renderContent = (content: string, index: number) => {
@@ -50,23 +54,24 @@ const ArticleContent: React.FC<ArticleContentProps> = ({
     }
   };
 
-  // Get article image based on ID
+  // Get article image based on ID - these are now completely static references
   const getArticleImage = (articleId: number) => {
     switch (articleId) {
       case 4:
-        return 'f7341154-6b0b-4d67-837b-075f65bcade6.png';
+        return '/lovable-uploads/f7341154-6b0b-4d67-837b-075f65bcade6.png';
       case 5:
-        return '23cf95d4-cc38-45ad-b52f-be19624de0d1.png';
+        return '/lovable-uploads/23cf95d4-cc38-45ad-b52f-be19624de0d1.png';
       case 6:
-        return '01b4c9b6-74b9-4aa4-95ae-cef321707e46.png';
+        return '/lovable-uploads/notification.jpg';
       case 7:
-        return '22c769d2-3966-4aad-93c4-1a1f07222872.png';
+        return '/lovable-uploads/3c0b21a6-55f6-44aa-8575-2e27f8a8a8a4.png';
       case 8:
-        return 'eurocis-1.png';
+        return '/lovable-uploads/düsseldorf.jpg';
       default:
-        return '69b73410-b7da-4aa0-9a35-00ac7c62e874.png';
+        return '/lovable-uploads/69b73410-b7da-4aa0-9a35-00ac7c62e874.png';
     }
   };
+
   return <article className="max-w-4xl mx-auto">
       <div className="mb-10">
         <Link to="/news" className="flex items-center gap-2 text-primary hover:underline mb-6 transition-all hover:gap-3">
@@ -83,7 +88,11 @@ const ArticleContent: React.FC<ArticleContentProps> = ({
       </div>
       
       <div className="mb-12 overflow-hidden rounded-xl shadow-md">
-        <img src={imageUrl} alt={title} className="w-full h-auto md:h-96 object-cover" />
+        <img 
+          src={coverImage || imageUrl} 
+          alt={title} 
+          className="w-full h-auto md:h-96 object-cover" 
+        />
       </div>
       
       <div className="prose prose-lg max-w-none">
@@ -96,7 +105,7 @@ const ArticleContent: React.FC<ArticleContentProps> = ({
           {allArticleIds.filter(articleId => articleId !== id).slice(0, 3).map(articleId => <Link to={`/news/${articleId}`} key={articleId} className="flex-shrink-0 w-72">
               <div className="feature-card group hover:shadow-md transition-all duration-300 h-full">
                 <div className="mb-4 overflow-hidden rounded-lg shadow-sm">
-                  <img src={`/lovable-uploads/${getArticleImage(articleId)}`} alt="مقال ذو صلة" className="w-full h-36 object-cover transition-transform duration-300 group-hover:scale-105" />
+                  <img src={getArticleImage(articleId)} alt="مقال ذو صلة" className="w-full h-36 object-cover transition-transform duration-300 group-hover:scale-105" />
                 </div>
                 <h4 className="font-bold">
                   {getArticleTitle(articleId)}
@@ -107,4 +116,5 @@ const ArticleContent: React.FC<ArticleContentProps> = ({
       </div>
     </article>;
 };
+
 export default ArticleContent;
