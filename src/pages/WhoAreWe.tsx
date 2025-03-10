@@ -115,7 +115,7 @@ const WhoAreWe = () => {
             </div>
             <div className={cn("relative transition-all duration-700", isVisible.story ? "opacity-100 translate-x-0" : "opacity-0 translate-x-[50px]")}>
               <div className="absolute -z-10 top-0 right-0 w-72 h-72 bg-primary/10 rounded-full blur-2xl"></div>
-              <img alt="قصة دراهم" src="/lovable-uploads/bdfa7c4b-92a3-45d1-a576-a9b04c74bcc2.jpg" className="w-full h-fit rounded-2xl shadow-lg hover:shadow-xl transition-shadow object-contain" />
+              <img alt="قصة دراهم" src="/lovable-uploads/bdfa7c4b-92a3-45d1-a576-a9b04c74bcc2.jpg" className="w-full rounded-2xl shadow-lg hover:shadow-xl transition-shadow object-cover" />
             </div>
           </div>
           
