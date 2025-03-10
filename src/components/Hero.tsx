@@ -73,7 +73,7 @@ const Hero = () => {
             دراهم هي الشركة الليبية الرائدة في حلول البطاقات الرقمية وبرامج المكافآت والولاء. نحن نمكّن الأفراد، الشركات، والتجار من تعظيم الفائدة من القيمة الرقمية، مع تجربة سلسة واستثنائية باستخدام تقنيات مبتكرة.
           </p>
           <div className="flex flex-wrap gap-4">
-            <a href="#" className="button-primary">ابدأ الآن مجانًا</a>
+            <a href="#" className="button-primary">تواصل معنا</a>
             <a href="#why-us" className="button-outline">لماذا دراهم؟</a>
           </div>
           
