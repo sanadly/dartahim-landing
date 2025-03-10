@@ -8,7 +8,7 @@ const NewsArticle4 = () => {
     id: 4,
     title: "تطبيق ولاء العملاء: مفتاح النمو المستدام في سوق التجزئة الليبي",
     date: "19 ديسمبر 2024",
-    imageUrl: "/lovable-uploads/growth.jpg",
+    imageUrl: "/lovable-uploads/app.jpg",
     content: [
       "يشهد قطاع التجزئة في ليبيا تطورًا متسارعًا، حيث يتزايد وعي المستهلكين وتتنوع خياراتهم. لم يعد العملاء يكتفون بالأسعار التنافسية وتوفر المنتجات، بل أصبحوا يبحثون عن تجربة تسوق متكاملة ومجزية، وعن علاقة حقيقية مع العلامات التجارية التي يختارونها. في هذا السياق، يبرز تطبيق ولاء العملاء المخصص كأداة استراتيجية لا غنى عنها لتحقيق النمو المستدام والربحية على المدى الطويل.",
       
@@ -51,7 +51,7 @@ const NewsArticle4 = () => {
       "</ul>",
       
       "<div className='my-10 rounded-lg overflow-hidden shadow-md'>",
-      "<img src='/lovable-uploads/card.png' alt='بطاقات الولاء' className='w-full object-cover' />",
+      "<img src='/lovable-uploads/card.png' alt='بطاقات الولاء' className='w-full h-2 object-cover' />",
       "<p className='text-center text-sm text-text/60 mt-2'>بطاقات ولاء العملاء الإلكترونية تحل محل البطاقات التقليدية</p>",
       "</div>",
       
