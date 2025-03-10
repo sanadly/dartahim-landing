@@ -26,7 +26,7 @@ const Navbar = () => {
           <a href="#features" className="hover:text-primary transition-colors">المميزات</a>
           <a href="#why-us" className="hover:text-primary transition-colors">لماذا نحن</a>
           <a href="#contact" className="hover:text-primary transition-colors">اتصل بنا</a>
-          <a href="#" className="button-primary">ابدأ الآن</a>
+          <a href="#" className="button-primary">أحجز موعد</a>
         </div>
 
         {/* Mobile menu button */}
