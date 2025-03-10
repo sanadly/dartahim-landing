@@ -139,7 +139,7 @@ const WhoAreWe = () => {
               نحن ملتزمون بتطوير خدمات مالية رقمية تلبي احتياجات المستخدمين والشركات في ليبيا. تواصل معنا اليوم لمعرفة المزيد عن خدماتنا وكيف يمكننا مساعدتك.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="#" className="button-primary">ابدأ الآن</a>
+              <a href="#" className="button-primary">أحجز موعد</a>
               <a href="/#contact" className="button-outline">تواصل معنا</a>
             </div>
           </div>
