@@ -1,6 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { CheckCircle, Star, Gift, User, CreditCard, TrendingUp, Award, Shield, Crown, Sparkles, ChevronRight } from "lucide-react";
+import { CheckCircle, Star, Gift, User, CreditCard, TrendingUp, Award, Shield, Crown, Sparkles } from "lucide-react";
+import BookingButton from "@/components/BookingButton";
+
 const LoyaltyCards = () => {
   const benefits = [{
     icon: <Star className="h-6 w-6" />,
@@ -15,6 +17,7 @@ const LoyaltyCards = () => {
     title: "فهم أفضل للعملاء",
     description: "جمع بيانات قيمة عن سلوك العملاء وتفضيلاتهم لتحسين عروضك."
   }];
+  
   const features = [{
     title: "برامج النقاط المرنة",
     description: "صمم نظام نقاط يناسب عملك مع خيارات متعددة للكسب والاسترداد."
@@ -34,7 +37,9 @@ const LoyaltyCards = () => {
     title: "تحليلات متقدمة",
     description: "تقارير وتحليلات تفصيلية لقياس أداء برنامج الولاء وتأثيره على عملك."
   }];
-  return <div className="min-h-screen flex flex-col" dir="rtl">
+
+  return (
+    <div className="min-h-screen flex flex-col" dir="rtl">
       <Navbar />
       
       <main className="flex-grow pt-32 px-6">
@@ -253,14 +258,15 @@ const LoyaltyCards = () => {
               تواصل معنا اليوم لمعرفة المزيد عن حلول بطاقات الولاء المخصصة التي يمكننا تقديمها لعملك.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="#" className="button-primary">أحجز موعد</a>
-              <a href="/#contact" className="button-outline">تواصل معنا</a>
+              <BookingButton />
             </div>
           </div>
         </div>
       </main>
       
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default LoyaltyCards;
