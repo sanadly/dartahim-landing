@@ -47,7 +47,7 @@ const NewsArticle7 = () => {
       "<li><strong>التكلفة المرتفعة جدًا:</strong> وكالات البرمجة المحترفة تطلب أسعارًا أعلى بكثير من الفرق الداخلية، نظرًا لخبرتها وتعقيد المشروع.</li>",
       "</ul>",
       
-      "<div className='my-10 rounded-lg overflow-hidden shadow-md'>",
+      "<div className='my-10 h-24 rounded-lg overflow-hidden shadow-md'>",
       "<img src='/lovable-uploads/8403013f-eafe-4e9c-be77-241e2d56d4fe.png' alt='حاسبة التكاليف' className='w-full h-24 object-cover' />",
       "<p className='text-center text-sm text-text/60 mt-2'>حساب التكاليف بدقة يساعد في اتخاذ القرار المناسب</p>",
       "</div>",
