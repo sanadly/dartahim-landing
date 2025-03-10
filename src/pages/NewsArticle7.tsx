@@ -1,3 +1,4 @@
+
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import ArticleContent from "@/components/ArticleContent";
@@ -7,8 +8,8 @@ const NewsArticle7 = () => {
     id: 7,
     title: "هل أنت مستعد لإطلاق برنامج ولاء؟ دليل \"دراهم\" الشامل لتقدير التكلفة الحقيقية",
     date: "٥ أكتوبر ٢٠٢٣",
-    imageUrl: "/lovable-uploads/7d9bf6e4-abd1-45fa-ad06-3c07b4b9686b.png",
-    coverImage: "/lovable-uploads/7d9bf6e4-abd1-45fa-ad06-3c07b4b9686b.png",
+    imageUrl: "/lovable-uploads/1.jpg",
+    coverImage: "/lovable-uploads/1.jpg",
     content: [
       "لقد أدركت الآن قوة وأهمية برنامج الولاء لنمو عملك، وربما وضعت بالفعل خططك التسويقية وحددت نوع البرنامج والمكافآت التي ستقدمها. لكن السؤال الأهم الذي يطرح نفسه: كيف تحدد التكلفة الحقيقية لإطلاق برنامج ولاء ناجح؟",
       
@@ -19,7 +20,7 @@ const NewsArticle7 = () => {
       "قد يبدو غريبًا أن نبدأ بالميزانية من خلال التقنية، لكن في الواقع، التقنية هي حجر الزاوية في أي برنامج ولاء ناجح. ستحتاج إلى منصة تقنية قوية لتأسيس برنامجك عليها. الخيار الأساسي هنا هو: هل تبني البرنامج بنفسك، أم تعتمد على حل جاهز؟",
       
       "<div className='my-10 rounded-lg overflow-hidden shadow-md'>",
-      "<img src='/lovable-uploads/83e04920-52ab-4ce9-b579-70c39a52d903.png' alt='تقنية برامج الولاء' className='w-full object-cover' />",
+      "<img src='/lovable-uploads/2.jpg' alt='تقنية برامج الولاء' className='w-full object-cover' />",
       "<p className='text-center text-sm text-text/60 mt-2'>تقنيات متطورة تدعم برامج الولاء الفعالة</p>",
       "</div>",
       
@@ -52,7 +53,7 @@ const NewsArticle7 = () => {
       "</ul>",
       
       "<div className='my-10 rounded-lg overflow-hidden shadow-md'>",
-      "<img src='/lovable-uploads/35f70603-cdc9-4814-ad2b-eb016331ee0c.png' alt='حاسبة التكاليف' className='w-full object-cover' />",
+      "<img src='/lovable-uploads/3.jpg' alt='حاسبة التكاليف' className='w-full object-cover' />",
       "<p className='text-center text-sm text-text/60 mt-2'>حساب التكاليف بدقة يساعد في اتخاذ القرار المناسب</p>",
       "</div>",
       
@@ -95,7 +96,7 @@ const NewsArticle7 = () => {
       
       "<li><strong>التكاليف التشغيلية والتنفيذية:</strong> تكاليف الخوادم، الصيانة، الدعم الفني، التحديثات، التدريب، إدارة البرنامج بشكل يومي، وغيرها. حلول \"دراهم\" الجاهزة تتضمن جزءًا كبيرًا من هذه التكاليف في الاشتراك، مما يبسط عليك الأمر.</li>",
       
-      "<li><strong>التكاليف غير المتوقعة:</strong> قد تظهر تكاليف غير متوقعة أثناء تطوير البرنامج أو تشغيله، مثل الحاجة إلى تع��يلات إضافية، معالجة مشاكل تقنية، أو تغييرات في السوق تتطلب تكييف البرنامج. شراكتك مع \"دراهم\" تمنحك دعمًا مستمرًا وخبرة تساعد في تقليل هذه المخاطر.</li>",
+      "<li><strong>التكاليف غير المتوقعة:</strong> قد تظهر تكاليف غير متوقعة أثناء تطوير البرنامج أو تشغيله، مثل الحاجة إلى تعديلات إضافية، معالجة مشاكل تقنية، أو تغييرات في السوق تتطلب تكييف البرنامج. شراكتك مع \"دراهم\" تمنحك دعمًا مستمرًا وخبرة تساعد في تقليل هذه المخاطر.</li>",
       "</ul>",
       
       "<h3 className='text-xl font-bold mt-8 mb-4'>تجنب الأخطاء الشائعة التي تضر ببرامج الولاء:</h3>",
