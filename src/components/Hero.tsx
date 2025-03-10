@@ -65,7 +65,8 @@ const Hero = () => {
     }
   };
 
-  return <section className="min-h-screen mt-2 pt-20 md:pt-32 pb-16 px-4 md:px-6 hero-pattern flex items-center relative overflow-hidden">
+  return (
+    <section className="min-h-screen mt-2 pt-20 md:pt-32 pb-16 px-4 md:px-6 hero-pattern flex items-center relative overflow-hidden">
       <div className="absolute -top-20 -left-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse-light"></div>
       <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-primary/20 rounded-full blur-3xl animate-pulse-light" style={{
       animationDelay: '1s'
@@ -112,8 +113,8 @@ const Hero = () => {
               </div>
               <span className="text-xs md:text-sm">🛎️ دعم فني</span>
             </div>
-          </motion.div>
-        </motion.div> */}
+          </motion.div> */}
+        </motion.div>
         
         <motion.div initial={{
         opacity: 0,
@@ -217,7 +218,8 @@ const Hero = () => {
           </div>
         </motion.div>
       </div>
-    </section>;
+    </section>
+  );
 };
 
 export default Hero;
