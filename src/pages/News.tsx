@@ -2,6 +2,7 @@
 import { NewspaperIcon, CalendarIcon, ChevronRightIcon } from "lucide-react";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import { Link } from "react-router-dom";
 
 const News = () => {
   const articles = [
@@ -57,10 +58,10 @@ const News = () => {
                 </div>
                 <h3 className="text-xl font-bold mb-2">{article.title}</h3>
                 <p className="text-text/80 mb-6 flex-grow">{article.summary}</p>
-                <a href="#" className="flex items-center gap-2 text-primary hover:underline mt-auto group-hover:gap-3 transition-all">
+                <Link to={`/news/${article.id}`} className="flex items-center gap-2 text-primary hover:underline mt-auto group-hover:gap-3 transition-all">
                   <span>اقرأ المزيد</span>
                   <ChevronRightIcon size={16} />
-                </a>
+                </Link>
               </div>
             ))}
           </div>

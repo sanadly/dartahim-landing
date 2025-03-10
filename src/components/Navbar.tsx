@@ -32,6 +32,7 @@ const Navbar = () => {
           <a href="#why-us" className="hover:text-primary transition-colors">لماذا نحن</a>
           <a href="#contact" className="hover:text-primary transition-colors">اتصل بنا</a>
           <Link to="/news" className="hover:text-primary transition-colors">الأخبار</Link>
+          <Link to="/team" className="hover:text-primary transition-colors">فريقنا</Link>
           <Link to="/jobs" className="hover:text-primary transition-colors">الوظائف</Link>
           <a href="#" className="button-primary">أحجز موعد</a>
         </div>
@@ -48,6 +49,7 @@ const Navbar = () => {
         <a href="#why-us" className="hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>لماذا نحن</a>
         <a href="#contact" className="hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>اتصل بنا</a>
         <Link to="/news" className="hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>الأخبار</Link>
+        <Link to="/team" className="hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>فريقنا</Link>
         <Link to="/jobs" className="hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>الوظائف</Link>
         <a href="#" className="button-primary mt-4" onClick={() => setMobileMenuOpen(false)}>ابدأ الآن</a>
       </div>

@@ -1,5 +1,5 @@
 
-import { BriefcaseIcon, FileTextIcon, UserPlusIcon, ClipboardIcon } from "lucide-react";
+import { BriefcaseIcon, FileTextIcon, UserPlusIcon, ClipboardIcon, GraduationCap, Flame, Users } from "lucide-react";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
@@ -94,14 +94,23 @@ const Jobs = () => {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               <div className="p-6 bg-white rounded-xl shadow-sm">
+                <div className="text-primary mb-4">
+                  <Flame className="h-10 w-10 mx-auto" />
+                </div>
                 <h3 className="font-bold text-xl mb-2">بيئة عمل مرنة</h3>
                 <p className="text-text/70">نقدم ساعات عمل مرنة وإمكانية العمل عن بعد جزئياً</p>
               </div>
               <div className="p-6 bg-white rounded-xl shadow-sm">
+                <div className="text-primary mb-4">
+                  <GraduationCap className="h-10 w-10 mx-auto" />
+                </div>
                 <h3 className="font-bold text-xl mb-2">فرص النمو</h3>
                 <p className="text-text/70">برامج تدريبية وفرص للتطور المهني وتعلم مهارات جديدة</p>
               </div>
               <div className="p-6 bg-white rounded-xl shadow-sm">
+                <div className="text-primary mb-4">
+                  <Users className="h-10 w-10 mx-auto" />
+                </div>
                 <h3 className="font-bold text-xl mb-2">مزايا تنافسية</h3>
                 <p className="text-text/70">رواتب تنافسية وتأمين صحي ومكافآت أداء</p>
               </div>
