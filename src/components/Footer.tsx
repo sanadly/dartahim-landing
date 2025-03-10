@@ -1,121 +1,106 @@
-import { Heart, Facebook, Instagram, Twitter, Linkedin, Youtube } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { useEffect, useState } from "react";
+import RegistrationBadge from "./RegistrationBadge";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const footerLinks = [{
-    title: "الشركة",
-    links: [{
-      name: "من نحن",
-      url: "/who-are-we"
-    }, {
-      name: "فريق العمل",
-      url: "/our-team"
-    }, {
-      name: "الوظائف",
-      url: "/jobs"
-    }, {
-      name: "الأخبار",
-      url: "/news"
-    }]
-  }, {
-    title: "المنتجات",
-    links: [{
-      name: "بطاقات الولاء",
-      url: "/loyalty-cards"
-    }, {
-      name: "حلول الكاشباك",
-      url: "/cashback-solutions"
-    }, {
-      name: "منصات التسويق",
-      url: "/marketing-platforms"
-    }]
-  }, {
-    title: "الدعم",
-    links: [{
-      name: "مركز المساعدة",
-      url: "/help-center"
-    }, {
-      name: "الأسئلة الشائعة",
-      url: "/faq"
-    }, {
-      name: "اتصل بنا",
-      url: "/#contact"
-    }]
-  }];
-  return <footer className="bg-primary/5 pt-16 pb-8 px-6">
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 50;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [scrolled]);
+
+  const socialLinks = [
+    { name: "Facebook", url: "#", icon: <Facebook className="h-5 w-5" /> },
+    { name: "Twitter", url: "#", icon: <Twitter className="h-5 w-5" /> },
+    { name: "Instagram", url: "#", icon: <Instagram className="h-5 w-5" /> },
+    { name: "LinkedIn", url: "#", icon: <Linkedin className="h-5 w-5" /> },
+  ];
+  
+  return (
+    <footer className="bg-primary/5 py-12 md:py-16 px-6">
       <div className="container mx-auto">
-        {/* Footer Top */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
-          {footerLinks.map((column, idx) => <div key={idx}>
-              <h4 className="font-bold text-lg mb-4">{column.title}</h4>
-              <ul className="space-y-2">
-                {column.links.map((link, linkIdx) => <li key={linkIdx}>
-                    {link.url.startsWith('/#') ? (
-                      <a href={link.url} className="text-text/70 hover:text-primary transition-colors">
-                        {link.name}
-                      </a>
-                    ) : (
-                      <Link to={link.url} className="text-text/70 hover:text-primary transition-colors">
-                        {link.name}
-                      </Link>
-                    )}
-                  </li>)}
-              </ul>
-            </div>)}
-        </div>
-        
-        {/* Footer Middle - Newsletter */}
-        <div className="py-8 border-t border-b border-primary/10 mb-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-center">
-            <div className="order-1 md:order-1 mb-4 md:mb-0">
-              <h4 className="font-bold text-lg mb-2">اشترك في نشرتنا الإخبارية</h4>
-              <p className="text-text/70 mb-0">احصل على آخر التحديثات والعروض الخاصة</p>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
+          <div className="md:col-span-2">
+            <a href="/" className="flex items-center gap-2 mb-4">
+              <img src="/lovable-uploads/01b4c9b6-74b9-4aa4-95ae-cef321707e46.png" alt="Darahim Logo" className="h-10" />
+              <span className="font-bold text-xl">دراهم</span>
+            </a>
+            <p className="text-text/70 max-w-md mb-4">
+              نقدم حلول مخصصة لبرامج الولاء والتسويق الرقمي للشركات في ليبيا، من خلال تطبيقات وأنظمة مبتكرة تناسب احتياجات عملك وتساعدك على بناء علاقات أقوى مع عملائك.
+            </p>
+            <div className="flex space-x-4 mb-4">
+              {socialLinks.map((link) => (
+                <a 
+                  key={link.name}
+                  href={link.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-text/70 hover:text-primary transition-colors"
+                  aria-label={link.name}
+                >
+                  {link.icon}
+                </a>
+              ))}
             </div>
-            <div className="order-2 md:order-2">
-              <form className="flex gap-2 max-w-full">
-                <input type="email" placeholder="أدخل بريدك الإلكتروني" className="px-4 py-2 rounded-lg bg-white/50 border border-secondary/30 focus:outline-none focus:ring-2 focus:ring-primary/50 flex-grow min-w-0" />
-                <button type="submit" className="button-primary whitespace-nowrap">
-                  اشترك الآن
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-        
-        {/* Footer Bottom */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex items-center">
-            <Link to="/" className="text-xl font-bold text-text flex items-center gap-2">
-              <img src="/lovable-uploads/d8c5b993-2a67-47ca-9ad1-222ee8ff41e9.png" alt="دراهم" className="h-20 object-fill" />
-            </Link>
+            <RegistrationBadge variant="footer" className="mb-4" />
           </div>
           
-          <div className="text-text/70 text-sm flex items-center gap-1">
-            <span>صنع بكل</span>
-            <Heart size={14} className="text-red-500 fill-red-500" />
-            <span>في ليبيا {currentYear} ©</span>
+          <div className="col-span-1">
+            <h4 className="font-bold text-lg mb-4">روابط سريعة</h4>
+            <ul className="flex flex-col gap-3">
+              <li>
+                <a href="/who-are-we" className="hover:text-primary transition-colors">من نحن</a>
+              </li>
+              <li>
+                <a href="/news" className="hover:text-primary transition-colors">الأخبار</a>
+              </li>
+              <li>
+                <a href="/jobs" className="hover:text-primary transition-colors">الوظائف</a>
+              </li>
+              <li>
+                <a href="/help-center" className="hover:text-primary transition-colors">مركز المساعدة</a>
+              </li>
+            </ul>
           </div>
           
-          <div className="flex gap-4">
-            <a href="https://www.facebook.com/darahim.ly" className="text-text/70 hover:text-primary transition-colors">
-              <Facebook size={18} />
-            </a>
-            <a href="#" className="text-text/70 hover:text-primary transition-colors">
-              <Twitter size={18} />
-            </a>
-            <a href="#" className="text-text/70 hover:text-primary transition-colors">
-              <Instagram size={18} />
-            </a>
-            <a href="https://www.linkedin.com/company/darahimly/" className="text-text/70 hover:text-primary transition-colors">
-              <Linkedin size={18} />
-            </a>
-            <a href="#" className="text-text/70 hover:text-primary transition-colors">
-              <Youtube size={18} />
-            </a>
+          <div className="col-span-1">
+            <h4 className="font-bold text-lg mb-4">خدماتنا</h4>
+            <ul className="flex flex-col gap-3">
+              <li>
+                <a href="/loyalty-cards" className="hover:text-primary transition-colors">بطاقات الولاء</a>
+              </li>
+              <li>
+                <a href="/cashback-solutions" className="hover:text-primary transition-colors">حلول الكاشباك</a>
+              </li>
+              <li>
+                <a href="/marketing-platforms" className="hover:text-primary transition-colors">منصات التسويق</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div className="border-t border-text/10 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center text-text/60 text-sm">
+          <p>{currentYear} © دراهم. جميع الحقوق محفوظة.</p>
+          <div className="flex space-x-6 mt-4 md:mt-0">
+            <a href="/terms" className="hover:text-primary transition-colors">شروط الاستخدام</a>
+            <a href="/privacy" className="hover:text-primary transition-colors">سياسة الخصوصية</a>
           </div>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
+
 export default Footer;
