@@ -1,10 +1,24 @@
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { ArrowLeft } from 'lucide-react';
-import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 
 const BookingButton = ({ className = "" }: { className?: string }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const calendarRef = useRef<HTMLDivElement>(null);
+  
+  useEffect(() => {
+    // This will ensure that Calendly properly initializes when the dialog opens
+    if (isOpen && calendarRef.current && window.Calendly) {
+      // @ts-ignore - Calendly is loaded globally
+      window.Calendly.initInlineWidget({
+        url: 'https://calendly.com/darahim-info/30min?primary_color=50ba64',
+        parentElement: calendarRef.current,
+        prefill: {},
+        utm: {}
+      });
+    }
+  }, [isOpen]);
 
   return (
     <>
@@ -17,14 +31,13 @@ const BookingButton = ({ className = "" }: { className?: string }) => {
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogContent className="sm:max-w-[700px] max-h-[90vh] overflow-y-auto">
-          <div className="calendly-inline-widget" 
-               data-url="https://calendly.com/darahim-info/30min?primary_color=50ba64" 
-               style={{ minWidth: '320px', height: '700px' }}>
-          </div>
-          <script type="text/javascript" 
-                  src="https://assets.calendly.com/assets/external/widget.js" 
-                  async>
-          </script>
+          <DialogTitle className="sr-only">حجز موعد</DialogTitle>
+          <div 
+            ref={calendarRef}
+            className="calendly-inline-widget" 
+            data-url="https://calendly.com/darahim-info/30min?primary_color=50ba64" 
+            style={{ minWidth: '320px', height: '700px' }}
+          />
         </DialogContent>
       </Dialog>
     </>
