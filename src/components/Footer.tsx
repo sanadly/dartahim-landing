@@ -27,9 +27,6 @@ const Footer = () => {
     }, {
       name: "منصات التسويق",
       url: "#"
-    }, {
-      name: "الدفع الإلكتروني",
-      url: "#"
     }]
   }, {
     title: "الدعم",
@@ -40,23 +37,8 @@ const Footer = () => {
       name: "الأسئلة الشائعة",
       url: "#"
     }, {
-      name: "التوثيق",
-      url: "#"
-    }, {
       name: "اتصل بنا",
       url: "#contact"
-    }]
-  }, {
-    title: "قانوني",
-    links: [{
-      name: "شروط الخدمة",
-      url: "#"
-    }, {
-      name: "سياسة الخصوصية",
-      url: "#"
-    }, {
-      name: "سياسة ملفات الارتباط",
-      url: "#"
     }]
   }];
   return <footer className="bg-primary/5 pt-16 pb-8 px-6">
