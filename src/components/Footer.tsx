@@ -1,4 +1,6 @@
-import { Heart, Facebook, Instagram, Twitter, Linkedin, Youtube } from 'lucide-react';
+
+import { Heart } from 'lucide-react';
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const footerLinks = [{
@@ -59,20 +61,26 @@ const Footer = () => {
       url: "#"
     }]
   }];
-  return <footer className="bg-primary/5 pt-16 pb-8 px-6">
+
+  return (
+    <footer className="bg-primary/5 pt-16 pb-8 px-6">
       <div className="container mx-auto">
         {/* Footer Top */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
-          {footerLinks.map((column, idx) => <div key={idx}>
+          {footerLinks.map((column, idx) => (
+            <div key={idx}>
               <h4 className="font-bold text-lg mb-4">{column.title}</h4>
               <ul className="space-y-2">
-                {column.links.map((link, linkIdx) => <li key={linkIdx}>
+                {column.links.map((link, linkIdx) => (
+                  <li key={linkIdx}>
                     <a href={link.url} className="text-text/70 hover:text-primary transition-colors">
                       {link.name}
                     </a>
-                  </li>)}
+                  </li>
+                ))}
               </ul>
-            </div>)}
+            </div>
+          ))}
         </div>
         
         {/* Footer Middle - Newsletter */}
@@ -84,7 +92,11 @@ const Footer = () => {
             </div>
             <div>
               <form className="flex gap-2">
-                <input type="email" placeholder="أدخل بريدك الإلكتروني" className="px-4 py-2 rounded-lg bg-white/50 border border-secondary/30 focus:outline-none focus:ring-2 focus:ring-primary/50 flex-grow" />
+                <input 
+                  type="email" 
+                  placeholder="أدخل بريدك الإلكتروني" 
+                  className="px-4 py-2 rounded-lg bg-white/50 border border-secondary/30 focus:outline-none focus:ring-2 focus:ring-primary/50 flex-grow" 
+                />
                 <button type="submit" className="button-primary whitespace-nowrap">
                   اشترك الآن
                 </button>
@@ -109,23 +121,25 @@ const Footer = () => {
           
           <div className="flex gap-4">
             <a href="#" className="text-text/70 hover:text-primary transition-colors">
-              <Facebook size={18} />
+              <img src="/lovable-uploads/c8e4e38d-4388-4d5b-8a0c-2dbb2b4261ae.png" alt="Facebook" className="h-6 w-6" />
             </a>
             <a href="#" className="text-text/70 hover:text-primary transition-colors">
-              <Twitter size={18} />
+              <img src="/lovable-uploads/c8e4e38d-4388-4d5b-8a0c-2dbb2b4261ae.png" alt="Twitter" className="h-6 w-6" />
             </a>
             <a href="#" className="text-text/70 hover:text-primary transition-colors">
-              <Instagram size={18} />
+              <img src="/lovable-uploads/c8e4e38d-4388-4d5b-8a0c-2dbb2b4261ae.png" alt="Instagram" className="h-6 w-6" />
             </a>
             <a href="#" className="text-text/70 hover:text-primary transition-colors">
-              <Linkedin size={18} />
+              <img src="/lovable-uploads/c8e4e38d-4388-4d5b-8a0c-2dbb2b4261ae.png" alt="LinkedIn" className="h-6 w-6" />
             </a>
             <a href="#" className="text-text/70 hover:text-primary transition-colors">
-              <Youtube size={18} />
+              <img src="/lovable-uploads/c8e4e38d-4388-4d5b-8a0c-2dbb2b4261ae.png" alt="YouTube" className="h-6 w-6" />
             </a>
           </div>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
+
 export default Footer;
