@@ -98,6 +98,33 @@ const Hero = () => {
             <a href="#why-us" className="button-outline">لماذا دراهم؟</a>
           </motion.div>
           
+          {/* Services Showcase */}
+          <motion.div variants={itemVariants} className="mt-12 mb-6">
+            <h3 className="text-xl font-bold mb-4">خدماتنا الرئيسية</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {services.map((service) => (
+                <a 
+                  key={service.id}
+                  href={service.link}
+                  className={cn(
+                    "p-4 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/30 transition-all hover:shadow-lg flex flex-col",
+                    activeCard === service.id ? "ring-2 ring-primary shadow-md" : ""
+                  )}
+                  onMouseEnter={() => setActiveCard(service.id)}
+                >
+                  <div className={`p-2 rounded-full bg-gradient-to-r ${service.color} w-fit mb-3`}>
+                    {service.icon}
+                  </div>
+                  <h4 className="font-bold mb-1">{service.title}</h4>
+                  <p className="text-sm text-text/70 mb-2">{service.description}</p>
+                  <div className="mt-auto flex items-center text-xs text-primary font-medium">
+                    اكتشف المزيد <ChevronRight className="h-3 w-3 mr-1" />
+                  </div>
+                </a>
+              ))}
+            </div>
+          </motion.div>
+
           {/* Trust Indicators with emojis */}
           <motion.div variants={itemVariants} className="flex flex-wrap gap-8 items-center">
             <div className="flex items-center gap-2">
@@ -214,33 +241,6 @@ const Hero = () => {
             </div>
           </div>
         </motion.div>
-                  {/* Services Showcase */}
-                  <motion.div variants={itemVariants} className="mt-12 mb-6">
-            <h3 className="text-xl font-bold mb-4">خدماتنا الرئيسية</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {services.map((service) => (
-                <a 
-                  key={service.id}
-                  href={service.link}
-                  className={cn(
-                    "p-4 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/30 transition-all hover:shadow-lg flex flex-col",
-                    activeCard === service.id ? "ring-2 ring-primary shadow-md" : ""
-                  )}
-                  onMouseEnter={() => setActiveCard(service.id)}
-                >
-                  <div className={`p-2 rounded-full bg-gradient-to-r ${service.color} w-fit mb-3`}>
-                    {service.icon}
-                  </div>
-                  <h4 className="font-bold mb-1">{service.title}</h4>
-                  <p className="text-sm text-text/70 mb-2">{service.description}</p>
-                  <div className="mt-auto flex items-center text-xs text-primary font-medium">
-                    اكتشف المزيد <ChevronRight className="h-3 w-3 mr-1" />
-                  </div>
-                </a>
-              ))}
-            </div>
-          </motion.div>
-
       </div>
     </section>
   );
