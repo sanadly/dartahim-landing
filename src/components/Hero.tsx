@@ -33,13 +33,7 @@ const Hero = () => {
                   <span className="text-text/70">محمد أحمد</span>
                   <span className="text-text/70">12/27</span>
                 </div>
-                <div className="mt-2 h-20 w-full rounded-lg bg-white/5 backdrop-blur-sm flex justify-center items-center p-1">
-                  <img 
-                    src="/lovable-uploads/c8e4e38d-4388-4d5b-8a0c-2dbb2b4261ae.png" 
-                    alt="DARAHIM CARD barcode" 
-                    className="h-full w-full object-contain"
-                  />
-                </div>
+                <div className="mt-2 bg-white/20 backdrop-blur-sm h-20 w-full rounded-lg"></div>
                 <div className="mt-2 flex justify-between">
                   <span className="text-text/70">1234 5678 9012 3456</span>
                   <span className="text-text/70">PREMIUM</span>
