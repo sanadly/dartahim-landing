@@ -1,9 +1,30 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { BarChart4, Target, Users, Mail, Smartphone, MessageSquare, BarChart2, Globe, Flag, ArrowUpRight, Zap, Check } from "lucide-react";
+import { BarChart4, Target, Users, Mail, Smartphone, MessageSquare, BarChart2, Globe, Flag, ArrowUpRight, Zap, Check, Star, Award, TrendingUp, PieChart } from "lucide-react";
+import { useState, useEffect } from "react";
+import { cn } from "@/lib/utils";
 
 const MarketingPlatforms = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [activeTab, setActiveTab] = useState("email");
+  
+  useEffect(() => {
+    const onScroll = () => {
+      const element = document.getElementById("cta-section");
+      if (element) {
+        const position = element.getBoundingClientRect();
+        if (position.top < window.innerHeight * 0.75) {
+          setIsVisible(true);
+        }
+      }
+    };
+    
+    window.addEventListener("scroll", onScroll);
+    onScroll(); // Check on initial load
+    
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   const benefits = [
     {
       icon: <Target className="h-6 w-6" />,
@@ -54,6 +75,76 @@ const MarketingPlatforms = () => {
       description: "تخطيط وتنفيذ ومتابعة الحملات التسويقية المتكاملة عبر جميع القنوات."
     }
   ];
+
+  // New content for the interactive tab section
+  const marketingTabs = [
+    {
+      id: "email",
+      icon: <Mail className="h-5 w-5" />,
+      title: "التسويق بالبريد الإلكتروني",
+      content: {
+        title: "أطلق العنان لقوة التسويق بالبريد الإلكتروني",
+        description: "منصة متكاملة تتيح لك إنشاء وإدارة حملات بريدية متخصصة تصل إلى جمهورك المستهدف بدقة وفاعلية.",
+        features: [
+          "نماذج جاهزة احترافية تناسب مختلف القطاعات",
+          "تقسيم الجمهور بناءً على البيانات السلوكية والديموغرافية",
+          "تتبع معدلات الفتح والنقر وتحويل المبيعات",
+          "أتمتة سلسلة الرسائل حسب تفاعل المستخدم"
+        ],
+        metrics: [
+          { label: "متوسط معدل الفتح", value: "32%", icon: <Star className="h-4 w-4 text-yellow-400" /> },
+          { label: "معدل النقر", value: "15%", icon: <TrendingUp className="h-4 w-4 text-green-500" /> },
+          { label: "عائد الاستثمار", value: "380%", icon: <Award className="h-4 w-4 text-blue-500" /> }
+        ],
+        image: "/lovable-uploads/69b73410-b7da-4aa0-9a35-00ac7c62e874.png"
+      }
+    },
+    {
+      id: "sms",
+      icon: <Smartphone className="h-5 w-5" />,
+      title: "الرسائل النصية",
+      content: {
+        title: "وصول فوري مع الرسائل النصية",
+        description: "منصة رسائل نصية متطورة تتيح لك التواصل الفوري مع عملائك بمعدل وصول يتجاوز 98%.",
+        features: [
+          "إرسال رسائل جماعية بتكلفة منخفضة",
+          "رسائل مخصصة تحتوي على اسم العميل ومعلوماته",
+          "روابط مختصرة للتتبع وقياس الأداء",
+          "جدولة الرسائل في الأوقات المثالية"
+        ],
+        metrics: [
+          { label: "معدل القراءة", value: "98%", icon: <Star className="h-4 w-4 text-yellow-400" /> },
+          { label: "متوسط الاستجابة", value: "4.5 دقيقة", icon: <TrendingUp className="h-4 w-4 text-green-500" /> },
+          { label: "معدل التحويل", value: "28%", icon: <Award className="h-4 w-4 text-blue-500" /> }
+        ],
+        image: "/lovable-uploads/69b73410-b7da-4aa0-9a35-00ac7c62e874.png"
+      }
+    },
+    {
+      id: "analytics",
+      icon: <BarChart4 className="h-5 w-5" />,
+      title: "تحليلات متقدمة",
+      content: {
+        title: "تحليلات متقدمة تدعمها الذكاء الاصطناعي",
+        description: "اكتشف رؤى عميقة حول سلوك عملائك واتخذ قرارات مبنية على البيانات لتحسين استراتيجياتك التسويقية.",
+        features: [
+          "لوحات تحكم مخصصة تبرز المؤشرات الرئيسية",
+          "تحليل تفاعل العملاء عبر القنوات المختلفة",
+          "تنبؤات ذكية لتحسين توقيت الحملات",
+          "تقارير أداء مفصلة قابلة للتصدير"
+        ],
+        metrics: [
+          { label: "تحسين معدل الاستهداف", value: "56%", icon: <Target className="h-4 w-4 text-primary" /> },
+          { label: "تحسين العائد على الاستثمار", value: "120%", icon: <PieChart className="h-4 w-4 text-accent" /> },
+          { label: "توفير الوقت", value: "75%", icon: <Zap className="h-4 w-4 text-yellow-500" /> }
+        ],
+        image: "/lovable-uploads/69b73410-b7da-4aa0-9a35-00ac7c62e874.png"
+      }
+    }
+  ];
+
+  // Get the active tab content
+  const activeTabContent = marketingTabs.find(tab => tab.id === activeTab)?.content;
 
   return (
     <div className="min-h-screen flex flex-col" dir="rtl">
@@ -296,17 +387,163 @@ const MarketingPlatforms = () => {
             </div>
           </div>
           
-          {/* Section "قصص نجاح" has been removed as requested */}
+          {/* Interactive Marketing Solutions Showcase - New Enhanced Section */}
+          <div className="mb-20 rounded-2xl bg-white shadow-lg border border-primary/10 overflow-hidden">
+            <div className="bg-primary p-6 text-white">
+              <h2 className="text-2xl font-bold">استكشف حلولنا التسويقية المتكاملة</h2>
+              <p className="text-white/80 mt-2">اكتشف كيف يمكن لمنصات التسويق من دراهم تحويل استراتيجيتك التسويقية</p>
+            </div>
+            
+            {/* Tab Navigation */}
+            <div className="flex border-b overflow-x-auto">
+              {marketingTabs.map(tab => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={cn(
+                    "px-6 py-4 flex items-center gap-2 font-medium transition-colors",
+                    activeTab === tab.id 
+                      ? "border-b-2 border-primary text-primary" 
+                      : "text-text/60 hover:text-primary hover:bg-primary/5"
+                  )}
+                >
+                  {tab.icon}
+                  {tab.title}
+                </button>
+              ))}
+            </div>
+            
+            {/* Tab Content */}
+            {activeTabContent && (
+              <div className="p-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-3 text-primary">{activeTabContent.title}</h3>
+                    <p className="text-text/70 mb-6">{activeTabContent.description}</p>
+                    
+                    <div className="space-y-4 mb-8">
+                      <h4 className="font-bold">المميزات الرئيسية:</h4>
+                      <ul className="space-y-2">
+                        {activeTabContent.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-start gap-2">
+                            <div className="mt-1">
+                              <Check className="h-4 w-4 text-primary" />
+                            </div>
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <div className="grid grid-cols-3 gap-4">
+                      {activeTabContent.metrics.map((metric, idx) => (
+                        <div key={idx} className="bg-primary/5 p-4 rounded-lg text-center">
+                          <div className="flex justify-center mb-2">{metric.icon}</div>
+                          <div className="text-xl font-bold text-primary">{metric.value}</div>
+                          <div className="text-xs text-text/70">{metric.label}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <div className="rounded-lg overflow-hidden shadow-md">
+                    <img 
+                      src={activeTabContent.image} 
+                      alt={activeTabContent.title} 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
           
-          {/* CTA Section */}
-          <div className="bg-primary/5 rounded-2xl p-10 text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">ارفع مستوى تسويقك مع منصات دراهم</h2>
-            <p className="text-lg text-text/70 max-w-3xl mx-auto mb-8">
-              تواصل معنا اليوم لمعرفة كيف يمكن لمنصات التسويق المتكاملة من دراهم أن تساعد في نمو أعمالك وتحسين علاقاتك مع العملاء.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="#" className="button-primary">أحجز موعد</a>
-              <a href="/#contact" className="button-outline">تواصل معنا</a>
+          {/* Enhanced CTA Section */}
+          <div id="cta-section" className={cn(
+            "bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-10 mb-16 transition-all duration-700",
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
+          )}>
+            <div className="flex flex-col md:flex-row items-center gap-8">
+              <div className="md:w-3/5">
+                <h2 className="text-3xl font-bold mb-4">ارفع مستوى تسويقك مع منصات دراهم</h2>
+                <p className="text-lg text-text/70 mb-6">
+                  حلول متكاملة تجمع بين تحليلات البيانات المتقدمة والذكاء الاصطناعي لتحويل تجربة عملائك وزيادة عائد استثمارك التسويقي.
+                </p>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                  {[
+                    { icon: <Users className="h-5 w-5" />, text: "استهداف دقيق لعملائك" },
+                    { icon: <TrendingUp className="h-5 w-5" />, text: "زيادة معدلات التحويل" },
+                    { icon: <Award className="h-5 w-5" />, text: "تحسين ولاء العملاء" },
+                    { icon: <BarChart4 className="h-5 w-5" />, text: "تقارير أداء متقدمة" }
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex items-center gap-3 bg-white/50 rounded-lg p-3">
+                      <div className="bg-primary/20 p-2 rounded-lg text-primary">
+                        {item.icon}
+                      </div>
+                      <span className="font-medium">{item.text}</span>
+                    </div>
+                  ))}
+                </div>
+                
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a href="#" className="button-primary text-center group transition-all">
+                    <span className="flex items-center justify-center">
+                      أحجز موعد
+                      <ArrowUpRight className="h-4 w-4 mr-2 group-hover:translate-y-[-2px] group-hover:translate-x-[-2px] transition-transform" />
+                    </span>
+                  </a>
+                  <a href="/#contact" className="button-outline text-center">تواصل معنا</a>
+                </div>
+              </div>
+              
+              <div className="md:w-2/5 enhanced-card p-6">
+                <div className="bg-white rounded-lg shadow-sm p-4">
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="h-3 w-3 rounded-full bg-red-400"></div>
+                    <div className="h-3 w-3 rounded-full bg-yellow-400"></div>
+                    <div className="h-3 w-3 rounded-full bg-green-400"></div>
+                    <span className="text-sm text-text/50 mr-2">منصات دراهم للتسويق</span>
+                  </div>
+                  
+                  <div className="space-y-3">
+                    <div className="bg-primary/5 p-3 rounded-lg">
+                      <div className="flex justify-between items-center">
+                        <span className="font-medium">تقرير الأداء الأسبوعي</span>
+                        <span className="text-sm text-primary">↑ 24%</span>
+                      </div>
+                      <div className="mt-2 h-2 bg-gray-200 rounded-full">
+                        <div className="h-2 bg-primary rounded-full" style={{ width: '75%' }}></div>
+                      </div>
+                    </div>
+                    
+                    <div className="flex gap-2">
+                      <div className="bg-accent/5 p-3 rounded-lg flex-1 text-center">
+                        <div className="text-sm text-text/70">زيارات</div>
+                        <div className="text-xl font-bold text-accent">1.4K</div>
+                      </div>
+                      <div className="bg-secondary/5 p-3 rounded-lg flex-1 text-center">
+                        <div className="text-sm text-text/70">تحويلات</div>
+                        <div className="text-xl font-bold text-secondary">320</div>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-primary/5 p-3 rounded-lg">
+                      <div className="text-sm font-medium mb-2">أعلى المنتجات مبيعاً</div>
+                      <div className="space-y-2">
+                        <div className="flex justify-between items-center">
+                          <span className="text-sm">بطاقة الولاء الذهبية</span>
+                          <span className="text-xs font-medium">842 مشترك</span>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span className="text-sm">باقة كاشباك بريميوم</span>
+                          <span className="text-xs font-medium">654 مشترك</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

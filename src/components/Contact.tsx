@@ -29,6 +29,9 @@ const Contact = () => {
     }, 1500);
   };
 
+  // Common style for social media links
+  const socialLinkStyle = "bg-transparent text-primary hover:bg-primary/10 p-3 rounded-full transition-colors duration-300 hover:shadow-md";
+
   return (
     <section id="contact" className="py-16 px-6 relative overflow-hidden" dir="rtl">
       <div className="absolute -top-20 -right-20 w-96 h-96 bg-primary/20 rounded-full blur-3xl -z-10"></div>
@@ -56,6 +59,7 @@ const Contact = () => {
                   id="name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
+                  placeholder="أدخل اسمك الكامل"
                   className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50"
                   required
                 />
@@ -70,6 +74,7 @@ const Contact = () => {
                   id="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  placeholder="أدخل بريدك الإلكتروني"
                   className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50"
                   required
                 />
@@ -84,6 +89,7 @@ const Contact = () => {
                   rows={4}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
+                  placeholder="اكتب رسالتك هنا..."
                   className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50"
                   required
                 ></textarea>
@@ -135,19 +141,19 @@ const Contact = () => {
             <div className="feature-card p-8">
               <h3 className="text-xl font-bold mb-6">تابعنا على وسائل التواصل</h3>
               <div className="flex flex-wrap gap-4">
-                <a href="https://www.facebook.com/darahim.ly" className="bg-blue-500 text-white p-3 rounded-full hover:bg-blue-600 transition-colors">
+                <a href="https://www.facebook.com/darahim.ly" className={socialLinkStyle} aria-label="Facebook">
                   <Facebook size={20} />
                 </a>
-                <a href="#" className="bg-indigo-500 text-white p-3 rounded-full hover:bg-indigo-600 transition-colors">
+                <a href="#" className={socialLinkStyle} aria-label="Twitter">
                   <Twitter size={20} />
                 </a>
-                <a href="#" className="bg-pink-500 text-white p-3 rounded-full hover:bg-pink-600 transition-colors">
+                <a href="#" className={socialLinkStyle} aria-label="Instagram">
                   <Instagram size={20} />
                 </a>
-                <a href="https://www.linkedin.com/company/darahimly/" className="bg-blue-700 text-white p-3 rounded-full hover:bg-blue-800 transition-colors">
+                <a href="https://www.linkedin.com/company/darahimly/" className={socialLinkStyle} aria-label="LinkedIn">
                   <Linkedin size={20} />
                 </a>
-                <a href="#" className="bg-red-500 text-white p-3 rounded-full hover:bg-red-600 transition-colors">
+                <a href="#" className={socialLinkStyle} aria-label="YouTube">
                   <Youtube size={20} />
                 </a>
               </div>

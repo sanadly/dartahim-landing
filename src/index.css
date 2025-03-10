@@ -58,6 +58,12 @@
     @apply font-ibm font-bold;
   }
 
+  /* Add RTL support for accordion content */
+  [data-orientation="vertical"] > [data-state] {
+    direction: rtl;
+    text-align: right;
+  }
+
   .glass-card {
     @apply bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg;
   }
@@ -94,4 +100,113 @@
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
   }
+}
+
+/* Enhanced animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-light {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes count-up {
+  from { content: "0"; }
+  to { content: attr(data-target); }
+}
+
+@keyframes slide-in-right {
+  0% { transform: translateX(50px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slide-in-left {
+  0% { transform: translateX(-50px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-pulse-light {
+  animation: pulse-light 3s ease-in-out infinite;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.8s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.8s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.animate-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animate-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animate-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animate-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animate-delay-500 {
+  animation-delay: 500ms;
+}
+
+/* Enhanced card effects */
+.enhanced-card {
+  @apply relative overflow-hidden transition-all duration-300 rounded-2xl;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(91, 230, 119, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.enhanced-card:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(91, 230, 119, 0.4);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05), 0 0 10px rgba(91, 230, 119, 0.1);
+  transform: translateY(-5px);
+}
+
+/* Input focus effects */
+input:focus, textarea:focus {
+  box-shadow: 0 0 0 2px rgba(79, 186, 100, 0.3);
+  border-color: rgb(79, 186, 100);
+}
+
+/* RTL specific adjustments */
+[dir="rtl"] .accordion-content,
+[dir="rtl"] .faq-content {
+  text-align: right;
+}
+
+[dir="rtl"] .rtl-list {
+  padding-right: 1.5rem;
+  padding-left: 0;
+}
+
+[dir="rtl"] .rtl-list li::before {
+  right: -1.5rem;
+  left: auto;
 }
