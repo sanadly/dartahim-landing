@@ -7,13 +7,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Jobs from "./pages/Jobs";
 import News from "./pages/News";
-import NewsArticle1 from "./pages/NewsArticle1";
-import NewsArticle2 from "./pages/NewsArticle2";
-import NewsArticle3 from "./pages/NewsArticle3";
 import NewsArticle4 from "./pages/NewsArticle4";
 import NewsArticle5 from "./pages/NewsArticle5";
 import NewsArticle6 from "./pages/NewsArticle6";
 import NewsArticle7 from "./pages/NewsArticle7";
+import NewsArticle8 from "./pages/NewsArticle8";
 import Team from "./pages/Team";
 import WhoAreWe from "./pages/WhoAreWe";
 import NotFound from "./pages/NotFound";
@@ -30,13 +28,11 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/jobs" element={<Jobs />} />
           <Route path="/news" element={<News />} />
-          <Route path="/news/1" element={<NewsArticle1 />} />
-          <Route path="/news/2" element={<NewsArticle2 />} />
-          <Route path="/news/3" element={<NewsArticle3 />} />
           <Route path="/news/4" element={<NewsArticle4 />} />
           <Route path="/news/5" element={<NewsArticle5 />} />
           <Route path="/news/6" element={<NewsArticle6 />} />
           <Route path="/news/7" element={<NewsArticle7 />} />
+          <Route path="/news/8" element={<NewsArticle8 />} />
           <Route path="/our-team" element={<Team />} />
           <Route path="/who-are-we" element={<WhoAreWe />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
