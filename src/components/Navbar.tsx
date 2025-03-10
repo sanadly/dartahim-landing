@@ -29,10 +29,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex justify-between items-center">
         <a href="#" className="text-2xl font-bold text-text flex items-center gap-2">
-          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-            <span className="text-white font-bold">د</span>
-          </div>
-          <span className={cn("transition-all", scrolled ? "opacity-100" : "opacity-80")}>دراهم</span>
+          <img src="/lovable-uploads/d8c5b993-2a67-47ca-9ad1-222ee8ff41e9.png" alt="دراهم" className="h-10" />
         </a>
 
         {/* Desktop menu */}

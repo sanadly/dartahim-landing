@@ -105,8 +105,9 @@ const Contact = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full text-right dir-rtl px-4 py-3 rounded-lg bg-white/50 border border-secondary/30 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                    className="w-full px-4 py-3 rounded-lg bg-white/50 border border-secondary/30 focus:outline-none focus:ring-2 focus:ring-primary/50"
                     placeholder="أدخل رقم هاتفك"
+                    dir="rtl"
                   />
                 </div>
                 
@@ -142,8 +143,8 @@ const Contact = () => {
             </div>
           </div>
 
-                    {/* Contact Info */}
-                    <div className="flex flex-col space-y-8 md:pr-8">
+          {/* Contact Info */}
+          <div className="flex flex-col space-y-8 md:pr-8">
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                 <Phone size={20} className="text-primary" />
@@ -186,7 +187,6 @@ const Contact = () => {
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>

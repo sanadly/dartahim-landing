@@ -1,5 +1,5 @@
 
-import { Heart } from 'lucide-react';
+import { Heart, Facebook, Instagram, Twitter, Linkedin, Youtube } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -92,10 +92,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center">
             <a href="#" className="text-xl font-bold text-text flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                <span className="text-white font-bold text-xs">د</span>
-              </div>
-              <span>دراهم</span>
+              <img src="/lovable-uploads/d8c5b993-2a67-47ca-9ad1-222ee8ff41e9.png" alt="دراهم" className="h-10" />
             </a>
           </div>
           
@@ -107,16 +104,19 @@ const Footer = () => {
           
           <div className="flex gap-4">
             <a href="#" className="text-text/70 hover:text-primary transition-colors">
-              <span className="text-sm">FB</span>
+              <Facebook size={18} />
             </a>
             <a href="#" className="text-text/70 hover:text-primary transition-colors">
-              <span className="text-sm">TW</span>
+              <Twitter size={18} />
             </a>
             <a href="#" className="text-text/70 hover:text-primary transition-colors">
-              <span className="text-sm">IG</span>
+              <Instagram size={18} />
             </a>
             <a href="#" className="text-text/70 hover:text-primary transition-colors">
-              <span className="text-sm">LI</span>
+              <Linkedin size={18} />
+            </a>
+            <a href="#" className="text-text/70 hover:text-primary transition-colors">
+              <Youtube size={18} />
             </a>
           </div>
         </div>
