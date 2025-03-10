@@ -8,7 +8,7 @@ import { Search, HeadphonesIcon, MessageCircleQuestionIcon, BookOpenIcon, InboxI
 
 const HelpCenter = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col" dir="rtl">
       <Navbar />
       
       <main className="flex-grow pt-32 px-6 pb-20">

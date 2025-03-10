@@ -31,19 +31,19 @@ const Hero = () => {
             <div className="bg-secondary/30 backdrop-blur-sm w-12 h-12 rounded-full flex items-center justify-center">
               <span className="text-primary font-bold">+50</span>
             </div>
-            <span className="text-sm">عميل في ليبيا</span>
+            <span className="text-sm">👥 عميل في ليبيا</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="bg-secondary/30 backdrop-blur-sm w-12 h-12 rounded-full flex items-center justify-center">
               <span className="text-primary font-bold">99%</span>
             </div>
-            <span className="text-sm">رضا عملائنا</span>
+            <span className="text-sm">😍 رضا عملائنا</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="bg-secondary/30 backdrop-blur-sm w-12 h-12 rounded-full flex items-center justify-center">
               <span className="text-primary font-bold">24/7</span>
             </div>
-            <span className="text-sm">دعم فني</span>
+            <span className="text-sm">🛎️ دعم فني</span>
           </div>
         </div>
       </div>
