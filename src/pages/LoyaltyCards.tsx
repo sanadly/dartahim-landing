@@ -1,3 +1,4 @@
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { CheckCircle, Star, Gift, User, CreditCard, TrendingUp, Award, Shield, Crown, Sparkles, ChevronRight } from "lucide-react";
@@ -17,6 +18,7 @@ const LoyaltyCards = () => {
     title: "فهم أفضل للعملاء",
     description: "جمع بيانات قيمة عن سلوك العملاء وتفضيلاتهم لتحسين عروضك."
   }];
+  
   const features = [{
     title: "برامج النقاط المرنة",
     description: "صمم نظام نقاط يناسب عملك مع خيارات متعددة للكسب والاسترداد."
@@ -37,7 +39,8 @@ const LoyaltyCards = () => {
     description: "تقارير وتحليلات تفصيلية لقياس أداء برنامج الولاء وتأثيره على عملك."
   }];
 
-  return <div className="min-h-screen flex flex-col" dir="rtl">
+  return (
+    <div className="min-h-screen flex flex-col" dir="rtl">
       <Navbar />
       
       <main className="flex-grow pt-32 px-6">
@@ -171,13 +174,15 @@ const LoyaltyCards = () => {
           <div className="mb-20">
             <h2 className="text-3xl font-bold mb-8 text-center">فوائد برامج الولاء</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {benefits.map((benefit, index) => <div key={index} className="feature-card p-8">
+              {benefits.map((benefit, index) => (
+                <div key={index} className="feature-card p-8">
                   <div className="text-primary mb-4 inline-flex p-4 bg-primary/10 rounded-full">
                     {benefit.icon}
                   </div>
                   <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
                   <p className="text-text/80">{benefit.description}</p>
-                </div>)}
+                </div>
+              ))}
             </div>
           </div>
           
@@ -237,7 +242,8 @@ const LoyaltyCards = () => {
           <div className="mb-20">
             <h2 className="text-3xl font-bold mb-8 text-center">مميزات حلول بطاقات الولاء</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {features.map((feature, index) => <div key={index} className="feature-card p-6">
+              {features.map((feature, index) => (
+                <div key={index} className="feature-card p-6">
                   <div className="flex items-start gap-3">
                     <CheckCircle className="text-primary mt-1 flex-shrink-0" />
                     <div>
@@ -245,7 +251,8 @@ const LoyaltyCards = () => {
                       <p className="text-text/80">{feature.description}</p>
                     </div>
                   </div>
-                </div>)}
+                </div>
+              ))}
             </div>
           </div>
           
@@ -256,4 +263,16 @@ const LoyaltyCards = () => {
               تواصل معنا اليوم لمعرفة المزيد عن حلول بطاقات الولاء المخصصة التي يمكننا تقديمها لعملك.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Booking
+              <BookingButton />
+              <a href="/#contact" className="button-outline">تواصل معنا</a>
+            </div>
+          </div>
+        </div>
+      </main>
+      
+      <Footer />
+    </div>
+  );
+};
+
+export default LoyaltyCards;
