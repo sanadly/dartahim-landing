@@ -3,12 +3,14 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { Search, PlusIcon, MinusIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
 interface FAQItem {
   question: string;
   answer: string | React.ReactNode;
   category: string;
   isOpen?: boolean;
 }
+
 const FAQ = () => {
   // Mock data for FAQs
   const faqCategories = [{
@@ -30,6 +32,7 @@ const FAQ = () => {
     id: 'pricing',
     name: '💰 الأسعار والاشتراكات'
   }];
+
   const initialFAQs: FAQItem[] = [{
     question: 'ما هي التكلفة الحقيقية لبرنامج الولاء؟',
     answer: 'تختلف تكلفة برنامج الولاء حسب حجم عملك واحتياجاتك. يمكن أن تشمل التكاليف: رسوم الاشتراك في المنصة، تكلفة المكافآت، تكاليف التسويق. لمعرفة المزيد، يمكنك الاطلاع على <a href="/news/7" class="text-primary hover:underline">دليلنا الشامل لتقدير تكلفة برنامج الولاء</a>.',
@@ -40,7 +43,7 @@ const FAQ = () => {
     category: 'loyalty-programs'
   }, {
     question: 'ما هي ميزات تطبيق "دراهم" التي تميزه عن الحلول الأخرى؟',
-    answer: 'يتميز تطبيق "دراهم" بعدة مزايا: (١) مصمم خصيصًا للسوق الليبي (٢) سهولة الاستخدام للتجار والعملاء (٣) إمكانيات تحليل متقدمة (٤) حملات تسويقية مخصصة (٥) تكامل سلس مع أنظمة نقاط البيع (٦) دعم فني على مدار الساعة (٧) تحديثات مستمرة بناءً على احتياجات السوق.',
+    answer: 'يتميز تطبيق "دراهم" بعدة مزايا: (١) مصمم خصيصًا للسوق الليبي (٢) سهولة الاستخدام للتجار والعملاء (٣) إمكانيات تحليل متقدمة (٤) حملات تسويقية مخصصة (٥) تكامل سلس مع أنظمة نقاط البيع (٥) دعم فني على مدار الساعة (٦) تحديثات مستمرة بناءً على احتياجات السوق.',
     category: 'app-usage'
   }, {
     question: 'كيف أضمن أمان بيانات عملائي في تطبيق "دراهم"؟',
@@ -64,7 +67,7 @@ const FAQ = () => {
     category: 'pricing'
   }, {
     question: 'كيف يمكنني إنشاء حملات تسويقية مخصصة في تطبيق "دراهم"؟',
-    answer: 'يمكنك إنشاء حملات تسويقية مخصصة من خلال لوحة تحكم "دراهم" باتباع هذه الخطوات: (١) اختر نوع الحملة (٢) حدد الجمهور المستهدف (٣) صمم العرض والمكافأة (٤) حدد فترة الحملة (٥) أضف محتوى الرسالة (٦) أطلق الحملة وتابع النتائج. لمزيد من المعلومات، يمكنك الاطلاع على <a href="/news/6" class="text-primary hover:underline">مقالنا حول الحملات التسويقية المخصصة</a>.',
+    answer: 'يمكنك إنشاء حملات تسويقية مخصصة من خلال لوحة تحكم "دراهم" باتباع هذه الخطوات: (١) اختر نوع الحملة (٢) حدد الجمهور المستهدف (٣) صمم العرض والمكافأة (٤) حدد فترة الحملة (٥) أضف محتوى الرسالة (٥) أطلق الحملة وتابع النتائج. لمزيد من المعلومات، يمكنك الاطلاع على <a href="/news/6" class="text-primary hover:underline">مقالنا حول الحملات التسويقية المخصصة</a>.',
     category: 'loyalty-programs'
   }, {
     question: 'هل يمكنني تصدير بيانات العملاء من نظام "دراهم"؟',
@@ -79,14 +82,18 @@ const FAQ = () => {
     answer: 'توفر منصة "دراهم" تحليلات متقدمة تساعدك على فهم سلوك العملاء واتخاذ قرارات أفضل. يمكنك استخدام هذه البيانات لتحديد العملاء الأكثر قيمة، واكتشاف أنماط الشراء، وتحسين المخزون، وتخصيص العروض، وتحسين تجربة العملاء. نقدم أيضًا تقارير دورية وتوصيات مخصصة بناءً على بيانات عملك.',
     category: 'customer-data'
   }];
+
   const [faqs, setFaqs] = useState<FAQItem[]>(initialFAQs);
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
   // Toggle FAQ open/close
   const toggleFAQ = (index: number) => {
+    const filteredIndex = filteredFAQs.findIndex((_, i) => i === index);
+    const actualIndex = faqs.findIndex(faq => faq === filteredFAQs[filteredIndex]);
+    
     setFaqs(faqs.map((faq, i) => {
-      if (i === index) {
+      if (i === actualIndex) {
         return {
           ...faq,
           isOpen: !faq.isOpen
@@ -99,9 +106,12 @@ const FAQ = () => {
   // Filter FAQs based on active category and search query
   const filteredFAQs = faqs.filter(faq => {
     const matchesCategory = activeCategory === 'all' || faq.category === activeCategory;
-    const matchesSearch = !searchQuery || faq.question.toLowerCase().includes(searchQuery.toLowerCase()) || typeof faq.answer === 'string' && faq.answer.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesSearch = !searchQuery || 
+      faq.question.toLowerCase().includes(searchQuery.toLowerCase()) || 
+      (typeof faq.answer === 'string' && faq.answer.toLowerCase().includes(searchQuery.toLowerCase()));
     return matchesCategory && matchesSearch;
   });
+
   return <div className="min-h-screen flex flex-col" dir="rtl">
       <Navbar />
       
@@ -135,11 +145,11 @@ const FAQ = () => {
             {/* FAQ Accordion */}
             <div className="space-y-4">
               {filteredFAQs.length > 0 ? filteredFAQs.map((faq, index) => <div key={index} className="border border-border rounded-lg overflow-hidden">
-                    <button onClick={() => toggleFAQ(index)} className="w-full flex justify-start items-right p-5 bg-background hover:bg-primary/5 transition-colors text-right">
-                      <span className={faq.isOpen ? "text-primary" : ""}>
+                    <button onClick={() => toggleFAQ(index)} className="w-full flex justify-between items-center p-5 bg-background hover:bg-primary/5 transition-colors text-right">
+                      <span className={`flex-shrink-0 ms-4 ${faq.isOpen ? "text-primary" : ""}`}>
                         {faq.isOpen ? <MinusIcon size={20} /> : <PlusIcon size={20} />}
                       </span>
-                      <h3 className="font-bold text-lg">{faq.question}</h3>
+                      <h3 className="font-bold text-lg flex-grow text-right">{faq.question}</h3>
                     </button>
                     
                     {faq.isOpen && <div className="p-5 bg-card border-t border-border">
@@ -173,4 +183,5 @@ const FAQ = () => {
       <Footer />
     </div>;
 };
+
 export default FAQ;
