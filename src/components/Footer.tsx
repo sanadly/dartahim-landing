@@ -8,10 +8,7 @@ const Footer = () => {
     links: [{
       name: "من نحن",
       url: "/who-are-we"
-    }, {
-      name: "فريق العمل",
-      url: "/team"
-    }, {
+    },  {
       name: "الوظائف",
       url: "/jobs"
     }, {
