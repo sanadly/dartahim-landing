@@ -10,7 +10,7 @@ const Footer = () => {
       url: "/who-are-we"
     }, {
       name: "فريق العمل",
-      url: "/our-team"
+      url: "/team"
     }, {
       name: "الوظائف",
       url: "/jobs"
