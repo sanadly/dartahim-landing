@@ -12,7 +12,7 @@ const Jobs = () => {
       type: "دوام كامل",
       location: "عن بعد",
       icon: <BriefcaseIcon className="h-6 w-6" />,
-      imageUrl: "/lovable-uploads/da1e9582-2257-4e62-a7c9-5b81477776c8.jpg"
+      imageUrl: "/lovable-uploads/frontend.avif"
     },
     {
       id: 2,
@@ -21,7 +21,7 @@ const Jobs = () => {
       type: "دوام كامل",
       location: "عن بعد",
       icon: <FileTextIcon className="h-6 w-6" />,
-      imageUrl: "/lovable-uploads/9d3431e8-f0b4-4b0c-a766-c4ba1bd2505d.jpg"
+      imageUrl: "/lovable-uploads/ux.avif"
     },
     {
       id: 3,
@@ -30,7 +30,7 @@ const Jobs = () => {
       type: "دوام جزئي",
       location: "بنغازي، ليبيا",
       icon: <ClipboardIcon className="h-6 w-6" />,
-      imageUrl: "/lovable-uploads/a60ccd7c-eb30-4c78-ae67-9c6337896ffc.jpg"
+      imageUrl: "/lovable-uploads/backend.avif"
     }
   ];
 
@@ -49,7 +49,7 @@ const Jobs = () => {
           
           <div className="relative mb-16 overflow-hidden rounded-2xl">
             <img 
-              src="/lovable-uploads/8d82719d-8f80-4a58-9372-6835998ad7a9.jpg" 
+              src="/lovable-uploads/team.avif" 
               alt="فريق العمل" 
               className="w-full h-[300px] md:h-[400px] object-cover"
             />
@@ -103,7 +103,11 @@ const Jobs = () => {
             <div className="feature-card group hover:shadow-lg transition-all duration-300">
               <div className="h-48 w-full overflow-hidden rounded-t-xl bg-gradient-to-r from-primary/30 to-accent/30">
                 <div className="h-full w-full flex items-center justify-center">
-                  <CheckCircle2 className="h-24 w-24 text-white/30" />
+                <img 
+                    src="/lovable-uploads/bewerbung.jpg"
+                    alt="bewerbung "
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
               </div>
               <div className="p-6">

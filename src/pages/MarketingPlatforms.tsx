@@ -76,7 +76,7 @@ const MarketingPlatforms = () => {
         value: "380%",
         icon: <Award className="h-4 w-4 text-blue-500" />
       }],
-      image: "/lovable-uploads/69b73410-b7da-4aa0-9a35-00ac7c62e874.png"
+      image: "/lovable-uploads/email.avif"
     }
   }, {
     id: "sms",
@@ -99,7 +99,7 @@ const MarketingPlatforms = () => {
         value: "28%",
         icon: <Award className="h-4 w-4 text-blue-500" />
       }],
-      image: "/lovable-uploads/69b73410-b7da-4aa0-9a35-00ac7c62e874.png"
+      image: "/lovable-uploads/notification.jpg"
     }
   }, {
     id: "analytics",
@@ -122,7 +122,7 @@ const MarketingPlatforms = () => {
         value: "75%",
         icon: <Zap className="h-4 w-4 text-yellow-500" />
       }],
-      image: "/lovable-uploads/69b73410-b7da-4aa0-9a35-00ac7c62e874.png"
+      image: "/lovable-uploads/dashboard.jpg"
     }
   }];
 
