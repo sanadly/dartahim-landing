@@ -6,7 +6,7 @@ export interface ServiceItem {
   id: number;
   title: string;
   description: string;
-  icon: React.ReactNode;
+  icon: JSX.Element;
   color: string;
   link: string;
   detailDescription?: string;
