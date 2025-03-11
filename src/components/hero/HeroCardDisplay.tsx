@@ -15,8 +15,8 @@ const HeroCardDisplay = ({ activeCard }: HeroCardDisplayProps) => {
       }}>
         <div className="w-[240px] md:w-[320px] lg:w-[380px] h-[160px] md:h-[200px] rounded-3xl glass-card bg-gradient-to-br from-white/50 to-white/10 flex flex-col p-4 md:p-6 shadow-xl border border-white/20 relative overflow-hidden z-10 hover:shadow-2xl transition-all duration-300 mx-auto">
           <div className="flex justify-between items-center mb-auto">
-            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-              <span className="text-white font-bold">د</span>
+            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-accent  via-white to-accent  flex items-center justify-center">
+              <span className="text-white font-bold"><img src="favicon.png" className='h-6 ' alt="" /></span>
             </div>
             <span className="text-lg md:text-xl font-bold">دراهم كارد</span>
           </div>
