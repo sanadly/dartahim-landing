@@ -1,8 +1,10 @@
+
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { CreditCard, Gift, BarChart4, ChevronRight, ArrowLeft, Code, Laptop, Smartphone, Award } from 'lucide-react';
 import { motion } from 'framer-motion';
 import BookingButton from './BookingButton';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const [activeCard, setActiveCard] = useState(0);
@@ -208,7 +210,15 @@ const Hero = () => {
           <div className="w-full mt-2">
             <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4 text-center">خدماتنا الرئيسية</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
-              {services.map(service => <a key={service.id} href={service.link} className={cn("p-3 md:p-4 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/30 transition-all hover:shadow-lg flex flex-col", activeCard === service.id ? "ring-2 ring-primary shadow-md" : "")} onMouseEnter={() => setActiveCard(service.id)}>
+              {services.map(service => (
+                <Link 
+                  key={service.id} 
+                  to={service.link} 
+                  className={cn("p-3 md:p-4 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/30 transition-all hover:shadow-lg flex flex-col", 
+                    activeCard === service.id ? "ring-2 ring-primary shadow-md" : ""
+                  )}
+                  onMouseEnter={() => setActiveCard(service.id)}
+                >
                   <div className={`p-1.5 md:p-2 rounded-full bg-gradient-to-r ${service.color} w-fit mb-2 md:mb-3`}>
                     {service.icon}
                   </div>
@@ -217,7 +227,8 @@ const Hero = () => {
                   <div className="mt-auto flex items-center text-xs text-primary font-medium">
                     اكتشف المزيد <ChevronRight className="h-2.5 md:h-3 w-2.5 md:w-3 mr-1" />
                   </div>
-                </a>)}
+                </Link>
+              ))}
             </div>
           </div>
         </motion.div>
