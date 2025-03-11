@@ -53,7 +53,7 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-8">
           <Link to="/who-are-we" className="hover:text-primary transition-colors">من نحن</Link>
           <Link to="/news" className="hover:text-primary transition-colors">الأخبار</Link>
-          <Link to="/team" className="hover:text-primary transition-colors">فريقنا</Link>
+          <Link to="/faq" className="hover:text-primary transition-colors">الأسئلة الأكثر شيوعا</Link>
           <Link to="/jobs" className="hover:text-primary transition-colors">الوظائف</Link>
           <a href="#contact" onClick={(e) => handleAnchorClick(e, '#contact')} className="hover:text-primary transition-colors">تواصل معنا</a>
           <BookingButton />
@@ -77,7 +77,7 @@ const Navbar = () => {
       )}>
         <Link to="/who-are-we" className="hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>من نحن</Link>
         <Link to="/news" className="hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>الأخبار</Link>
-        <Link to="/team" className="hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>فريقنا</Link>
+        <Link to="/faq" className="hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>الأسئلة الأكثر شيوعا</Link>
         <Link to="/jobs" className="hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>الوظائف</Link>
         <a href="#contact" onClick={(e) => { handleAnchorClick(e, '#contact'); setMobileMenuOpen(false); }} className="hover:text-primary transition-colors">تواصل معنا</a>
         <BookingButton />
