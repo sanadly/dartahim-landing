@@ -3,12 +3,15 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { Search, PlusIcon, MinusIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
 interface FAQItem {
   question: string;
   answer: string | React.ReactNode;
   category: string;
   isOpen?: boolean;
 }
+
 const FAQ = () => {
   // Mock data for FAQs
   const faqCategories = [{
@@ -30,6 +33,7 @@ const FAQ = () => {
     id: 'pricing',
     name: '💰 الأسعار والاشتراكات'
   }];
+
   const initialFAQs: FAQItem[] = [{
     question: 'ما هي التكلفة الحقيقية لبرنامج الولاء؟',
     answer: 'تختلف تكلفة برنامج الولاء حسب حجم عملك واحتياجاتك. يمكن أن تشمل التكاليف: رسوم الاشتراك في المنصة، تكلفة المكافآت، تكاليف التسويق. لمعرفة المزيد، يمكنك الاطلاع على <a href="/news/7" class="text-primary hover:underline">دليلنا الشامل لتقدير تكلفة برنامج الولاء</a>.',
@@ -40,7 +44,7 @@ const FAQ = () => {
     category: 'loyalty-programs'
   }, {
     question: 'ما هي ميزات تطبيق "دراهم" التي تميزه عن الحلول الأخرى؟',
-    answer: 'يتميز تطبيق "دراهم" بعدة مزايا: (١) مصمم خصيصًا للسوق الليبي (٢) سهولة الاستخدام للتجار والعملاء (٣) إمكانيات تحليل متقدمة (٤) حملات تسويقية مخصصة (٥) تكامل سلس مع أنظمة نقاط البيع (٦) دعم فني على مدار الساعة (٧) تحديثات مستمرة بناءً على احتياجات السوق.',
+    answer: 'يتميز تطبيق "دراهم" بعدة مزايا: (١) مصمم خصيصًا للسوق الليبي (٢) سهولة الاستخدام للتجار والعملاء (٣) إمكانيات تحليل متقدمة (٤) حملات تسويقية مخصصة (٥) تكامل سلس مع أنظمة نقاط البيع (٥) دعم فني على مدار الساعة (٦) تحديثات مستمرة بناءً على احتياجات السوق.',
     category: 'app-usage'
   }, {
     question: 'كيف أضمن أمان بيانات عملائي في تطبيق "دراهم"؟',
@@ -51,7 +55,7 @@ const FAQ = () => {
     answer: 'نعم، تم تصميم "دراهم" ليتكامل بسلاسة مع معظم أنظمة نقاط البيع الشائعة في ليبيا. لدينا واجهات برمجة (APIs) مفتوحة تسمح بالتكامل مع أنظمة نقاط البيع المختلفة. يمكن لفريقنا التقني مساعدتك في عملية التكامل والتأكد من أنها تعمل بكفاءة.',
     category: 'technical'
   }, {
-    question: 'ما هي طرق الدفع المتاحة في نظام دراهم؟',
+    question: 'ما هي طرق الدفع المتاحة في نظ��م دراهم؟',
     answer: 'يدعم نظام دراهم مجموعة متنوعة من طرق الدفع تشمل: الدفع النقدي، البطاقات المصرفية، المحافظ الإلكترونية، وحلول الدفع الرقمي المحلية في ليبيا. نحن نعمل باستمرار على إضافة المزيد من خيارات الدفع لتلبية احتياجات السوق المتطورة.',
     category: 'digital-payments'
   }, {
@@ -64,7 +68,7 @@ const FAQ = () => {
     category: 'pricing'
   }, {
     question: 'كيف يمكنني إنشاء حملات تسويقية مخصصة في تطبيق "دراهم"؟',
-    answer: 'يمكنك إنشاء حملات تسويقية مخصصة من خلال لوحة تحكم "دراهم" باتباع هذه الخطوات: (١) اختر نوع الحملة (٢) حدد الجمهور المستهدف (٣) صمم العرض والمكافأة (٤) حدد فترة الحملة (٥) أضف محتوى الرسالة (٦) أطلق الحملة وتابع النتائج. لمزيد من المعلومات، يمكنك الاطلاع على <a href="/news/6" class="text-primary hover:underline">مقالنا حول الحملات التسويقية المخصصة</a>.',
+    answer: 'يمكنك إنشاء حملات تسويقية مخصصة من خلال لوحة تحكم "دراهم" باتباع هذه الخطوات: (١) اختر نوع الحملة (٢) حدد الجمهور المستهدف (٣) صمم العرض والمكافأة (٤) حدد فترة الحملة (٥) أضف محتوى الرسالة (٥) أطلق الحملة وتابع النتائج. لمزيد من المعلومات، يمكنك الاطلاع على <a href="/news/6" class="text-primary hover:underline">مقالنا حول الحملات التسويقية المخصصة</a>.',
     category: 'loyalty-programs'
   }, {
     question: 'هل يمكنني تصدير بيانات العملاء من نظام "دراهم"؟',
@@ -79,7 +83,10 @@ const FAQ = () => {
     answer: 'توفر منصة "دراهم" تحليلات متقدمة تساعدك على فهم سلوك العملاء واتخاذ قرارات أفضل. يمكنك استخدام هذه البيانات لتحديد العملاء الأكثر قيمة، واكتشاف أنماط الشراء، وتحسين المخزون، وتخصيص العروض، وتحسين تجربة العملاء. نقدم أيضًا تقارير دورية وتوصيات مخصصة بناءً على بيانات عملك.',
     category: 'customer-data'
   }];
-  const [faqs, setFaqs] = useState<FAQItem[]>(initialFAQs);
+
+  const [faqs, setFaqs] = useState<FAQItem[]>(
+    initialFAQs.map(faq => ({ ...faq, isOpen: false }))
+  );
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
@@ -99,10 +106,14 @@ const FAQ = () => {
   // Filter FAQs based on active category and search query
   const filteredFAQs = faqs.filter(faq => {
     const matchesCategory = activeCategory === 'all' || faq.category === activeCategory;
-    const matchesSearch = !searchQuery || faq.question.toLowerCase().includes(searchQuery.toLowerCase()) || typeof faq.answer === 'string' && faq.answer.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesSearch = !searchQuery || 
+      faq.question.toLowerCase().includes(searchQuery.toLowerCase()) || 
+      (typeof faq.answer === 'string' && faq.answer.toLowerCase().includes(searchQuery.toLowerCase()));
     return matchesCategory && matchesSearch;
   });
-  return <div className="min-h-screen flex flex-col" dir="rtl">
+
+  return (
+    <div className="min-h-screen flex flex-col" dir="rtl">
       <Navbar />
       
       <main className="flex-grow pt-32 px-6 pb-20">
@@ -118,40 +129,104 @@ const FAQ = () => {
               <div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none text-muted-foreground">
                 <Search size={18} />
               </div>
-              <input type="text" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} placeholder="ابحث عن سؤال..." className="w-full rounded-full py-3 pr-12 pl-6 border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all" />
+              <input 
+                type="text" 
+                value={searchQuery} 
+                onChange={e => setSearchQuery(e.target.value)} 
+                placeholder="ابحث عن سؤال..." 
+                className="w-full rounded-full py-3 pr-12 pl-6 border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all" 
+              />
             </div>
             
             {/* Categories */}
-            <div className="mb-10 flex flex-wrap justify-center gap-3">
-              <button onClick={() => setActiveCategory('all')} className={`px-4 py-2 rounded-full text-sm transition-colors ${activeCategory === 'all' ? 'bg-primary text-white' : 'bg-primary/10 hover:bg-primary/20'}`}>
-                الكل
-              </button>
-              
-              {faqCategories.map(category => <button key={category.id} onClick={() => setActiveCategory(category.id)} className={`px-4 py-2 rounded-full text-sm transition-colors ${activeCategory === category.id ? 'bg-primary text-white' : 'bg-primary/10 hover:bg-primary/20'}`}>
-                  {category.name}
-                </button>)}
-            </div>
-            
-            {/* FAQ Accordion */}
-            <div className="space-y-4">
-              {filteredFAQs.length > 0 ? filteredFAQs.map((faq, index) => <div key={index} className="border border-border rounded-lg overflow-hidden">
-                    <button onClick={() => toggleFAQ(index)} className="w-full flex justify-start items-right p-5 bg-background hover:bg-primary/5 transition-colors text-right">
-                      <span className={faq.isOpen ? "text-primary" : ""}>
-                        {faq.isOpen ? <MinusIcon size={20} /> : <PlusIcon size={20} />}
-                      </span>
-                      <h3 className="font-bold text-lg">{faq.question}</h3>
-                    </button>
-                    
-                    {faq.isOpen && <div className="p-5 bg-card border-t border-border">
-                        {typeof faq.answer === 'string' ? <p dangerouslySetInnerHTML={{
-                  __html: faq.answer
-                }} className="leading-relaxed" /> : faq.answer}
-                      </div>}
-                  </div>) : <div className="text-center py-10">
-                  <p className="text-lg text-text/70">لم يتم العثور على نتائج مطابقة للبحث.</p>
-                  <p className="mt-2">حاول استخدام كلمات مفتاحية مختلفة أو <Link to="/help-center" className="text-primary hover:underline">تواصل معنا</Link> للمساعدة.</p>
-                </div>}
-            </div>
+            <Tabs value={activeCategory} onValueChange={setActiveCategory} className="w-full mb-10">
+              <TabsList className="w-full flex flex-wrap justify-center gap-2 bg-transparent h-auto p-0">
+                <TabsTrigger 
+                  value="all" 
+                  className={`px-4 py-2 rounded-full text-sm transition-colors ${activeCategory === 'all' ? 'bg-primary text-white' : 'bg-primary/10 hover:bg-primary/20'}`}
+                >
+                  الكل
+                </TabsTrigger>
+                
+                {faqCategories.map(category => (
+                  <TabsTrigger 
+                    key={category.id} 
+                    value={category.id} 
+                    className={`px-4 py-2 rounded-full text-sm transition-colors ${activeCategory === category.id ? 'bg-primary text-white' : 'bg-primary/10 hover:bg-primary/20'}`}
+                  >
+                    {category.name}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+
+              <TabsContent value="all" className="mt-6">
+                <div className="space-y-4">
+                  {filteredFAQs.length > 0 ? (
+                    filteredFAQs.map((faq, index) => (
+                      <div key={index} className="border border-border rounded-lg overflow-hidden">
+                        <button 
+                          onClick={() => toggleFAQ(faqs.indexOf(faq))} 
+                          className="w-full flex items-center p-5 bg-background hover:bg-primary/5 transition-colors text-right gap-3"
+                        >
+                          <span className={`${faq.isOpen ? "text-primary" : ""} flex-shrink-0`}>
+                            {faq.isOpen ? <MinusIcon size={20} /> : <PlusIcon size={20} />}
+                          </span>
+                          <h3 className="font-bold text-lg">{faq.question}</h3>
+                        </button>
+                        
+                        {faq.isOpen && (
+                          <div className="p-5 bg-card border-t border-border">
+                            {typeof faq.answer === 'string' ? (
+                              <p dangerouslySetInnerHTML={{ __html: faq.answer }} className="leading-relaxed" />
+                            ) : faq.answer}
+                          </div>
+                        )}
+                      </div>
+                    ))
+                  ) : (
+                    <div className="text-center py-10">
+                      <p className="text-lg text-text/70">لم يتم العثور على نتائج مطابقة للبحث.</p>
+                      <p className="mt-2">حاول استخدام كلمات مفتاحية مختلفة أو <Link to="/help-center" className="text-primary hover:underline">تواصل معنا</Link> للمساعدة.</p>
+                    </div>
+                  )}
+                </div>
+              </TabsContent>
+
+              {faqCategories.map(category => (
+                <TabsContent key={category.id} value={category.id} className="mt-6">
+                  <div className="space-y-4">
+                    {filteredFAQs.length > 0 ? (
+                      filteredFAQs.map((faq, index) => (
+                        <div key={index} className="border border-border rounded-lg overflow-hidden">
+                          <button 
+                            onClick={() => toggleFAQ(faqs.indexOf(faq))} 
+                            className="w-full flex items-center p-5 bg-background hover:bg-primary/5 transition-colors text-right gap-3"
+                          >
+                            <span className={`${faq.isOpen ? "text-primary" : ""} flex-shrink-0`}>
+                              {faq.isOpen ? <MinusIcon size={20} /> : <PlusIcon size={20} />}
+                            </span>
+                            <h3 className="font-bold text-lg">{faq.question}</h3>
+                          </button>
+                          
+                          {faq.isOpen && (
+                            <div className="p-5 bg-card border-t border-border">
+                              {typeof faq.answer === 'string' ? (
+                                <p dangerouslySetInnerHTML={{ __html: faq.answer }} className="leading-relaxed" />
+                              ) : faq.answer}
+                            </div>
+                          )}
+                        </div>
+                      ))
+                    ) : (
+                      <div className="text-center py-10">
+                        <p className="text-lg text-text/70">لم يتم العثور على نتائج مطابقة للبحث.</p>
+                        <p className="mt-2">حاول استخدام كلمات مفتاحية مختلفة أو <Link to="/help-center" className="text-primary hover:underline">تواصل معنا</Link> للمساعدة.</p>
+                      </div>
+                    )}
+                  </div>
+                </TabsContent>
+              ))}
+            </Tabs>
             
             {/* Still need help section */}
             <div className="mt-16 bg-primary/10 rounded-lg p-8 text-center">
@@ -171,6 +246,8 @@ const FAQ = () => {
       </main>
       
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default FAQ;
