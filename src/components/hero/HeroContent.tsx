@@ -1,8 +1,6 @@
-
 import { motion } from 'framer-motion';
 import { Award } from 'lucide-react';
 import BookingButton from '../BookingButton';
-
 const HeroContent = () => {
   const containerVariants = {
     hidden: {
@@ -16,7 +14,6 @@ const HeroContent = () => {
       }
     }
   };
-  
   const itemVariants = {
     hidden: {
       y: 20,
@@ -31,11 +28,9 @@ const HeroContent = () => {
       }
     }
   };
-
-  return (
-    <motion.div className="order-2 lg:order-1" initial="hidden" animate="visible" variants={containerVariants}>
+  return <motion.div className="order-2 lg:order-1" initial="hidden" animate="visible" variants={containerVariants}>
       <motion.div variants={itemVariants} className="inline-block px-4 py-1 rounded-full bg-secondary/30 backdrop-blur-sm mb-4 mx-auto flex justify-center">
-        <span className="text-xs md:text-sm font-medium">المتخصصون في برامج الولاء و حلول التسويق الرقمية #1 في ليبيا</span>
+        <span className="text-xs md:text-sm font-medium justify-center">المتخصصون في برامج الولاء و حلول التسويق الرقمية #1 في ليبيا</span>
       </motion.div>
       
       <motion.h1 variants={itemVariants} className="text-3xl md:text-4xl lg:text-6xl font-bold mb-4 md:mb-6 leading-relaxed">
@@ -55,8 +50,6 @@ const HeroContent = () => {
         <Award size={16} className="text-primary" />
         <span>شركة مُسجلة في ليبيا</span>
       </motion.div>
-    </motion.div>
-  );
+    </motion.div>;
 };
-
 export default HeroContent;
