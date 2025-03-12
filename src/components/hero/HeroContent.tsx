@@ -34,8 +34,8 @@ const HeroContent = () => {
 
   return (
     <motion.div className="order-2 lg:order-1" initial="hidden" animate="visible" variants={containerVariants}>
-      <motion.div variants={itemVariants} className="inline-block px-4 py-1 rounded-full bg-secondary/30 backdrop-blur-sm mb-4">
-        <span className="text-xs md:text-sm font-medium">المتخصصون في برامج الولاء و حلول التسويق الرقمية #1 في ليبيا</span>
+      <motion.div variants={itemVariants} className="inline-block px-6 py-2 rounded-full bg-secondary/30 backdrop-blur-sm mb-4">
+        <span className="text-sm font-medium">المتخصصون في برامج الولاء و حلول التسويق الرقمية #1 في ليبيا</span>
       </motion.div>
       
       <motion.h1 variants={itemVariants} className="text-3xl md:text-4xl lg:text-6xl font-bold mb-4 md:mb-6 leading-relaxed">
