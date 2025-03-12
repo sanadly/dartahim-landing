@@ -8,7 +8,7 @@ import Index from "./pages/Index";
 import Jobs from "./pages/Jobs";
 import News from "./pages/News";
 import NewsArticle4 from "./pages/NewsArticle4";
-import NewsArticle5 from "./pages/Future Article";
+import NewsArticle5 from "./pages/FutureArticle";
 import NewsArticle6 from "./pages/NewsArticle6";
 import NewsArticle7 from "./pages/NewsArticle7";
 import NewsArticle8 from "./pages/NewsArticle8";

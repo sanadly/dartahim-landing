@@ -2,13 +2,14 @@
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import BookingButton from './BookingButton';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
   
   useEffect(() => {
@@ -37,24 +38,43 @@ const Navbar = () => {
       }
     } else {
       // If we're on another page, navigate to home page with the anchor
-      window.location.href = `/${anchor}`;
+      navigate('/', { replace: true });
+      // Reset scroll position and then scroll to anchor after a short delay
+      window.scrollTo(0, 0);
+      
+      // Use a timeout to ensure navigation completes before attempting to scroll
+      setTimeout(() => {
+        const targetElement = document.querySelector(anchor);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.getBoundingClientRect().top + window.scrollY - 100,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
     }
+  };
+  
+  // Handle regular link navigation to ensure scroll reset
+  const handleRegularNavigation = () => {
+    window.scrollTo(0, 0);
+    setMobileMenuOpen(false);
   };
   
   return (
     <nav className={cn('fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 md:px-6 py-2 md:py-4', 
       scrolled ? 'glass-nav shadow-sm' : 'bg-transparent')}>
       <div className="container mx-auto flex justify-between items-center">
-        <Link to="/" className="text-2xl font-bold text-text flex items-center gap-2">
+        <Link to="/" onClick={handleRegularNavigation} className="text-2xl font-bold text-text flex items-center gap-2">
           <img alt="دراهم" src="/lovable-uploads/69b73410-b7da-4aa0-9a35-00ac7c62e874.png" className="h-16 md:h-20 object-fill" />
         </Link>
 
         {/* Desktop menu */}
         <div className="hidden md:flex items-center gap-8">
-          <Link to="/who-are-we" className="hover:text-primary transition-colors">من نحن</Link>
-          <Link to="/news" className="hover:text-primary transition-colors">الأخبار</Link>
-          <Link to="/faq" className="hover:text-primary transition-colors">الأسئلة الشائعة</Link>
-          <Link to="/jobs" className="hover:text-primary transition-colors">الوظائف</Link>
+          <Link to="/who-are-we" onClick={handleRegularNavigation} className="hover:text-primary transition-colors">من نحن</Link>
+          <Link to="/news" onClick={handleRegularNavigation} className="hover:text-primary transition-colors">الأخبار</Link>
+          <Link to="/faq" onClick={handleRegularNavigation} className="hover:text-primary transition-colors">الأسئلة الشائعة</Link>
+          <Link to="/jobs" onClick={handleRegularNavigation} className="hover:text-primary transition-colors">الوظائف</Link>
           <a href="#contact" onClick={(e) => handleAnchorClick(e, '#contact')} className="hover:text-primary transition-colors">تواصل معنا</a>
           <BookingButton />
         </div>
@@ -75,10 +95,10 @@ const Navbar = () => {
         "border-b border-white/10",
         mobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
       )}>
-        <Link to="/who-are-we" className="hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>من نحن</Link>
-        <Link to="/news" className="hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>الأخبار</Link>
-        <Link to="/faq" className="hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>الأسئلة الشائعة</Link>
-        <Link to="/jobs" className="hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>الوظائف</Link>
+        <Link to="/who-are-we" onClick={handleRegularNavigation} className="hover:text-primary transition-colors">من نحن</Link>
+        <Link to="/news" onClick={handleRegularNavigation} className="hover:text-primary transition-colors">الأخبار</Link>
+        <Link to="/faq" onClick={handleRegularNavigation} className="hover:text-primary transition-colors">الأسئلة الشائعة</Link>
+        <Link to="/jobs" onClick={handleRegularNavigation} className="hover:text-primary transition-colors">الوظائف</Link>
         <a href="#contact" onClick={(e) => { handleAnchorClick(e, '#contact'); setMobileMenuOpen(false); }} className="hover:text-primary transition-colors">تواصل معنا</a>
         <BookingButton />
       </div>
