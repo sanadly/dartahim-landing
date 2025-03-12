@@ -1,8 +1,49 @@
+
 import { Heart, Facebook, Instagram, Twitter, Linkedin, Youtube, Award } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHomePage = location.pathname === '/';
+  
+  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, anchor: string) => {
+    e.preventDefault();
+    
+    if (isHomePage) {
+      // If we're on the home page, smooth scroll to the section
+      const targetElement = document.querySelector(anchor);
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.getBoundingClientRect().top + window.scrollY - 100,
+          behavior: 'smooth'
+        });
+      }
+    } else {
+      // If we're on another page, navigate to home page with the anchor
+      navigate('/', { replace: true });
+      // Reset scroll position and then scroll to anchor after a short delay
+      window.scrollTo(0, 0);
+      
+      // Use a timeout to ensure navigation completes before attempting to scroll
+      setTimeout(() => {
+        const targetElement = document.querySelector(anchor);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.getBoundingClientRect().top + window.scrollY - 100,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
+    }
+  };
+  
+  // Handle regular link navigation to ensure scroll reset
+  const handleRegularNavigation = () => {
+    window.scrollTo(0, 0);
+  };
+  
   const footerLinks = [{
     title: "الشركة",
     links: [{
@@ -40,6 +81,7 @@ const Footer = () => {
       url: "/#contact"
     }]
   }];
+  
   return <footer className="bg-primary/5 pt-16 pb-8 px-6">
       <div className="container mx-auto">
         {/* Footer Top */}
@@ -49,11 +91,19 @@ const Footer = () => {
               <ul className="space-y-2">
                 {column.links.map((link, linkIdx) => <li key={linkIdx}>
                     {link.url.startsWith('/#') ? (
-                      <a href={link.url} className="text-text/70 hover:text-primary transition-colors">
+                      <a 
+                        href={link.url} 
+                        onClick={(e) => handleAnchorClick(e, link.url.substring(1))}
+                        className="text-text/70 hover:text-primary transition-colors"
+                      >
                         {link.name}
                       </a>
                     ) : (
-                      <Link to={link.url} className="text-text/70 hover:text-primary transition-colors">
+                      <Link 
+                        to={link.url} 
+                        onClick={handleRegularNavigation}
+                        className="text-text/70 hover:text-primary transition-colors"
+                      >
                         {link.name}
                       </Link>
                     )}
@@ -83,7 +133,7 @@ const Footer = () => {
         {/* Footer Bottom */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-3">
-            <Link to="/" className="text-xl font-bold text-text flex items-center gap-2">
+            <Link to="/" onClick={handleRegularNavigation} className="text-xl font-bold text-text flex items-center gap-2">
               <img src="/lovable-uploads/d8c5b993-2a67-47ca-9ad1-222ee8ff41e9.png" alt="دراهم" className="h-20 object-fill" />
             </Link>
             <div className="flex items-center gap-1 bg-primary/10 px-3 py-1.5 rounded-full text-sm text-primary">
