@@ -1,4 +1,4 @@
-import { Info, Clock, Target, Briefcase, Heart, Shield, Users, TrendingUp, CheckCircle, Zap, Award, GraduationCap, Building, Lightbulb } from "lucide-react";
+import { Info, Clock, Target, Briefcase, Heart, Shield, Users, TrendingUp, CheckCircle, Zap, Award, GraduationCap, Building, Lightbulb, Mail, LinkedinIcon, Twitter as TwitterIcon, Github } from "lucide-react";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { useState, useEffect } from "react";
@@ -14,9 +14,9 @@ const founders = [
       imageUrl: "/lovable-uploads/mo.jpeg",
       socialLinks: {
         email: "mohamed@darahem.com",
-        twitter: "#",
-        linkedin: "#",
-        github: "#"
+        twitter: "https://twitter.com/darahimly",
+        linkedin: "https://www.linkedin.com/company/darahimly/",
+        github: "https://github.com/darahimly"
       }
     },
     {
@@ -27,9 +27,9 @@ const founders = [
       imageUrl: "/lovable-uploads/sara.jpeg",
       socialLinks: {
         email: "ahmed@darahem.com",
-        twitter: "#",
-        linkedin: "#",
-        github: "#"
+        twitter: "https://twitter.com/darahimly",
+        linkedin: "https://www.linkedin.com/company/darahimly/",
+        github: "https://github.com/darahimly"
       }
     }
 ];
@@ -88,7 +88,7 @@ const WhoAreWe = () => {
   const expertiseAreas = [{
     icon: <Award className="h-6 w-6" />,
     title: "خبرة عملية",
-    description: "فريق عمل متخصص يملك خبرة عملية في مجال تطوير برامج الولاء والحلول التسويقية الرقمية تمتد لأكثر من 10 سنوات."
+    description: "فريق عمل متخصص يملك خبرة عملية في مجال تط��ير برامج الولاء والحلول التسويقية الرقمية تمتد لأكثر من 10 سنوات."
   }, {
     icon: <GraduationCap className="h-6 w-6" />,
     title: "خلفية أكاديمية",
@@ -234,6 +234,45 @@ const WhoAreWe = () => {
                     <CheckCircle className="h-4 w-4 mr-1" />
                   </a>
                 </div>)}
+            </div>
+          </div>
+          
+          {/* Team Section */}
+          <div id="team" className="mb-20">
+            <h2 className={cn("text-3xl font-bold mb-8 text-center transition-all duration-500", isVisible.values ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10")}>فريقنا</h2>
+            <p className={cn("text-text/70 max-w-3xl mx-auto text-center mb-10 transition-all duration-500 delay-100", isVisible.values ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10")}>
+              يقود دراهم فريق من المتخصصين ذوي الخبرة العالية في مجال تطوير البرمجيات وأنظمة الولاء
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {founders.map((founder, index) => (
+                <div key={founder.id} className={cn("feature-card p-8 transition-all duration-500", isVisible.values ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20")} style={{
+                  transitionDelay: `${index * 100}ms`
+                }}>
+                  <div className="flex flex-col md:flex-row gap-6 items-center md:items-start">
+                    <img src={founder.imageUrl} alt={founder.name} className="w-32 h-32 rounded-full object-cover border-4 border-primary/10" />
+                    <div>
+                      <h3 className="text-xl font-bold mb-1">{founder.name}</h3>
+                      <p className="text-primary mb-3">{founder.role}</p>
+                      <p className="text-text/80 mb-4">{founder.bio}</p>
+                      <div className="flex gap-3">
+                        <a href={`mailto:${founder.socialLinks.email}`} aria-label="البريد الإلكتروني" className="p-2 bg-white/50 hover:bg-primary/10 rounded-full transition-colors">
+                          <Mail size={16} />
+                        </a>
+                        <a href={founder.socialLinks.twitter} target="_blank" rel="noopener noreferrer" aria-label="تويتر" className="p-2 bg-white/50 hover:bg-primary/10 rounded-full transition-colors">
+                          <TwitterIcon size={16} />
+                        </a>
+                        <a href={founder.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" aria-label="لينكد إن" className="p-2 bg-white/50 hover:bg-primary/10 rounded-full transition-colors">
+                          <LinkedinIcon size={16} />
+                        </a>
+                        <a href={founder.socialLinks.github} target="_blank" rel="noopener noreferrer" aria-label="جيت هاب" className="p-2 bg-white/50 hover:bg-primary/10 rounded-full transition-colors">
+                          <Github size={16} />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
           
